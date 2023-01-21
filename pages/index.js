@@ -4,11 +4,20 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <Layout>
-      <div id='hero' className='relative h-[1050px] bg-red-500 flex justify-center items-center text-white '>
+      <div id='hero' className='relative h-[1050px] flex justify-center items-center text-white '>
         <Image alt='Mountains' src='/polenta-hero.jpg' layout='fill' objectFit='cover' />
-        <div className='container h-[400px] absolute translate-y-[525px] flex justify-center items-center bg-red-800'></div>
+        <div className='container h-[450px] absolute translate-y-[525px] flex justify-center items-center '>
+          <Image
+            alt='Mountains'
+            src='/splash.png'
+            layout='fill'
+            objectFit='contain'
+            className='absolute translate-y-5 drop-shadow opacity-95'
+          />
+          <h1 className='text-[110px] z-10 font-bold -translate-y-2 drop-shadow-2xl'>POLENTA</h1>
+        </div>
       </div>
-      <div className='py-16 pt-[264px] flex justify-center items-center flex-col'>
+      <div className='py-16 pt-[289px] flex justify-center items-center flex-col'>
         <div className='container'>
           <iframe
             className='video'
