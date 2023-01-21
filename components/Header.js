@@ -1,4 +1,6 @@
 import Menu from './Menu'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 export default function Header() {
   return (
@@ -17,8 +19,25 @@ export default function Header() {
           backdrop-blur-md
         `}
       >
-        <div id='left'>POLENTA</div>
-        <div id='center'>Website Links</div>
+        <div id='left'>
+          <Link href='/'>
+            <p className='hover:text-accent-500 cursor-pointer'>POLENTA</p>
+          </Link>
+        </div>
+        <div id='center' className='flex gap-8 font-bold'>
+          <Link href='/' className=''>
+            HOME
+          </Link>
+          <Link href='/' className=''>
+            ABOUT
+          </Link>
+          <Link href='/' className='mx-8'>
+            CONCERTS
+          </Link>
+          <Link href='/' className='mx-8'>
+            CONTACT
+          </Link>
+        </div>
         <div id='right'>Social Media</div>
       </div>
     </div>
