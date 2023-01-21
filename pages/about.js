@@ -1,6 +1,5 @@
 import Layout from '../components/Layouts/Default'
 import Image from 'next/image'
-import Title from '../components/Title'
 import React from 'react'
 
 import axios from 'axios'

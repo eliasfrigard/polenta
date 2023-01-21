@@ -15,7 +15,7 @@ export default function Header() {
           bg-opacity-90
           h-[80px]
           w-full
-          shadow-md 
+          shadow-lg
           backdrop-blur-md 
           tracking-wide
           px-48
@@ -37,7 +37,7 @@ export default function Header() {
           <Link href='/concerts' className='mx-8'>
             CONCERTS
           </Link>
-          <Link href='/' className='mx-8'>
+          <Link href='/contact' className='mx-8'>
             CONTACT
           </Link>
         </div>

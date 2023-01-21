@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <Layout>
-      <div id='hero' className='relative h-[1050px] flex justify-center items-center text-white '>
+      <div id='hero' className='relative h-[1050px] flex justify-center items-center text-white shadow-2xl'>
         <Image alt='Mountains' src='/polenta-hero.jpg' layout='fill' objectFit='cover' />
         <div className='container h-[450px] absolute translate-y-[525px] flex justify-center items-center '>
           <Image
