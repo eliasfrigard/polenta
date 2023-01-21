@@ -1,26 +1,25 @@
 import Menu from './Menu'
 
-export default function Header({ height, position }) {
+export default function Header() {
   return (
-    <div className={`w-full flex justify-center items-center ${position} z-10`}>
+    <div className={`w-full flex justify-center fixed items-center z-10`}>
       <div
         className={`
           flex
           justify-between
           items-center 
-          bg-[#EFF0F2]
+          bg-white
           bg-opacity-80
-          h-[${height}]
-          w-[60vw] 
-          p-8
-          mt-8
-          shadow-lg 
-          rounded-2xl
+          h-[70px]
+          w-full
+          p-10
+          shadow-md 
           backdrop-blur-md
         `}
       >
-        <div id='left'>hello</div>
-        <div id='right'>there</div>
+        <div id='left'>POLENTA</div>
+        <div id='center'>Website Links</div>
+        <div id='right'>Social Media</div>
       </div>
     </div>
   )
