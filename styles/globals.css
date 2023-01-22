@@ -26,4 +26,29 @@ a {
     border-radius: theme('borderRadius.lg');
     box-shadow: theme('boxShadow.xl');
   }
+  .burger {
+    cursor: pointer;
+  }
+  .burgerLine {
+    width: 30px;
+    height: 2px;
+    background-color: rgb(230, 230, 230);
+    margin: 7px;
+    transition: all 0.3s ease;
+    border-radius: theme('borderRadius.full');
+  }
+  .mobileNavLink {
+    cursor: pointer;
+    color: white;
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 500;
+    font-weight: 500;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    transition-duration: 50ms;
+  }
+  .mobileNavLink:hover {
+    color: black;
+  }
 }
