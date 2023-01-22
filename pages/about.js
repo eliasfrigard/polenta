@@ -30,10 +30,10 @@ export default function Home() {
         />
       </div>
       <div className='container py-32 flex justify-center items-center gap-16 flex-wrap'>
-        <div className='bg-[#011C26] w-[320px] h-[400px]'></div>
-        <div className='bg-[#011C26] w-[320px] min-w-[300px] h-[400px]'></div>
-        <div className='bg-[#011C26] w-[320px] min-w-[300px] h-[400px]'></div>
-        <div className='bg-[#011C26] w-[320px] min-w-[300px] h-[400px]'></div>
+        <div className='roundedShadow bg-[#011C26] w-[320px] h-[400px]'></div>
+        <div className='roundedShadow bg-[#011C26] w-[320px] min-w-[300px] h-[400px]'></div>
+        <div className='roundedShadow bg-[#011C26] w-[320px] min-w-[300px] h-[400px]'></div>
+        <div className='roundedShadow bg-[#011C26] w-[320px] min-w-[300px] h-[400px]'></div>
       </div>
     </Layout>
   )

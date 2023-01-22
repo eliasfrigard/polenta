@@ -1,8 +1,16 @@
 import Layout from '../components/Layouts/Default'
 import Image from 'next/image'
 import ContactForm from '../components/ContactForm'
+import Event from '../components/Event'
 
 export default function Home() {
+  const event = {
+    date: Date.now(),
+    venue: 'Teatro Salla Della Communita',
+    city: 'Gothenburg',
+    country: 'Sweden',
+  }
+
   return (
     <Layout>
       <div id='hero' className='relative h-[1050px] flex justify-center items-center text-white shadow-2xl'>
@@ -48,6 +56,18 @@ export default function Home() {
           ></iframe>
         </div>
       </div>
+
+      <div className='pb-32 pt-16 bg-[#F2F2F2] flex justify-center items-center flex-col'>
+        <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
+        <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
+        <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
+        <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
+        <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
+        <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
+        <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
+        <Event date={event.date} venue={event.venue} city={event.city} country={event.country} last={true} />
+      </div>
+
       <ContactForm></ContactForm>
     </Layout>
   )

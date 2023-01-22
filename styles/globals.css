@@ -63,4 +63,11 @@ a {
     border-radius: theme('borderRadius.lg');
     box-shadow: theme('boxShadow.xl');
   }
+  .formLabel {
+    display: block;
+    letter-spacing: 0.025em;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    margin-left: 3px;
+  }
 }

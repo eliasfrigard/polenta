@@ -16,8 +16,8 @@ export default function Event({ venue, date, city, country, last = false, first 
             <Moment format='HH:mm dddd'>{date}</Moment>
           </p>
         </div>
-        <div className='centerContent tracking-wide font-medium'>{venue}</div>
-        <div className='centerContent font-medium text-lg tracking-wide'>
+        <div className='centerContent tracking-wide font-medium italic'>{venue}</div>
+        <div className='centerContent font-medium text-base tracking-wide'>
           {city}, {country}
         </div>
         <div className='centerContent'>
