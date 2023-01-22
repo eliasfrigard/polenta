@@ -2,6 +2,8 @@ import Layout from '../components/Layouts/Default'
 import Image from 'next/image'
 import React from 'react'
 
+import Card from '../components/Card.js'
+
 import axios from 'axios'
 import md from 'markdown-it'
 
@@ -30,10 +32,10 @@ export default function Home() {
         />
       </div>
       <div className='container py-32 flex justify-center items-center gap-16 flex-wrap'>
-        <div className='roundedShadow bg-[#011C26] w-[320px] h-[400px]'></div>
-        <div className='roundedShadow bg-[#011C26] w-[320px] min-w-[300px] h-[400px]'></div>
-        <div className='roundedShadow bg-[#011C26] w-[320px] min-w-[300px] h-[400px]'></div>
-        <div className='roundedShadow bg-[#011C26] w-[320px] min-w-[300px] h-[400px]'></div>
+        <Card name='Veera Kuisma' instrument='5-string violin' />
+        <Card name='Aino Kinnunen' instrument='Violin' />
+        <Card name='Olli Sippola' instrument='Violin' />
+        <Card name='Mikko Malmivaara' instrument='6-string guitar' />
       </div>
     </Layout>
   )
