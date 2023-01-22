@@ -34,8 +34,8 @@ export default function Contact() {
           className='flex items-center justify-between gap-8 p-8 pr-10 h-[100px] cursor-pointer w-full border-l-8 border-[#011C26] rounded-lg bg-gray-100 shadow-md hover:bg-[#011C26] hover:text-white duration-100'
         >
           <div className='flex flex-col justify-between gap-1'>
-            <p className='text font-medium tracking-wide'>Download our presskit from here.</p>
-            <p className='text italic tracking-wide'>polenta-presskit.zip</p>
+            <p className='text font-medium tracking-wide'>Download our technical rider from here.</p>
+            <p className='text italic tracking-wide'>polenta-technical-rider.pdf</p>
           </div>
 
           <BsDownload className='text-2xl'></BsDownload>
@@ -45,8 +45,8 @@ export default function Contact() {
           className='flex items-center justify-between gap-8 p-8 pr-10 h-[100px] cursor-pointer w-full border-l-8 border-[#011C26] rounded-lg bg-gray-100 shadow-md hover:bg-[#011C26] hover:text-white duration-100'
         >
           <div className='flex flex-col justify-between gap-1'>
-            <p className='text font-medium tracking-wide'>Download our presskit from here.</p>
-            <p className='text italic tracking-wide'>polenta-presskit.zip</p>
+            <p className='text font-medium tracking-wide'>Download our hospitality rider from here.</p>
+            <p className='text italic tracking-wide'>polenta-hospitality-rider.pdf</p>
           </div>
 
           <BsDownload className='text-2xl'></BsDownload>
