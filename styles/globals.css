@@ -56,4 +56,11 @@ a {
     justify-content: center;
     align-items: center;
   }
+  .contactForm {
+    background: linear-gradient(0deg, rgba(1, 28, 38, 1) 50%, rgba(242, 242, 242, 1) 50%);
+  }
+  .roundedShadow {
+    border-radius: theme('borderRadius.lg');
+    box-shadow: theme('boxShadow.xl');
+  }
 }

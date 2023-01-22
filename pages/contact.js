@@ -1,5 +1,6 @@
 import Layout from '../components/Layouts/Default'
 import Image from 'next/image'
+import ContactForm from '../components/ContactForm'
 
 import { BsDownload } from 'react-icons/bs'
 
@@ -22,6 +23,7 @@ export default function Contact() {
           <BsDownload className='text-3xl'></BsDownload>
         </div>
       </div>
+      <ContactForm></ContactForm>
     </Layout>
   )
 }

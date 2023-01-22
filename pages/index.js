@@ -1,5 +1,6 @@
 import Layout from '../components/Layouts/Default'
 import Image from 'next/image'
+import ContactForm from '../components/ContactForm'
 
 export default function Home() {
   return (
@@ -47,6 +48,7 @@ export default function Home() {
           ></iframe>
         </div>
       </div>
+      <ContactForm></ContactForm>
     </Layout>
   )
 }
