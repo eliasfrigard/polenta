@@ -44,7 +44,7 @@ a {
     line-height: 1;
     font-weight: 500;
     font-weight: 500;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
     padding-bottom: 10px;
     transition-duration: 50ms;
   }
