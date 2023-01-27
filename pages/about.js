@@ -25,13 +25,13 @@ export default function Home() {
       <div id='hero' className='h-[100vh] flex justify-center items-center text-white'>
         <Image alt='Mountains' src='/polenta-9.jpg' layout='fill' objectFit='cover' />
       </div>
-      <div className='pt-16 container flex justify-center'>
+      <div className='px-8 md:px-0 pt-16 container flex justify-center'>
         <div
           className='prose prose-xl max-w-4xl prose-img:rounded-xl prose-headings:underline leading-[2rem] text-center'
           dangerouslySetInnerHTML={{ __html: md().render(post) }}
         />
       </div>
-      <div className='container py-32 flex justify-center items-center gap-16 flex-wrap'>
+      <div className='container py-16 md:py-32 flex justify-center items-center gap-8 md:gap-16 flex-wrap'>
         <Card name='Veera Kuisma' instrument='5-string violin' />
         <Card name='Aino Kinnunen' instrument='Violin' />
         <Card name='Olli Sippola' instrument='Violin' />
