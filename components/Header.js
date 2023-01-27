@@ -94,7 +94,7 @@ export default function Header() {
       </div>
 
       <div
-        className={`fixed flex flex-col justify-center items-center gap-24 mt-[80px] h-screen w-screen bg-[#011C26] z-10 duration-300 transform py-16 ${
+        className={`fixed flex flex-col justify-center items-center gap-24 pt-[80px] h-screen w-screen bg-[#011C26] z-10 duration-300 transform py-16 ${
           !mobileNavOpen && '-translate-y-[100vh]'
         }`}
       >
@@ -116,7 +116,7 @@ export default function Header() {
           </Link>
         </div>
 
-        <div className='flex justify-center items-center gap-8 text-white pb-16'>
+        <div className='flex justify-center items-center gap-8 text-white'>
           <AiOutlineMail className='text-[1.8rem] antialiased' />
           <BsFacebook className='text-2xl' />
           <BsInstagram className='text-2xl' />
