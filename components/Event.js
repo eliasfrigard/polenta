@@ -1,4 +1,5 @@
 import Moment from 'react-moment'
+import { IoMdGlobe, IoMdPin } from 'react-icons/io'
 
 export default function Event({ venue, date, city, country, last = false, first = false }) {
   return (
@@ -16,8 +17,12 @@ export default function Event({ venue, date, city, country, last = false, first 
             <Moment format='HH:mm dddd'>{date}</Moment>
           </p>
         </div>
-        <div className='centerContent tracking-wide font-medium italic'>{venue}</div>
-        <div className='centerContent font-medium text-base tracking-wide'>
+        <div className='centerContent tracking-wide font-medium italic flex gap-2'>
+          <IoMdPin className='text-xl'></IoMdPin>
+          {venue}
+        </div>
+        <div className='centerContent font-medium text-base tracking-wide flex gap-2'>
+          <IoMdGlobe className='text-xl'></IoMdGlobe>
           {city}, {country}
         </div>
         <div className='centerContent'>
