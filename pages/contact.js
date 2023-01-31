@@ -12,7 +12,7 @@ export default function Contact() {
       <div id='hero' className='h-[100vh] flex justify-center items-center text-white '>
         <Image alt='Mountains' src='/polenta-14.jpg' layout='fill' objectFit='cover' />
       </div>
-      <div className='container my-32 flex justify-center items-center gap-16 flex-wrap'>
+      <div className='container my-12 md:my-32 flex justify-center items-center gap-8 md:gap-16 flex-wrap'>
         <Card name='Veera Kuisma' email='example@polentamusic.net' phone='+358(0)-451107182' />
         <Card name='Aino Kinnunen' email='example@polentamusic.net' phone='+358(0)-451107182' />
         <Card name='Olli Sippola' email='example@polentamusic.net' phone='+358(0)-451107182' />

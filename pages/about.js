@@ -31,7 +31,7 @@ export default function Home() {
           dangerouslySetInnerHTML={{ __html: md().render(post) }}
         />
       </div>
-      <div className='container my-16 md:my-32 flex justify-center items-center gap-8 md:gap-16 flex-wrap'>
+      <div className='container my-12 md:my-32 flex justify-center items-center gap-8 md:gap-16 flex-wrap'>
         <Card name='Veera Kuisma' instrument='5-string violin' />
         <Card name='Aino Kinnunen' instrument='Violin' />
         <Card name='Olli Sippola' instrument='Violin' />
