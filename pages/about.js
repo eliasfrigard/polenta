@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <div id='hero' className='h-screen flex justify-center items-center text-white shadow-xl'>
+      <div id='hero' className='h-screen flex justify-center items-center text-white shadow-xl bg-blue-500'>
         <Image alt='Mountains' src='/polenta-9.jpg' layout='fill' objectFit='cover' />
       </div>
 
