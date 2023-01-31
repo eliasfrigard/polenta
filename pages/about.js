@@ -26,7 +26,7 @@ export default function Home() {
         <Image alt='Mountains' src='/polenta-9.jpg' layout='fill' objectFit='cover' />
       </div>
 
-      <div className='px-8 md:px-0 my-12 md:my-32 container flex justify-center'>
+      <div className='px-6 md:px-0 my-12 md:my-32 flex justify-center items-center flex-col'>
         <div
           className='-translate-x-[2px] prose prose-lg md:prose-xl max-w-4xl prose-img:rounded-xl prose-img:shadow-lg prose-headings:underline leading-[2rem] text-center'
           dangerouslySetInnerHTML={{ __html: md().render(post) }}
