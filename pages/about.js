@@ -22,12 +22,12 @@ export default function Home() {
 
   return (
     <Layout>
-      <div id='hero' className='h-[100vh] flex justify-center items-center text-white'>
+      <div id='hero' className='h-screen flex justify-center items-center text-white'>
         <Image alt='Mountains' src='/polenta-9.jpg' layout='fill' objectFit='cover' />
       </div>
-      <div className='px-8 md:px-0 my-32 container flex justify-center'>
+      <div className='px-8 md:px-0 my-12 md:my-32 container flex justify-center'>
         <div
-          className='prose prose-xl max-w-4xl prose-img:rounded-xl prose-headings:underline leading-[2rem] text-center'
+          className='-translate-x-[2px] prose prose-lg md:prose-xl max-w-4xl prose-img:rounded-xl prose-img:shadow-lg prose-headings:underline leading-[2rem] text-center'
           dangerouslySetInnerHTML={{ __html: md().render(post) }}
         />
       </div>
