@@ -40,7 +40,7 @@ export default function Event({ venue, date, city, country, last = false, first 
       <div
         className={`mt-4 ${
           !last && 'mb-4'
-        } md:hidden centerContent py-6 max-w-[1400px] w-full flex flex-col gap-6 hover:bg-gray-200 rounded-lg`}
+        } md:hidden centerContent py-6 max-w-[1400px] w-full flex flex-col gap-6 rounded-lg`}
       >
         <BsCalendar3 className='text-6xl'></BsCalendar3>
         <div className='centerContent flex-col gap-2'>
