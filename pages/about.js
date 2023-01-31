@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <Layout>
       <div id='hero' className='h-screen overflow-auto centerContent shadow-xl bg-blue-500'>
-        <Image alt='Mountains' src='/polenta-9.jpg' layout='fill' objectFit='cover' />
+        <Image alt='Mountains' src='/polenta-9.jpg' layout="fill" objectFit='cover' />
       </div>
 
       <div className='px-6 md:px-0 my-12 md:my-32 flex justify-center items-center flex-col'>

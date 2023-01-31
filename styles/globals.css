@@ -70,10 +70,8 @@ a {
     margin-bottom: 0.5rem;
     margin-left: 3px;
   }
-  .fullHeight {
-    min-height: 100vh;
-    min-height: -moz-available;
-    min-height: -webkit-fill-available;
-    min-height: fill-available;
+  .h-screen {
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
   }
 }
