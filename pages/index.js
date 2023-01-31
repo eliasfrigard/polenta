@@ -16,7 +16,7 @@ export default function Home() {
     <Layout>
       <div id='hero' className='relative h-screen md:h-[1050px] flex justify-center items-center text-white shadow-2xl'>
         <Image alt='Mountains' src='/polenta-hero.jpg' layout='fill' objectFit='cover' />
-        <div className='container md:my-16 md:h-[450px] absolute translate-y-[525px] flex justify-center items-center '>
+        <div className='hidden md:centerContent container md:my-16 md:h-[450px] absolute translate-y-[525px] '>
           <Image
             alt='Mountains'
             src='/splash.png'
@@ -65,10 +65,7 @@ export default function Home() {
         <Title title='upcoming concerts' />
 
         <div className='md:my-16 bg-[#F2F2F2] flex justify-center items-center flex-col'>
-          <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-          <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-          <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-          <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
+          <Event date={event.date} venue={event.venue} city={event.city} country={event.country} first />
           <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
           <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
           <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
@@ -77,7 +74,7 @@ export default function Home() {
             venue={event.venue}
             city={event.city}
             country={event.country}
-            last={true}
+            last
           />
         </div>
       </div>
