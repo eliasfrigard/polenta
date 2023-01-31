@@ -46,12 +46,24 @@ export default function Contact() {
       <ContactForm></ContactForm>
 
       <div className='flex flex-col gap-12 md:gap-16 w-full bg-secondary-500 pt-12 md:pt-16 md:pb-16'>
-        <Title title="Downloads" color='primary-500' />
+        <Title title='Downloads' textColor='text-primary-500' borderColor='border-primary-500' />
         <div className='container px-4 md:px-0 grid grid-flow-row gap-8 md:grid-cols-2'>
-          <DownloadItem title="Download our presskit from here." filename="polenta-presskit.zip" />
-          <DownloadItem title="Download our technical rider from here if you dare to do it." filename="polenta-technical-rider.pdf" link="" />
-          <DownloadItem title="Download our hospitality rider." filename="polenta-hospitality-rider.pdf" link="" />
-          <DownloadItem title="Download our hospitality rider." filename="polenta-hospitality-rider.pdf" link="" />
+          <DownloadItem title='Download our presskit from here.' filename='polenta-presskit.zip' />
+          <DownloadItem
+            title='Download our technical rider from here if you dare to do it.'
+            filename='polenta-technical-rider.pdf'
+            link=''
+          />
+          <DownloadItem
+            title='Download our hospitality rider.'
+            filename='polenta-hospitality-rider.pdf'
+            link=''
+          />
+          <DownloadItem
+            title='Download our hospitality rider.'
+            filename='polenta-hospitality-rider.pdf'
+            link=''
+          />
         </div>
       </div>
     </Layout>

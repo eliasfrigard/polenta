@@ -69,13 +69,7 @@ export default function Home() {
           <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
           <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
           <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-          <Event
-            date={event.date}
-            venue={event.venue}
-            city={event.city}
-            country={event.country}
-            last
-          />
+          <Event date={event.date} venue={event.venue} city={event.city} country={event.country} last />
         </div>
       </div>
 
