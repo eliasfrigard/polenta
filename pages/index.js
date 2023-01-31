@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <div id='hero' className='relative h-screen md:h-[1050px] flex justify-center items-center text-white shadow-2xl'>
+      <div id='hero' className='relative h-screen md:h-[1050px] flex justify-center items-center shadow-2xl'>
         <Image alt='Mountains' src='/polenta-hero.jpg' layout='fill' objectFit='cover' />
         <div className='hidden md:centerContent container md:my-16 md:h-[450px] absolute translate-y-[525px] '>
           <Image
@@ -24,7 +24,7 @@ export default function Home() {
             objectFit='contain'
             className='absolute translate-y-5 drop-shadow opacity-95'
           />
-          <h1 className='text-5xl md:text-[110px] z-10 font-bold md:-translate-y-2 drop-shadow-2xl'>
+          <h1 className='text-5xl md:text-[110px] z-10 font-bold md:-translate-y-2 drop-shadow-2xl text-white'>
             POLENTA
           </h1>
         </div>
