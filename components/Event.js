@@ -10,18 +10,18 @@ export default function Event({ venue, date, city, country, last = false, first 
         } p-4 max-w-[1400px] w-full grid grid-flow-row grid-cols-4 gap-4 hover:bg-gray-200 rounded-lg`}
       >
         <div className='centerContent flex-col gap-3'>
-          <p className='text leading-none font-medium tracking-wide'>
+          <p className='text leading-none font-medium tracking-wider'>
             <Moment format='DD MMMM YYYY'>{date}</Moment>
           </p>
           <p className='text-xl leading-none font-medium tracking-wide'>
-            <Moment format='HH:mm dddd'>{date}</Moment>
+            <Moment format='dddd HH:mm'>{date}</Moment>
           </p>
         </div>
-        <div className='centerContent tracking-wide font-medium italic flex gap-2'>
+        <div className='centerContent tracking-wider font-bold flex gap-2'>
           <IoMdPin className='text-xl'></IoMdPin>
           {venue}
         </div>
-        <div className='centerContent font-medium text-base tracking-wide flex gap-2'>
+        <div className='centerContent font-medium text-base tracking-wider flex gap-2'>
           <IoMdGlobe className='text-xl'></IoMdGlobe>
           {city}, {country}
         </div>

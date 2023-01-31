@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       aspectRatio: {
         '9/16': '9 / 16',
+        '5/6': '5 / 6',
       },
     },
     container: {
