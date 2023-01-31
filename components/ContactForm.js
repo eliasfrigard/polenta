@@ -17,7 +17,7 @@ export default function ContactForm() {
                   Full Name
                 </label>
                 <input
-                  className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white ${!nameIsValid && 'border-red-500'
+                  className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-primary-500 ${!nameIsValid && 'border-red-500'
                     }`}
                   id='grid-first-name'
                   type='text'
@@ -32,7 +32,7 @@ export default function ContactForm() {
                   Email Address
                 </label>
                 <input
-                  className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white ${!emailIsValid && 'border-red-500'
+                  className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-primary-500 ${!emailIsValid && 'border-red-500'
                     }`}
                   id='grid-first-name'
                   type='text'
@@ -45,7 +45,7 @@ export default function ContactForm() {
                   Phone Number
                 </label>
                 <input
-                  className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white ${!phoneIsValid && 'border-red-500'
+                  className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-primary-500 ${!phoneIsValid && 'border-red-500'
                     }`}
                   id='grid-first-name'
                   type='text'
@@ -61,7 +61,7 @@ export default function ContactForm() {
                 </label>
                 <textarea
                   rows='7'
-                  className={`resize-none appearance-none block w-full bg-gray-200 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white ${!messageIsValid && 'border-red-500'
+                  className={`resize-none appearance-none block w-full bg-gray-200 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-primary-500 ${!messageIsValid && 'border-red-500'
                     }`}
                   id='grid-first-name'
                   type='text'
@@ -73,7 +73,7 @@ export default function ContactForm() {
               </div>
             </div>
           </form>
-          <button className='roundedShadow w-full h-14 md:mt-2 bg-secondary-500 text-white font-bold tracking-wider uppercase'>
+          <button className='roundedShadow w-full h-14 md:mt-2 bg-secondary-500 text-primary-500 font-bold tracking-wider uppercase'>
             Send message
           </button>
         </div>

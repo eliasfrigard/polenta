@@ -24,7 +24,7 @@ export default function Home() {
             objectFit='contain'
             className='absolute translate-y-5 drop-shadow opacity-95'
           />
-          <h1 className='text-5xl md:text-[110px] z-10 font-bold md:-translate-y-2 drop-shadow-2xl text-white'>
+          <h1 className='text-5xl md:text-[110px] z-10 font-bold md:-translate-y-2 drop-shadow-2xl text-primary-500'>
             POLENTA
           </h1>
         </div>

@@ -115,7 +115,7 @@ export default function Header() {
           </Link>
         </div>
 
-        <div className='flex justify-center items-center gap-8 text-white'>
+        <div className='flex justify-center items-center gap-8 text-primary-500'>
           <AiOutlineMail className='text-[1.8rem] antialiased' />
           <BsFacebook className='text-2xl' />
           <BsInstagram className='text-2xl' />
