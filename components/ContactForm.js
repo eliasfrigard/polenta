@@ -9,7 +9,7 @@ export default function ContactForm() {
   return (
     <>
       <div className={`centerContent contactForm w-full md:pb-16 mt-8 md:mt-32 px-4 md:px-0`}>
-        <div className='flex-col p-8 md:p-12 container max-w-4xl roundedShadow bg-[#F2F2F2] h-full border border-opacity-50 border-[#011C26]'>
+        <div className='flex-col p-8 md:p-12 container max-w-4xl roundedShadow bg-primary-500 h-full border border-opacity-50 border-secondary-500'>
           <form className='w-full'>
             <div className='flex flex-wrap -mx-3 md:mb-4'>
               <div className='w-full px-3 mb-2 md:mb-0'>
@@ -73,7 +73,7 @@ export default function ContactForm() {
               </div>
             </div>
           </form>
-          <button className='roundedShadow w-full h-14 md:mt-2 bg-[#011C26] text-white font-bold tracking-wider uppercase'>
+          <button className='roundedShadow w-full h-14 md:mt-2 bg-secondary-500 text-white font-bold tracking-wider uppercase'>
             Send message
           </button>
         </div>

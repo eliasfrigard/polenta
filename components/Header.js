@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <>
       <div
-        className={`w-full backdrop-blur flex justify-start fixed items-center z-10 bg-[#011C26] bg-opacity-90
+        className={`w-full backdrop-blur flex justify-start fixed items-center z-10 bg-secondary-500 bg-opacity-90
     `}
       >
         <div
@@ -29,7 +29,7 @@ export default function Header() {
           w-full
           shadow-lg
           tracking-wide
-          text-[#F2F2F2]
+          text-primary-500
           container
           px-8
         `}
@@ -65,7 +65,7 @@ export default function Header() {
         </div>
       </div>
 
-      <div className={`w-screen flex justify-start fixed items-center z-20 bg-[#011C26]`}>
+      <div className={`w-screen flex justify-start fixed items-center z-20 bg-secondary-500`}>
         <div
           className={`
           lg:hidden
@@ -75,7 +75,7 @@ export default function Header() {
           h-[80px]
           w-full
           tracking-wide
-          text-[#F2F2F2]
+          text-primary-500
           container
           px-8
         `}
@@ -94,9 +94,8 @@ export default function Header() {
       </div>
 
       <div
-        className={`fixed flex flex-col justify-center items-center gap-24 pt-[80px] h-screen w-screen bg-[#011C26] z-10 duration-300 transform py-16 ${
-          !mobileNavOpen && '-translate-y-[100vh]'
-        }`}
+        className={`fixed flex flex-col justify-center items-center gap-24 pt-[80px] h-screen w-screen bg-secondary-500 z-10 duration-300 transform py-16 ${!mobileNavOpen && '-translate-y-[100vh]'
+          }`}
       >
         <div className='container flex flex-col justify-center items-center gap-10'>
           <Link href='/'>

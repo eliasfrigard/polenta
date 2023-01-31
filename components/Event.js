@@ -27,7 +27,7 @@ export default function Event({ venue, date, city, country, last = false, first 
           {city}, {country}
         </div>
         <div className='centerContent'>
-          <div className='centerContent w-[150px] h-12 rounded-lg bg-[#011C26] shadow text-white hover:cursor-pointer'>
+          <div className='centerContent w-[150px] h-12 rounded-lg bg-secondary-500 shadow text-white hover:cursor-pointer'>
             <p className='tracking-widest uppercase font-medium text-sm'>Event Link</p>
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function Event({ venue, date, city, country, last = false, first 
           </div>
         </div>
         <div className='centerContent'>
-          <div className='centerContent w-[150px] h-12 rounded-lg bg-[#011C26] shadow text-white hover:cursor-pointer'>
+          <div className='centerContent w-[150px] h-12 rounded-lg bg-secondary-500 shadow text-white hover:cursor-pointer'>
             <p className='tracking-widest uppercase font-medium text-sm'>Event Link</p>
           </div>
         </div>

@@ -19,7 +19,7 @@ export default function Home() {
       <div className='flex flex-col gap-12 md:gap-32 my-12 md:my-32'>
         <div className='flex flex-col md:gap-16'>
           <Title title='Upcoming Concerts' />
-          <div className='bg-[#F2F2F2] centerContent flex-col'>
+          <div className='bg-primary-500 centerContent flex-col'>
             <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
             <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
             <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
@@ -38,7 +38,7 @@ export default function Home() {
         </div>
         <div className='flex flex-col md:gap-16'>
           <Title title='Previous Concerts' />{' '}
-          <div className='bg-[#F2F2F2] centerContent flex-col'>
+          <div className='bg-primary-500 centerContent flex-col'>
             <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
             <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
             <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
