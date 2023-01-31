@@ -25,7 +25,7 @@ export default function Contact() {
 
   return (
     <Layout>
-      <div id='hero' className='h-[100vh] flex justify-center items-center text-white '>
+      <div id='hero' className='relative h-screen centerContent shadow-xl'>
         <Image alt='Mountains' src='/polenta-14.jpg' layout='fill' objectFit='cover' />
       </div>
 

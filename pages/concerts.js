@@ -13,13 +13,13 @@ export default function Home() {
 
   return (
     <Layout>
-      <div id='hero' className='h-[100vh] flex justify-center items-center text-white '>
+      <div id='hero' className='relative h-screen centerContent shadow-xl'>
         <Image alt='Mountains' src='/polenta-5.jpg' layout='fill' objectFit='cover' />
       </div>
       <div className='flex flex-col gap-12 md:gap-32 my-12 md:my-32'>
         <div className='flex flex-col md:gap-16'>
           <Title title='Upcoming Concerts' />
-          <div className='bg-[#F2F2F2] flex justify-center items-center flex-col'>
+          <div className='bg-[#F2F2F2] centerContent flex-col'>
             <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
             <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
             <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
@@ -38,7 +38,7 @@ export default function Home() {
         </div>
         <div className='flex flex-col md:gap-16'>
           <Title title='Previous Concerts' />{' '}
-          <div className='bg-[#F2F2F2] flex justify-center items-center flex-col'>
+          <div className='bg-[#F2F2F2] centerContent flex-col'>
             <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
             <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
             <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />

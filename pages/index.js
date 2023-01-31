@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <div id='hero' className='relative h-screen md:h-[1050px] flex justify-center items-center shadow-2xl'>
+      <div id='hero' className='relative h-screen md:h-[1050px] flex justify-center items-center shadow-xl'>
         <Image alt='Mountains' src='/polenta-hero.jpg' layout='fill' objectFit='cover' />
         <div className='hidden md:centerContent container md:my-16 md:h-[450px] absolute translate-y-[525px] '>
           <Image
