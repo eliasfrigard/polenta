@@ -1,12 +1,11 @@
-import Head from 'next/head';
 import '../styles/globals.css'
+
+import Script from 'next/script'
 
 function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <Head>
-        <script defer type="text/javascript" src="/static/script.js"></script>
-      </Head>
+      <Script src="/static/script.js" />
       <Component {...pageProps} />
     </div>
   )
