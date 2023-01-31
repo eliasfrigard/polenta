@@ -64,7 +64,7 @@ export default function Home() {
       <div className='md:my-32'>
         <Title title='upcoming concerts' />
 
-        <div className='md:my-16 bg-[#F2F2F2] flex justify-center items-center flex-col'>
+        <div className='px-4 md:px-0 md:my-16 bg-[#F2F2F2] flex justify-center items-center flex-col'>
           <Event date={event.date} venue={event.venue} city={event.city} country={event.country} first />
           <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
           <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
