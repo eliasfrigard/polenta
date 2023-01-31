@@ -12,7 +12,8 @@ module.exports = {
       center: true,
     },
     colors: {
-      white: '#FFFFFF',
+      white: '#F2F2F2',
+      black: '#000000',
       primary: {
         500: '#F2F2F2',
       },
