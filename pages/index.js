@@ -16,7 +16,7 @@ export default function Home() {
     <Layout>
       <div id='hero' className='relative h-[1050px] flex justify-center items-center text-white shadow-2xl'>
         <Image alt='Mountains' src='/polenta-hero.jpg' layout='fill' objectFit='cover' />
-        <div className='container h-[450px] absolute translate-y-[525px] flex justify-center items-center '>
+        <div className='container my-16 h-[450px] absolute translate-y-[525px] flex justify-center items-center '>
           <Image
             alt='Mountains'
             src='/splash.png'
@@ -29,7 +29,8 @@ export default function Home() {
           </h1>
         </div>
       </div>
-      <div className='px-4 md:px-0 py-16 pt-[289px] flex justify-center items-center flex-col'>
+
+      <div className='px-4 md:px-0 my-16 pt-[289px] flex justify-center items-center flex-col'>
         <div className='container'>
           <iframe
             className='video'
@@ -60,10 +61,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='md:my-16'>
+      <div className='md:my-32'>
         <Title title='upcoming concerts' />
 
-        <div className='md:py-16 bg-[#F2F2F2] flex justify-center items-center flex-col'>
+        <div className='md:my-16 bg-[#F2F2F2] flex justify-center items-center flex-col'>
           <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
           <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
           <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />

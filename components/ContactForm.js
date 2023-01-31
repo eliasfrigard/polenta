@@ -8,7 +8,7 @@ export default function ContactForm() {
 
   return (
     <>
-      <div className={`centerContent contactForm w-full px-4 md:px-0`}>
+      <div className={`centerContent contactForm w-full pb-16 mt-32 px-4 md:px-0`}>
         <div className='flex-col p-8 md:p-12 container max-w-4xl roundedShadow bg-[#F2F2F2] h-full border border-opacity-50 border-[#011C26]'>
           <form className='w-full'>
             <div className='flex flex-wrap -mx-3 md:mb-4'>
@@ -17,9 +17,8 @@ export default function ContactForm() {
                   Full Name
                 </label>
                 <input
-                  className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white ${
-                    !nameIsValid && 'border-red-500'
-                  }`}
+                  className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white ${!nameIsValid && 'border-red-500'
+                    }`}
                   id='grid-first-name'
                   type='text'
                   placeholder='Jane'
@@ -33,9 +32,8 @@ export default function ContactForm() {
                   Email Address
                 </label>
                 <input
-                  className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white ${
-                    !emailIsValid && 'border-red-500'
-                  }`}
+                  className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white ${!emailIsValid && 'border-red-500'
+                    }`}
                   id='grid-first-name'
                   type='text'
                   placeholder='Jane'
@@ -47,9 +45,8 @@ export default function ContactForm() {
                   Phone Number
                 </label>
                 <input
-                  className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white ${
-                    !phoneIsValid && 'border-red-500'
-                  }`}
+                  className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white ${!phoneIsValid && 'border-red-500'
+                    }`}
                   id='grid-first-name'
                   type='text'
                   placeholder='Jane'
@@ -64,9 +61,8 @@ export default function ContactForm() {
                 </label>
                 <textarea
                   rows='7'
-                  className={`resize-none appearance-none block w-full bg-gray-200 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white ${
-                    !messageIsValid && 'border-red-500'
-                  }`}
+                  className={`resize-none appearance-none block w-full bg-gray-200 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white ${!messageIsValid && 'border-red-500'
+                    }`}
                   id='grid-first-name'
                   type='text'
                   placeholder='Jane'

@@ -5,9 +5,8 @@ export default function Event({ venue, date, city, country, last = false, first 
   return (
     <>
       <div
-        className={`${
-          !first && 'mt-4'
-        } p-4 max-w-[1400px] w-full grid grid-flow-row grid-cols-4 gap-4 hover:bg-gray-200 rounded-lg`}
+        className={`${!first && 'mt-4'
+          } p-4 max-w-[1400px] w-full grid grid-flow-row grid-cols-4 gap-4 hover:bg-gray-200 rounded-lg`}
       >
         <div className='centerContent flex-col gap-3'>
           <p className='text leading-none font-medium tracking-wide'>
