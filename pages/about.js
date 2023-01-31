@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <div id='hero' className='h-screens centerContent shadow-xl'>
+      <div id='hero' className='h-screen centerContent shadow-xl'>
         <Image alt='Mountains' src='/polenta-9.jpg' layout="fill" objectFit='cover' />
       </div>
 
