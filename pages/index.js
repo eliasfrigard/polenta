@@ -14,9 +14,9 @@ export default function Home() {
 
   return (
     <Layout>
-      <div id='hero' className='relative h-[1050px] flex justify-center items-center text-white shadow-2xl'>
+      <div id='hero' className='relative h-screen md:h-[1050px] flex justify-center items-center shadow-xl'>
         <Image alt='Mountains' src='/polenta-hero.jpg' layout='fill' objectFit='cover' />
-        <div className='container h-[450px] absolute translate-y-[525px] flex justify-center items-center '>
+        <div className='hidden md:centerContent container md:my-16 md:h-[450px] absolute translate-y-[525px] '>
           <Image
             alt='Mountains'
             src='/splash.png'
@@ -24,12 +24,13 @@ export default function Home() {
             objectFit='contain'
             className='absolute translate-y-5 drop-shadow opacity-95'
           />
-          <h1 className='text-5xl md:text-[110px] z-10 font-bold md:-translate-y-2 drop-shadow-2xl'>
+          <h1 className='text-5xl md:text-[110px] z-10 font-bold md:-translate-y-2 drop-shadow-2xl text-primary-500'>
             POLENTA
           </h1>
         </div>
       </div>
-      <div className='px-4 md:px-0 py-16 pt-[289px] flex justify-center items-center flex-col'>
+
+      <div className='px-4 md:px-0 my-12 md:my-16 md:pt-[289px] flex justify-center items-center flex-col'>
         <div className='container'>
           <iframe
             className='video'
@@ -60,14 +61,11 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='md:my-16'>
+      <div className='md:my-32'>
         <Title title='upcoming concerts' />
 
-        <div className='md:py-16 bg-[#F2F2F2] flex justify-center items-center flex-col'>
-          <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-          <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-          <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-          <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
+        <div className='px-4 md:px-0 md:my-16 bg-primary-500 flex justify-center items-center flex-col'>
+          <Event date={event.date} venue={event.venue} city={event.city} country={event.country} first />
           <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
           <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
           <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
@@ -76,7 +74,7 @@ export default function Home() {
             venue={event.venue}
             city={event.city}
             country={event.country}
-            last={true}
+            last
           />
         </div>
       </div>
