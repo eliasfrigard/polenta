@@ -57,9 +57,14 @@ export default function Home() {
       <div className='px-4 md:px-0 my-12 md:my-16 flex justify-center items-center flex-col'>
         <div className='container'>
           <div className='w-full centerContent flex-col'>
-            <p className='text-2xl md:text-4xl text-center tracking-wide font-medium uppercase mb-8 border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
-              Ykköspolska
-            </p>
+            <div className='centerContent text-center flex-col mb-8 gap-4'>
+              <p className='text-2xl md:text-4xl text-center tracking-wide font-medium uppercase border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
+                Konstan Parempi Valssi
+              </p>
+              <p className='italic opacity-70 tracking-wide font-medium'>
+                Polenta Music - 2022 Festival Awards in Cambridge
+              </p>
+            </div>
             <iframe
               className='video'
               src='https://www.youtube.com/embed/UpaJ4JEoxy8'
@@ -70,11 +75,14 @@ export default function Home() {
             ></iframe>
           </div>
         </div>
-        <div className='container flex gap-8 md:gap-16 mt-8 md:mt-16 flex-wrap md:flex-nowrap'>
+        <div className='container flex gap-12 md:gap-16 mt-12 md:mt-16 flex-wrap md:flex-nowrap'>
           <div className='w-full centerContent flex-col'>
-            <p className='text-2xl md:text-3xl text-center tracking-wide font-medium uppercase mb-8 border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
-              Kesän Tullessa
-            </p>
+            <div className='centerContent text-center flex-col mb-8 gap-4'>
+              <p className='text-2xl md:text-3xl text-center tracking-wide font-medium uppercase border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
+                Kesän Tullessa
+              </p>
+              <p className='italic opacity-70 tracking-wide font-medium'>Polenta Music - 2019</p>
+            </div>
             <iframe
               className='video'
               src='https://www.youtube.com/embed/F0Xzzrm_n_w'
@@ -85,9 +93,14 @@ export default function Home() {
             ></iframe>
           </div>
           <div className='w-full centerContent flex-col'>
-            <p className='text-2xl md:text-3xl text-center tracking-wide font-medium uppercase mb-8 border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
-              Konstan Parempi Valssi
-            </p>
+            <div className='centerContent text-center flex-col mb-8 gap-4'>
+              <p className='text-2xl md:text-3xl text-center tracking-wide font-medium uppercase border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
+                Konstan Parempi Valssi
+              </p>
+              <p className='italic opacity-70 tracking-wide font-medium'>
+                Polenta Music - 2022 Festival Awards Bla Bla Bla
+              </p>
+            </div>
             <iframe
               className='video'
               src='https://www.youtube.com/embed/bklW0v_nf60'
