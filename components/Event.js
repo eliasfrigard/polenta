@@ -8,10 +8,10 @@ export default function Event({ venue, date, city, country, last = false, first 
       <div
         className={`${!first && 'mt-4'} ${
           !last && 'mb-4'
-        } hidden md:grid p-4 max-w-[1400px] w-full grid-flow-row grid-cols-4 gap-4 hover:bg-gray-200 rounded-lg`}
+        } hidden md:grid p-4 max-w-[1300px] w-full grid-flow-row grid-cols-4 gap-4 hover:bg-gray-200 rounded-lg`}
       >
         <div className='centerContent flex-col gap-3'>
-          <p className='text leading-none font-medium tracking-wider drop-shadow-sm'>
+          <p className='text-md leading-none font-medium italic tracking-wider drop-shadow-sm'>
             <Moment format='DD MMMM YYYY'>{date}</Moment>
           </p>
           <p className='text-xl leading-none font-medium tracking-wide drop-shadow-sm'>
@@ -19,15 +19,15 @@ export default function Event({ venue, date, city, country, last = false, first 
           </p>
         </div>
         <div className='centerContent tracking-wider font-bold flex gap-2 drop-shadow-sm'>
-          <IoMdPin className='text-xl'></IoMdPin>
+          <IoMdPin className='text-2xl opacity-80'></IoMdPin>
           {venue}
         </div>
         <div className='centerContent font-medium text-base tracking-wider flex gap-2 drop-shadow-sm'>
-          <IoMdGlobe className='text-xl'></IoMdGlobe>
+          <IoMdGlobe className='text-2xl opacity-80'></IoMdGlobe>
           {city}, {country}
         </div>
         <div className='centerContent'>
-          <div className='centerContent w-[150px] h-12 rounded-lg bg-accent-500 hover:bg-secondary-500 text-primary-500 hover:cursor-pointer shadow duration-150'>
+          <div className='centerContent w-[180px] h-12 rounded-lg bg-accent-500 hover:bg-secondary-500 text-primary-500 hover:cursor-pointer shadow duration-150'>
             <p className='tracking-widest uppercase font-medium text-sm'>Event Link</p>
           </div>
         </div>
