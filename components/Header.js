@@ -51,6 +51,9 @@ export default function Header() {
             <Link href='/concerts' className='mx-8'>
               CONCERTS
             </Link>
+            <Link href='/music' className='mx-8'>
+              MUSIC
+            </Link>
             <Link href='/contact' className='mx-8'>
               CONTACT
             </Link>
@@ -94,8 +97,9 @@ export default function Header() {
       </div>
 
       <div
-        className={`fixed flex flex-col justify-center items-center gap-24 pt-[80px] h-screen w-screen bg-secondary-500 z-10 duration-300 transform py-16 ${!mobileNavOpen && '-translate-y-[100vh]'
-          }`}
+        className={`fixed flex flex-col justify-center items-center gap-24 pt-[80px] h-screen w-screen bg-secondary-500 z-10 duration-300 transform py-16 ${
+          !mobileNavOpen && '-translate-y-[100vh]'
+        }`}
       >
         <div className='container flex flex-col justify-center items-center gap-10'>
           <Link href='/'>

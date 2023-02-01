@@ -57,7 +57,7 @@ export default function Home() {
       <div className='px-4 md:px-0 my-12 md:my-16 flex justify-center items-center flex-col'>
         <div className='container'>
           <div className='w-full centerContent flex-col'>
-            <div className='centerContent text-center flex-col mb-8 gap-4'>
+            <div className='centerContent text-center flex-col mb-6 gap-4'>
               <p className='text-2xl md:text-4xl text-center tracking-wide font-medium uppercase border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
                 Ykköspolska
               </p>
@@ -77,7 +77,7 @@ export default function Home() {
         </div>
         <div className='container flex gap-12 md:gap-16 mt-12 md:mt-16 flex-wrap md:flex-nowrap'>
           <div className='w-full centerContent flex-col'>
-            <div className='centerContent text-center flex-col mb-8 gap-4'>
+            <div className='centerContent text-center flex-col mb-6 gap-4'>
               <p className='text-2xl md:text-3xl text-center tracking-wide font-medium uppercase border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
                 Kesän Tullessa
               </p>
@@ -93,7 +93,7 @@ export default function Home() {
             ></iframe>
           </div>
           <div className='w-full centerContent flex-col'>
-            <div className='centerContent text-center flex-col mb-8 gap-4'>
+            <div className='centerContent text-center flex-col mb-6 gap-4'>
               <p className='text-2xl md:text-3xl text-center tracking-wide font-medium uppercase border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
                 Konstan Parempi Valssi
               </p>
