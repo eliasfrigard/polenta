@@ -59,7 +59,7 @@ export default function Home() {
           <div className='w-full centerContent flex-col'>
             <div className='centerContent text-center flex-col mb-8 gap-4'>
               <p className='text-2xl md:text-4xl text-center tracking-wide font-medium uppercase border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
-                Konstan Parempi Valssi
+                Ykköspolska
               </p>
               <p className='italic opacity-70 tracking-wide font-medium'>
                 Polenta Music - 2022 Festival Awards in Cambridge
