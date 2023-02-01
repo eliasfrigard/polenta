@@ -20,9 +20,8 @@ export default function ContactForm() {
                   Full Name
                 </label>
                 <input
-                  className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-primary-500 ${
-                    !nameIsValid && 'border-red-500'
-                  }`}
+                  className={`appearance-none block w-full bg-gray-200 text-gray-700 border border-secondary-500 border-opacity-20 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-primary-500 ${!nameIsValid && 'border-red-500'
+                    }`}
                   id='grid-first-name'
                   type='text'
                   placeholder='Jane'
@@ -36,9 +35,8 @@ export default function ContactForm() {
                   Email Address
                 </label>
                 <input
-                  className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-primary-500 ${
-                    !emailIsValid && 'border-red-500'
-                  }`}
+                  className={`appearance-none block w-full bg-gray-200 text-gray-700 border border-secondary-500 border-opacity-20 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-primary-500 ${!emailIsValid && 'border-red-500'
+                    }`}
                   id='grid-first-name'
                   type='text'
                   placeholder='Jane'
@@ -50,9 +48,8 @@ export default function ContactForm() {
                   Phone Number
                 </label>
                 <input
-                  className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-primary-500 ${
-                    !phoneIsValid && 'border-red-500'
-                  }`}
+                  className={`appearance-none block w-full bg-gray-200 text-gray-700 border border-secondary-500 border-opacity-20 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-primary-500 ${!phoneIsValid && 'border-red-500'
+                    }`}
                   id='grid-first-name'
                   type='text'
                   placeholder='Jane'
@@ -67,9 +64,8 @@ export default function ContactForm() {
                 </label>
                 <textarea
                   rows='7'
-                  className={`resize-none appearance-none block w-full bg-gray-200 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-primary-500 ${
-                    !messageIsValid && 'border-red-500'
-                  }`}
+                  className={`resize-none appearance-none block w-full bg-gray-200 text-gray-700 border border-secondary-500 border-opacity-20 rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-primary-500 ${!messageIsValid && 'border-red-500'
+                    }`}
                   id='grid-first-name'
                   type='text'
                   placeholder='Jane'
