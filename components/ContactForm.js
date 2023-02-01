@@ -9,10 +9,10 @@ export default function ContactForm() {
   return (
     <>
       <div className={`centerContent flex-col contactForm w-full md:pb-16 mt-8 md:mt-32 px-4 md:px-0`}>
-        <p className='text-4xl font-bold uppercase mb-8 tracking-wide border-b border-opacity-20 border-black pb-4'>
+        <p className='text-3xl md:text-4xl font-bold uppercase mb-8 tracking-wide border-b border-opacity-20 border-black pb-4'>
           contact / booking
         </p>
-        <div className='flex-col p-8 md:p-12 container max-w-4xl roundedShadow bg-primary-500 h-full border border-opacity-20 border-secondary-500'>
+        <div className='flex-col p-8 md:p-12 mt-2 md:mt-0 container max-w-4xl roundedShadow bg-primary-500 h-full border border-opacity-20 border-secondary-500'>
           <form className='w-full'>
             <div className='flex flex-wrap -mx-3 md:mb-4'>
               <div className='w-full px-3 mb-2 md:mb-0'>
