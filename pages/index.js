@@ -1,8 +1,13 @@
+import React from 'react'
+
 import Layout from '../components/Layouts/Default'
 import Image from 'next/image'
 import ContactForm from '../components/ContactForm'
 import Event from '../components/Event'
 import Title from '../components/Title'
+
+import md from 'markdown-it'
+import axios from 'axios'
 
 export default function Home() {
   const event = {
@@ -12,11 +17,23 @@ export default function Home() {
     country: 'Sweden',
   }
 
+  const [post, setPost] = React.useState('')
+
+  React.useEffect(() => {
+    const getPost = async () => {
+      const { data: post } = await axios.get('/exampleContact.md')
+
+      setPost(post)
+    }
+
+    getPost()
+  }, [])
+
   return (
     <Layout>
       <div id='hero' className='relative h-screen md:h-[1050px] flex justify-center items-center shadow-xl'>
         <Image alt='Mountains' src='/polenta-hero.jpg' layout='fill' objectFit='cover' />
-        <div className='hidden md:centerContent container md:my-16 md:h-[450px] absolute translate-y-[525px] '>
+        <div className='hidden md:centerContent container md:my-16 md:h-[450px] absolute translate-y-[525px] my-32'>
           <Image
             alt='Mountains'
             src='/splash.png'
@@ -30,34 +47,56 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='px-4 md:px-0 my-12 md:my-16 md:pt-[289px] flex justify-center items-center flex-col'>
+      <div className='px-8 md:px-0 container flex justify-center mb-12 md:mb-32 md:mt-[225px] pt-12 md:pt-32 '>
+        <div
+          className='-translate-x-[2px] prose prose-lg md:prose-xl max-w-4xl prose-img:rounded-xl prose-img:shadow-lg prose-headings:underline leading-[2rem] text-center'
+          dangerouslySetInnerHTML={{ __html: md().render(post) }}
+        />
+      </div>
+
+      <div className='px-4 md:px-0 my-12 md:my-16 flex justify-center items-center flex-col'>
         <div className='container'>
-          <iframe
-            className='video'
-            src='https://www.youtube.com/embed/UpaJ4JEoxy8'
-            title='YouTube video player'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            allowFullScreen
-            loading='lazy'
-          ></iframe>
+          <div className='w-full centerContent flex-col'>
+            <p className='text-2xl md:text-4xl text-center tracking-wide font-medium uppercase mb-8 border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
+              Ykköspolska
+            </p>
+            <iframe
+              className='video'
+              src='https://www.youtube.com/embed/UpaJ4JEoxy8'
+              title='YouTube video player'
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+              allowFullScreen
+              loading='lazy'
+            ></iframe>
+          </div>
         </div>
         <div className='container flex gap-8 md:gap-16 mt-8 md:mt-16 flex-wrap md:flex-nowrap'>
-          <iframe
-            className='video'
-            src='https://www.youtube.com/embed/F0Xzzrm_n_w'
-            title='YouTube video player'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            allowFullScreen
-            loading='lazy'
-          ></iframe>
-          <iframe
-            className='video'
-            src='https://www.youtube.com/embed/bklW0v_nf60'
-            title='YouTube video player'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            allowFullScreen
-            loading='lazy'
-          ></iframe>
+          <div className='w-full centerContent flex-col'>
+            <p className='text-2xl md:text-3xl text-center tracking-wide font-medium uppercase mb-8 border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
+              Kesän Tullessa
+            </p>
+            <iframe
+              className='video'
+              src='https://www.youtube.com/embed/F0Xzzrm_n_w'
+              title='YouTube video player'
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+              allowFullScreen
+              loading='lazy'
+            ></iframe>
+          </div>
+          <div className='w-full centerContent flex-col'>
+            <p className='text-2xl md:text-3xl text-center tracking-wide font-medium uppercase mb-8 border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
+              Konstan Parempi Valssi
+            </p>
+            <iframe
+              className='video'
+              src='https://www.youtube.com/embed/bklW0v_nf60'
+              title='YouTube video player'
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+              allowFullScreen
+              loading='lazy'
+            ></iframe>
+          </div>
         </div>
       </div>
 
