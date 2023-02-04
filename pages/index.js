@@ -21,7 +21,7 @@ export async function getStaticProps() {
   const concertsRes = await contentful.getEntries({
     content_type: 'concert',
     order: 'fields.dateTime',
-    'fields.dateTime[gte]': gt,
+    // 'fields.dateTime[gte]': gt,
   })
 
   const homePageRes = await contentful.getEntries({
