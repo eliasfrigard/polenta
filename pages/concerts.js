@@ -3,58 +3,86 @@ import Event from '../components/Event'
 import Image from 'next/image'
 import Title from '../components/Title'
 
-export default function Home() {
-  const event = {
-    date: Date.now(),
-    venue: 'Teatro Salla Della Communita',
-    city: 'Gothenburg',
-    country: 'Sweden',
-  }
+import { createClient } from 'contentful'
 
+export async function getStaticProps() {
+  const contentful = createClient({
+    space: process.env.SPACE_ID,
+    accessToken: process.env.ACCESS_TOKEN,
+  })
+
+  var currentDate = new Date().toISOString()
+
+  const upcomingConcertsRes = await contentful.getEntries({
+    content_type: 'concert',
+    order: 'fields.dateTime',
+    'fields.dateTime[gte]': currentDate,
+  })
+
+  const previousConcertsRes = await contentful.getEntries({
+    content_type: 'concert',
+    order: 'fields.dateTime',
+    'fields.dateTime[lte]': currentDate,
+  })
+
+  return {
+    props: {
+      concerts: {
+        upcoming: upcomingConcertsRes.items,
+        previous: previousConcertsRes.items,
+      },
+    },
+  }
+}
+
+export default function Concerts({ concerts }) {
   return (
     <Layout>
       <div id='hero' className='relative h-screen centerContent shadow-xl'>
         <Image alt='Mountains' src='/polenta-5.jpg' layout='fill' objectFit='cover' />
       </div>
       <div className='flex flex-col gap-12 md:gap-32 my-12 md:my-32'>
-        <div className='flex flex-col md:gap-16'>
+        <div className='flex flex-col md:gap-16 centerContent'>
           <Title title='Upcoming Concerts' />
-          <div className='bg-primary-500 centerContent flex-col'>
-            <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-            <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-            <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-            <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-            <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-            <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-            <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-            <Event
-              date={event.date}
-              venue={event.venue}
-              city={event.city}
-              country={event.country}
-              last={true}
-            />
-          </div>
+          {concerts.upcoming.length > 2 ? (
+            <div className='bg-primary-500 centerContent flex-col'>
+              {concerts.upcoming.map((concert, index) => (
+                <Event
+                  key={concert.sys.id}
+                  date={concert.fields.dateTime}
+                  venue={concert.fields.venue}
+                  city={concert.fields.address}
+                  country={concert.fields.country}
+                  first={index === 0}
+                  last={index + 1 === concerts.upcoming.length}
+                />
+              ))}
+            </div>
+          ) : (
+            <p className='text-xl leading-loose text-center tracking-wider font-medium'>
+              No upcoming concerts at this moment.
+            </p>
+          )}
         </div>
-        <div className='flex flex-col md:gap-16'>
-          <Title title='Previous Concerts' />{' '}
-          <div className='bg-primary-500 centerContent flex-col'>
-            <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-            <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-            <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-            <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-            <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-            <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-            <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-            <Event
-              date={event.date}
-              venue={event.venue}
-              city={event.city}
-              country={event.country}
-              last={true}
-            />
+
+        {concerts.previous.length > 0 && (
+          <div className='flex flex-col md:gap-16'>
+            <Title title='Previous Concerts' />{' '}
+            <div className='bg-primary-500 centerContent flex-col'>
+              {concerts.previous.map((concert, index) => (
+                <Event
+                  key={concert.sys.id}
+                  date={concert.fields.dateTime}
+                  venue={concert.fields.venue}
+                  city={concert.fields.address}
+                  country={concert.fields.country}
+                  first={index === 0}
+                  last={index + 1 === concerts.previous.length}
+                />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </Layout>
   )

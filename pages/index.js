@@ -129,23 +129,25 @@ export default function Home({ hero, introduction, videos, concerts }) {
         </div>
       </div>
 
-      <div className='md:my-32'>
-        <Title title='upcoming concerts' />
+      {concerts.length > 0 && (
+        <div className='md:my-32'>
+          <Title title='upcoming concerts' />
 
-        <div className='px-4 md:px-0 md:my-16 bg-primary-500 flex justify-center items-center flex-col'>
-          {concerts.map((concert, index) => (
-            <Event
-              key={concert.sys.id}
-              date={concert.fields.dateTime}
-              venue={concert.fields.venue}
-              city={concert.fields.address}
-              country={concert.fields.country}
-              first={index === 0}
-              last={index + 1 === concerts.length}
-            />
-          ))}
+          <div className='px-4 md:px-0 md:my-16 bg-primary-500 flex justify-center items-center flex-col'>
+            {concerts.map((concert, index) => (
+              <Event
+                key={concert.sys.id}
+                date={concert.fields.dateTime}
+                venue={concert.fields.venue}
+                city={concert.fields.address}
+                country={concert.fields.country}
+                first={index === 0}
+                last={index + 1 === concerts.length}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       <ContactForm></ContactForm>
     </Layout>
