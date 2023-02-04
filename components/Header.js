@@ -42,21 +42,11 @@ export default function Header() {
             </Link>
           </div>
           <div id='center' className='flex gap-8 font-medium justify-center tracking-widest'>
-            <Link href='/' className=''>
-              HOME
-            </Link>
-            <Link href='/about' className=''>
-              ABOUT
-            </Link>
-            <Link href='/concerts' className='mx-8'>
-              CONCERTS
-            </Link>
-            <Link href='/music' className='mx-8'>
-              MUSIC
-            </Link>
-            <Link href='/contact' className='mx-8'>
-              CONTACT
-            </Link>
+            <Link href='/'>HOME</Link>
+            <Link href='/about'>ABOUT</Link>
+            <Link href='/concerts'>CONCERTS</Link>
+            <Link href='/music'>MUSIC</Link>
+            <Link href='/contact'>CONTACT</Link>
           </div>
           <div id='right' className='flex gap-6 justify-end items-center '>
             <AiOutlineMail className='text-[1.5rem] antialiased' />
