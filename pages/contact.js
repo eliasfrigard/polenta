@@ -48,7 +48,7 @@ export default function Contact({ text, hero, contacts }) {
         </div>
       </div>
 
-      <div className='container my-12 md:my-32 flex justify-center items-center gap-8 md:gap-16 flex-wrap'>
+      <div className='container my-12 md:my-32 flex justify-center items-center gap-8 flex-wrap'>
         {contacts.map((contact) => (
           <Card
             key={contact.sys.id}

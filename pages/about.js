@@ -45,7 +45,7 @@ export default function About({ biography, hero, bandMembers }) {
         </div>
       </div>
 
-      <div className='container grid grid-flow-row md:grid-cols-2 px-8 md:px-0 my-12 md:my-32 gap-8 md:gap-16'>
+      <div className='container grid grid-flow-row md:grid-cols-2 px-8 my-12 md:my-32 gap-8 md:gap-16'>
         {bandMembers.map((member) => (
           <Card
             key={member.sys.id}

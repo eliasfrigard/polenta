@@ -54,7 +54,7 @@ export default function Home({ hero, introduction, videos, concerts }) {
             alt='Mountains'
             src='/splash.png'
             fill
-            className='object-cover absolute translate-y-5 drop-shadow opacity-95'
+            className='object-contain absolute translate-y-5 drop-shadow opacity-95'
           />
           <h1 className='text-5xl md:text-[110px] z-10 font-bold md:-translate-y-2 drop-shadow-2xl text-primary-500'>
             POLENTA
