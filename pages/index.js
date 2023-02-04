@@ -48,14 +48,13 @@ export default function Home({ hero, introduction, videos, concerts }) {
   return (
     <Layout>
       <div id='hero' className='relative h-screen md:h-[1050px] flex justify-center items-center shadow-xl'>
-        <Image alt={hero.fields.title} src={'https:' + hero.fields.file.url} fill />
+        <Image alt={hero.fields.title} src={'https:' + hero.fields.file.url} fill className='object-cover' />
         <div className='hidden md:centerContent container md:my-16 md:h-[450px] absolute translate-y-[525px] my-32'>
           <Image
             alt='Mountains'
             src='/splash.png'
-            layout='fill'
-            objectFit='contain'
-            className='absolute translate-y-5 drop-shadow opacity-95'
+            fill
+            className='object-cover absolute translate-y-5 drop-shadow opacity-95'
           />
           <h1 className='text-5xl md:text-[110px] z-10 font-bold md:-translate-y-2 drop-shadow-2xl text-primary-500'>
             POLENTA

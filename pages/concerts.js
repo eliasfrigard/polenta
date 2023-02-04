@@ -46,12 +46,7 @@ export default function Concerts({ hero, concerts }) {
   return (
     <Layout>
       <div id='hero' className='relative h-screen centerContent shadow-xl'>
-        <Image
-          alt={hero.fields.title}
-          src={'https:' + hero.fields.file.url}
-          layout='fill'
-          objectFit='cover'
-        />
+        <Image alt={hero.fields.title} src={'https:' + hero.fields.file.url} fill className='object-cover' />
       </div>
       <div className='flex flex-col gap-12 md:gap-32 my-12 md:my-32'>
         <div className='flex flex-col md:gap-16 centerContent'>

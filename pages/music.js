@@ -10,7 +10,7 @@ export default function Music() {
   return (
     <Layout>
       <div id='hero' className='relative h-screen flex justify-center items-center shadow-xl'>
-        <Image alt='Mountains' src='/polenta-9.jpg' layout='fill' objectFit='cover' />
+        <Image alt='Mountains' src='/polenta-9.jpg' fill className='object-cover' />
       </div>
 
       <div className='container my-12 md:my-32 flex justify-center items-center gap-8 md:gap-16 flex-wrap'>

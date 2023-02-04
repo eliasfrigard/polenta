@@ -39,12 +39,7 @@ export default function Contact({ text, hero, contacts }) {
   return (
     <Layout>
       <div id='hero' className='relative h-screen centerContent shadow-xl'>
-        <Image
-          alt={hero.fields.title}
-          src={'https:' + hero.fields.file.url}
-          layout='fill'
-          objectFit='cover'
-        />
+        <Image alt={hero.fields.title} src={'https:' + hero.fields.file.url} fill className='object-cover' />
       </div>
 
       <div className='px-8 md:px-0 my-12 md:my-32 container flex justify-center'>
