@@ -16,7 +16,7 @@ export async function getStaticProps() {
     accessToken: process.env.ACCESS_TOKEN,
   })
 
-  var gt = new Date().toLocaleString()
+  var gt = new Date().toLocaleString('en-US')
 
   const concertsRes = await contentful.getEntries({
     content_type: 'concert',
