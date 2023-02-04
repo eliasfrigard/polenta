@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Layout from '../components/Layouts/Default'
 import Image from 'next/image'
+import Layout from '../components/Layouts/Default'
 import ContactForm from '../components/ContactForm'
 import Event from '../components/Event'
 import Title from '../components/Title'
@@ -30,8 +30,6 @@ export async function getStaticProps() {
 
   const homePage = homePageRes.items[0].fields
 
-  console.log(concertsRes.items[1].fields.address)
-
   return {
     props: {
       hero: homePage.pageImage,
@@ -46,13 +44,6 @@ export default function Home({ hero, introduction, videos, concerts }) {
   const firstVideo = videos[0].fields
   const secondVideo = videos[1].fields
   const thirdVideo = videos[2].fields
-
-  const event = {
-    date: Date.now(),
-    venue: 'Teatro Salla Della Communita',
-    city: 'Gothenburg',
-    country: 'Sweden',
-  }
 
   return (
     <Layout>
