@@ -3,7 +3,7 @@ import Image from 'next/image'
 export default function Hamburger({ name, instrument, email, phone, image }) {
   return (
     <div className='flex flex-col centerContent'>
-      <div className='aspect-[5/6] w-full min-w-[352px] relative'>
+      <div className='aspect-[5/6] w-full min-w-[300px] relative'>
         <Image alt={name} src={image} fill className='object-cover roundedShadow' />
       </div>
       <div className='centerContent flex-col w-full mt-4 md:mt-8 gap-2'>

@@ -20,17 +20,22 @@ export async function getStaticProps() {
     content_type: 'contactPage',
   })
 
+  const bandMembersRes = await contentful.getEntries({
+    content_type: 'bandMembers',
+  })
+
   const page = pageRes.items[0].fields
 
   return {
     props: {
       hero: page.heroImage,
       text: page.contactInformation,
+      contacts: bandMembersRes.items,
     },
   }
 }
 
-export default function Contact({ text, hero }) {
+export default function Contact({ text, hero, contacts }) {
   return (
     <Layout>
       <div id='hero' className='relative h-screen centerContent shadow-xl'>
@@ -49,10 +54,15 @@ export default function Contact({ text, hero }) {
       </div>
 
       <div className='container my-12 md:my-32 flex justify-center items-center gap-8 md:gap-16 flex-wrap'>
-        <Card name='Veera Kuisma' email='example@polentamusic.net' phone='+358(0)-451107182' />
-        <Card name='Aino Kinnunen' email='example@polentamusic.net' phone='+358(0)-451107182' />
-        <Card name='Olli Sippola' email='example@polentamusic.net' phone='+358(0)-451107182' />
-        <Card name='Mikko Malmivaara' email='example@polentamusic.net' phone='+358(0)-451107182' />
+        {contacts.map((contact) => (
+          <Card
+            key={contact.sys.id}
+            name={contact.fields.name}
+            phone={contact.fields.phoneNumber}
+            email={contact.fields.email}
+            image={`https:${contact.fields.image.fields.file.url}`}
+          />
+        ))}
       </div>
 
       <ContactForm></ContactForm>
