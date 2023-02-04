@@ -25,8 +25,15 @@ export async function getStaticProps() {
     'fields.dateTime[lte]': currentDate,
   })
 
+  const concertsPageRes = await contentful.getEntries({
+    content_type: 'concertsPage',
+  })
+
+  const concertsPage = concertsPageRes.items[0].fields
+
   return {
     props: {
+      hero: concertsPage.heroImage,
       concerts: {
         upcoming: upcomingConcertsRes.items,
         previous: previousConcertsRes.items,
@@ -35,11 +42,16 @@ export async function getStaticProps() {
   }
 }
 
-export default function Concerts({ concerts }) {
+export default function Concerts({ hero, concerts }) {
   return (
     <Layout>
       <div id='hero' className='relative h-screen centerContent shadow-xl'>
-        <Image alt='Mountains' src='/polenta-5.jpg' layout='fill' objectFit='cover' />
+        <Image
+          alt={hero.fields.title}
+          src={'https:' + hero.fields.file.url}
+          layout='fill'
+          objectFit='cover'
+        />
       </div>
       <div className='flex flex-col gap-12 md:gap-32 my-12 md:my-32'>
         <div className='flex flex-col md:gap-16 centerContent'>
