@@ -13,6 +13,10 @@ export async function getStaticProps() {
     accessToken: process.env.ACCESS_TOKEN,
   })
 
+  const bandMembersRes = await contentful.getEntries({
+    content_type: 'bandMembers',
+  })
+
   const pageRes = await contentful.getEntries({
     content_type: 'aboutPage',
   })
@@ -23,11 +27,12 @@ export async function getStaticProps() {
     props: {
       hero: page.heroImage,
       biography: page.biography,
+      bandMembers: bandMembersRes.items,
     },
   }
 }
 
-export default function About({ biography, hero }) {
+export default function About({ biography, hero, bandMembers }) {
   return (
     <Layout>
       <div id='hero' className='relative h-screen flex justify-center items-center shadow-xl'>
@@ -46,10 +51,14 @@ export default function About({ biography, hero }) {
       </div>
 
       <div className='container my-12 md:my-32 flex justify-center items-center gap-8 md:gap-16 flex-wrap'>
-        <Card name='Veera Kuisma' instrument='5-string violin' />
-        <Card name='Aino Kinnunen' instrument='Violin' />
-        <Card name='Olli Sippola' instrument='Violin' />
-        <Card name='Mikko Malmivaara' instrument='6-string guitar' />
+        {bandMembers.map((member) => (
+          <Card
+            key={member.sys.id}
+            name={member.fields.name}
+            instrument={member.fields.instrument}
+            image={`https:${member.fields.image.fields.file.url}`}
+          />
+        ))}
       </div>
     </Layout>
   )
