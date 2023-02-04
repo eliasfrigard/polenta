@@ -6,10 +6,47 @@ import ContactForm from '../components/ContactForm'
 import Event from '../components/Event'
 import Title from '../components/Title'
 
-import md from 'markdown-it'
-import axios from 'axios'
+import getYoutubeID from 'get-youtube-id'
+import { createClient } from 'contentful'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-export default function Home() {
+export async function getStaticProps() {
+  const contentful = createClient({
+    space: process.env.SPACE_ID,
+    accessToken: process.env.ACCESS_TOKEN,
+  })
+
+  var gt = new Date().toLocaleString()
+
+  const concertsRes = await contentful.getEntries({
+    content_type: 'concert',
+    order: 'fields.dateTime',
+    'fields.dateTime[gte]': gt,
+  })
+
+  const homePageRes = await contentful.getEntries({
+    content_type: 'homePage',
+  })
+
+  const homePage = homePageRes.items[0].fields
+
+  console.log(concertsRes.items[1].fields.address)
+
+  return {
+    props: {
+      hero: homePage.pageImage,
+      introduction: homePage.introduction,
+      videos: homePage.videos,
+      concerts: concertsRes.items,
+    },
+  }
+}
+
+export default function Home({ hero, introduction, videos, concerts }) {
+  const firstVideo = videos[0].fields
+  const secondVideo = videos[1].fields
+  const thirdVideo = videos[2].fields
+
   const event = {
     date: Date.now(),
     venue: 'Teatro Salla Della Communita',
@@ -17,22 +54,15 @@ export default function Home() {
     country: 'Sweden',
   }
 
-  const [post, setPost] = React.useState('')
-
-  React.useEffect(() => {
-    const getPost = async () => {
-      const { data: post } = await axios.get('/exampleContact.md')
-
-      setPost(post)
-    }
-
-    getPost()
-  }, [])
-
   return (
     <Layout>
       <div id='hero' className='relative h-screen md:h-[1050px] flex justify-center items-center shadow-xl'>
-        <Image alt='Mountains' src='/polenta-hero.jpg' layout='fill' objectFit='cover' />
+        <Image
+          alt={hero.fields.title}
+          src={'https:' + hero.fields.file.url}
+          layout='fill'
+          objectFit='cover'
+        />
         <div className='hidden md:centerContent container md:my-16 md:h-[450px] absolute translate-y-[525px] my-32'>
           <Image
             alt='Mountains'
@@ -48,10 +78,9 @@ export default function Home() {
       </div>
 
       <div className='px-8 md:px-0 container flex justify-center mb-12 md:mb-32 md:mt-[225px] pt-12 md:pt-32 '>
-        <div
-          className='-translate-x-[2px] prose prose-lg md:prose-xl max-w-4xl prose-img:rounded-xl prose-img:shadow-lg prose-headings:underline leading-[2rem] text-center'
-          dangerouslySetInnerHTML={{ __html: md().render(post) }}
-        />
+        <div className='-translate-x-[2px] prose prose-lg md:prose-xl max-w-4xl prose-img:rounded-xl prose-img:shadow-lg prose-headings:underline leading-[2rem] text-center'>
+          {documentToReactComponents(introduction)}
+        </div>
       </div>
 
       <div className='px-4 md:px-0 my-12 md:my-16 flex justify-center items-center flex-col'>
@@ -59,15 +88,13 @@ export default function Home() {
           <div className='w-full centerContent flex-col'>
             <div className='centerContent text-center flex-col mb-6 gap-4'>
               <p className='text-2xl md:text-4xl text-center tracking-wide font-medium uppercase border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
-                Ykköspolska
+                {firstVideo.title}
               </p>
-              <p className='italic opacity-70 tracking-wide font-medium'>
-                Polenta Music - 2022 Festival Awards in Cambridge
-              </p>
+              <p className='italic opacity-70 tracking-wide font-medium'>{firstVideo?.description}</p>
             </div>
             <iframe
               className='video'
-              src='https://www.youtube.com/embed/UpaJ4JEoxy8'
+              src={`https://www.youtube.com/embed/${getYoutubeID(firstVideo.youTubeLink)}`}
               title='YouTube video player'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
               allowFullScreen
@@ -79,13 +106,13 @@ export default function Home() {
           <div className='w-full centerContent flex-col'>
             <div className='centerContent text-center flex-col mb-6 gap-4'>
               <p className='text-2xl md:text-3xl text-center tracking-wide font-medium uppercase border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
-                Kesän Tullessa
+                {secondVideo.title}
               </p>
-              <p className='italic opacity-70 tracking-wide font-medium'>Polenta Music - 2019</p>
+              <p className='italic opacity-70 tracking-wide font-medium'>{secondVideo?.description}</p>
             </div>
             <iframe
               className='video'
-              src='https://www.youtube.com/embed/F0Xzzrm_n_w'
+              src={`https://www.youtube.com/embed/${getYoutubeID(secondVideo.youTubeLink)}`}
               title='YouTube video player'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
               allowFullScreen
@@ -95,15 +122,13 @@ export default function Home() {
           <div className='w-full centerContent flex-col'>
             <div className='centerContent text-center flex-col mb-6 gap-4'>
               <p className='text-2xl md:text-3xl text-center tracking-wide font-medium uppercase border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
-                Konstan Parempi Valssi
+                {thirdVideo.title}
               </p>
-              <p className='italic opacity-70 tracking-wide font-medium'>
-                Polenta Music - 2022 Festival Awards Bla Bla Bla
-              </p>
+              <p className='italic opacity-70 tracking-wide font-medium'>{thirdVideo?.description}</p>
             </div>
             <iframe
               className='video'
-              src='https://www.youtube.com/embed/bklW0v_nf60'
+              src={`https://www.youtube.com/embed/${getYoutubeID(thirdVideo.youTubeLink)}`}
               title='YouTube video player'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
               allowFullScreen
@@ -117,11 +142,17 @@ export default function Home() {
         <Title title='upcoming concerts' />
 
         <div className='px-4 md:px-0 md:my-16 bg-primary-500 flex justify-center items-center flex-col'>
-          <Event date={event.date} venue={event.venue} city={event.city} country={event.country} first />
-          <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-          <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-          <Event date={event.date} venue={event.venue} city={event.city} country={event.country} />
-          <Event date={event.date} venue={event.venue} city={event.city} country={event.country} last />
+          {concerts.map((concert, index) => (
+            <Event
+              key={concert.sys.id}
+              date={concert.fields.dateTime}
+              venue={concert.fields.venue}
+              city={concert.fields.address}
+              country={concert.fields.country}
+              first={index === 0}
+              last={index + 1 === concerts.length}
+            />
+          ))}
         </div>
       </div>
 
