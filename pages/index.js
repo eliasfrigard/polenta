@@ -16,12 +16,12 @@ export async function getStaticProps() {
     accessToken: process.env.ACCESS_TOKEN,
   })
 
-  var gt = new Date().toLocaleString('en-US')
+  var gt = new Date().toISOString()
 
   const concertsRes = await contentful.getEntries({
     content_type: 'concert',
     order: 'fields.dateTime',
-    // 'fields.dateTime[gte]': gt,
+    'fields.dateTime[gte]': gt,
   })
 
   const homePageRes = await contentful.getEntries({
