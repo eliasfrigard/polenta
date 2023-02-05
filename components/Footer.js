@@ -4,7 +4,7 @@ export default function Footer({ height }) {
       <div className='container grid grid-flow-row rounded md:px-32 tracking-wide leading-loose'>
         <div className='text-center'>
           <p>Copyright 2023 © Polenta Music</p>
-          <p className='text-sm mt-2'>Website by Elias Frigård</p>
+          <p className='text-xs mt-2'>Website by Elias Frigård</p>
         </div>
       </div>
     </div>
