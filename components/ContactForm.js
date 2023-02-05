@@ -1,10 +1,36 @@
+import { loadGetInitialProps } from 'next/dist/shared/lib/utils'
 import React from 'react'
 
 export default function ContactForm() {
   const [emailIsValid, setEmailValid] = React.useState(true)
   const [nameIsValid, setNameIsValid] = React.useState(true)
   const [phoneIsValid, setPhoneIsValid] = React.useState(true)
-  const [messageIsValid, setMessageIdValid] = React.useState(true)
+  const [messageIsValid, setMessageIsValid] = React.useState(true)
+
+  const validateEmail = (event) => {
+    const value = event.target.value.toString()
+    const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+
+    setEmailValid(value.match(regex))
+  }
+
+  const validatePhone = (event) => {
+    const value = event.target.value.toString()
+
+    setPhoneIsValid(value.length < 25)
+  }
+
+  const validateName = (event) => {
+    const value = event.target.value.toString()
+
+    setNameIsValid(value.length < 124 && value.length > 0)
+  }
+
+  const validateMessage = (event) => {
+    const value = event.target.value.toString()
+
+    setMessageIsValid(value.length < 4000 && value.length > 0)
+  }
 
   return (
     <>
@@ -25,9 +51,12 @@ export default function ContactForm() {
                   }`}
                   id='grid-first-name'
                   type='text'
-                  placeholder='Jane'
+                  placeholder='So we know who you are!'
+                  onChange={validateName}
                 />
-                {!nameIsValid && <p className='text-red-500 text-xs italic'>Please fill out this field.</p>}
+                {!nameIsValid && (
+                  <p className='text-[#ef4444] ml-1 mb-1 text-xs italic'>Name is not valid.</p>
+                )}
               </div>
             </div>
             <div className='flex flex-wrap -mx-3 md:mb-4'>
@@ -41,9 +70,12 @@ export default function ContactForm() {
                   }`}
                   id='grid-first-name'
                   type='text'
-                  placeholder='Jane'
+                  placeholder='So we know where to respond!'
+                  onBlur={validateEmail}
                 />
-                {!emailIsValid && <p className='text-red-500 text-xs italic'>Please fill out this field.</p>}
+                {!emailIsValid && (
+                  <p className='text-[#ef4444] ml-1 text-xs italic'>Please fill out your email address.</p>
+                )}
               </div>
               <div className='w-full md:w-1/2 px-3 mb-2 md:mb-0'>
                 <label className='formLabel' for='grid-first-name'>
@@ -55,9 +87,14 @@ export default function ContactForm() {
                   }`}
                   id='grid-first-name'
                   type='text'
-                  placeholder='Jane'
+                  placeholder='So we can call you back!'
+                  onChange={validatePhone}
                 />
-                {!phoneIsValid && <p className='text-red-500 text-xs italic'>Please fill out this field.</p>}
+                {!phoneIsValid && (
+                  <p className='text-[#ef4444] ml-1 text-xs italic'>
+                    Phone number cannot be more than 25 characters.
+                  </p>
+                )}
               </div>
             </div>
             <div className='flex flex-wrap -mx-3 mb-2'>
@@ -67,15 +104,18 @@ export default function ContactForm() {
                 </label>
                 <textarea
                   rows='7'
-                  className={`resize-none appearance-none block w-full bg-gray-200 text-gray-700 border border-secondary-500 border-opacity-20 rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-primary-500 ${
+                  className={`resize-y appearance-none block w-full bg-gray-200 text-gray-700 border border-secondary-500 border-opacity-20 rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-primary-500 ${
                     !messageIsValid && 'border-red-500'
                   }`}
                   id='grid-first-name'
                   type='text'
-                  placeholder='Jane'
+                  placeholder='What are you thinking about?'
+                  onChange={validateMessage}
                 />
                 {!messageIsValid && (
-                  <p className='text-red-500 text-xs italic'>Please fill out this field.</p>
+                  <p className='text-[#ef4444] ml-1 text-xs italic'>
+                    Message cannot be empty or exceed 4000 characters.
+                  </p>
                 )}
               </div>
             </div>
