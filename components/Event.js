@@ -27,8 +27,8 @@ export default function Event({ venue, date, city, country, last = false, first 
           {city}, {country}
         </div>
         <div className='centerContent'>
-          <div className='centerContent w-[180px] h-12 rounded-lg bg-accent-500 hover:bg-secondary-500 text-primary-500 hover:cursor-pointer shadow duration-150'>
-            <p className='tracking-widest uppercase font-medium text-sm'>Event Link</p>
+          <div className='centerContent w-[180px] h-12 rounded-lg bg-accent-500 hover:bg-secondary-500 text-primary-500 hover:cursor-pointer active:scale-[0.97] shadow duration-150'>
+            <p className='tracking-widest uppercase font-medium text-sm '>Event Link</p>
           </div>
         </div>
       </div>
@@ -62,8 +62,8 @@ export default function Event({ venue, date, city, country, last = false, first 
           </div>
         </div>
         <div className='centerContent w-full'>
-          <div className='centerContent w-3/4 h-12 rounded-lg bg-accent-500 shadow-lg text-primary-500 hover:cursor-pointer hover:bg-secondary-500 duration-150'>
-            <p className='tracking-widest uppercase font-medium text-sm'>Event Link</p>
+          <div className='centerContent w-3/4 h-12 rounded-lg bg-accent-500 shadow-lg text-primary-500 hover:cursor-pointer hover:bg-secondary-500 active:scale-[0.96] duration-150'>
+            <p className='tracking-widest uppercase font-medium text-sm active:scale-[0.98]'>Event Link</p>
           </div>
         </div>
       </div>
