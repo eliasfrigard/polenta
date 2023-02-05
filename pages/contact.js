@@ -42,13 +42,13 @@ export default function Contact({ text, hero, contacts }) {
         <Image alt={hero.fields.title} src={'https:' + hero.fields.file.url} fill className='object-cover' />
       </div>
 
-      <div className='px-8 md:px-0 my-12 md:my-32 container flex justify-center'>
+      <div className='px-8 lg:px-0 my-12 md:my-32 container flex justify-center'>
         <div className='-translate-x-[2px] prose prose-lg md:prose-xl max-w-4xl prose-img:rounded-xl prose-img:shadow-lg prose-headings:underline leading-[2rem] text-center'>
           {documentToReactComponents(text)}
         </div>
       </div>
 
-      <div className='container my-12 md:my-32 flex justify-center items-center gap-8 flex-wrap'>
+      <div className='container px-8 my-12 md:my-32 grid grid-flow-row md:grid-cols-2 lg:grid-cols-4 gap-8 flex-wrap'>
         {contacts.map((contact) => (
           <Card
             key={contact.sys.id}
