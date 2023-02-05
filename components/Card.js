@@ -5,10 +5,8 @@ export default function Hamburger({ name, instrument, email, phone, image, descr
     <div className='flex flex-col centerContent'>
       <div className='aspect-[3/4] w-full min-w-[200px] relative'>
         <Image alt={name} src={image} fill className='object-cover roundedShadow' />
-        {description && (
-          <div
-            className={`absolute w-full h-full bg-secondary-500 roundedShadow hover:backdrop-blur-[3px] bg-opacity-60 opacity-0 hover:opacity-100 duration-200 tracking-wide`}
-          >
+        {!description && (
+          <div className='imageOverlay'>
             <div className='centerContent flex-col min-w-full mt-4 md:mt-8 gap-2 text-primary-500'>
               <p className='text-lg md:text-xl tracking-wider font uppercase'>{name}</p>
               <div className='h-[1px] w-2/3 bg-primary-500 opacity-20'></div>

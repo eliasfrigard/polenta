@@ -8,7 +8,7 @@ export default function Title({ title, subtitle, textColor = 'text-black', borde
       >
         {title}
       </p>
-      {subtitle && <p className='mt-4 text-xl'>{subtitle}</p>}
+      {subtitle && <p className='mt-4 text-xl text-center'>{subtitle}</p>}
     </div>
   )
 }
