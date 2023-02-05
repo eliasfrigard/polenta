@@ -104,7 +104,7 @@ export default function ContactForm() {
                 </label>
                 <textarea
                   rows='7'
-                  className={`resize-y appearance-none block w-full bg-gray-200 text-gray-700 border border-secondary-500 border-opacity-20 rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-primary-500 ${
+                  className={`resize-none md:resize-y appearance-none block w-full bg-gray-200 text-gray-700 border border-secondary-500 border-opacity-20 rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-primary-500 ${
                     !messageIsValid && 'border-red-500'
                   }`}
                   id='grid-first-name'
