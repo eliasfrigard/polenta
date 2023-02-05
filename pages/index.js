@@ -5,6 +5,7 @@ import Layout from '../components/Layouts/Default'
 import ContactForm from '../components/ContactForm'
 import Event from '../components/Event'
 import Title from '../components/Title'
+import Video from '../components/Video'
 
 import getYoutubeID from 'get-youtube-id'
 import { createClient } from 'contentful'
@@ -68,63 +69,30 @@ export default function Home({ hero, introduction, videos, concerts }) {
         </div>
       </div>
 
-      <div className='px-8 md:px-16 my-12 md:my-16 flex justify-center items-center flex-col'>
+      <div className='px-8 md:px-16 my-16 md:my-16 flex justify-center items-center flex-col'>
         <div className='container'>
-          <div className='w-full centerContent flex-col'>
-            <div className='centerContent text-center flex-col mb-6 gap-4'>
-              <p className='text-2xl md:text-4xl text-center tracking-wide font-medium uppercase border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
-                {firstVideo.title}
-              </p>
-              <p className='italic opacity-70 tracking-wide font-medium'>{firstVideo?.description}</p>
-            </div>
-            <iframe
-              className='video'
-              src={`https://www.youtube.com/embed/${getYoutubeID(firstVideo.youTubeLink)}`}
-              title='YouTube video player'
-              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-              allowFullScreen
-              loading='lazy'
-            ></iframe>
-          </div>
+          <Video
+            title={firstVideo.title}
+            description={firstVideo.description}
+            link={firstVideo.youTubeLink}
+          />
         </div>
-        <div className='container flex gap-12 md:gap-16 mt-12 md:mt-16 flex-wrap md:flex-nowrap'>
-          <div className='w-full centerContent flex-col'>
-            <div className='centerContent text-center flex-col mb-6 gap-4'>
-              <p className='text-2xl md:text-3xl text-center tracking-wide font-medium uppercase border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
-                {secondVideo.title}
-              </p>
-              <p className='italic opacity-70 tracking-wide font-medium'>{secondVideo?.description}</p>
-            </div>
-            <iframe
-              className='video'
-              src={`https://www.youtube.com/embed/${getYoutubeID(secondVideo.youTubeLink)}`}
-              title='YouTube video player'
-              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-              allowFullScreen
-              loading='lazy'
-            ></iframe>
-          </div>
-          <div className='w-full centerContent flex-col'>
-            <div className='centerContent text-center flex-col mb-6 gap-4'>
-              <p className='text-2xl md:text-3xl text-center tracking-wide font-medium uppercase border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
-                {thirdVideo.title}
-              </p>
-              <p className='italic opacity-70 tracking-wide font-medium'>{thirdVideo?.description}</p>
-            </div>
-            <iframe
-              className='video'
-              src={`https://www.youtube.com/embed/${getYoutubeID(thirdVideo.youTubeLink)}`}
-              title='YouTube video player'
-              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-              allowFullScreen
-              loading='lazy'
-            ></iframe>
-          </div>
+        <div className='container flex gap-8 xl:gap-12 mt-12 md:mt-16 flex-wrap lg:flex-nowrap'>
+          <Video
+            title={secondVideo.title}
+            description={secondVideo.description}
+            link={secondVideo.youTubeLink}
+          />
+          <Video
+            title={thirdVideo.title}
+            description={thirdVideo.description}
+            link={thirdVideo.youTubeLink}
+          />
         </div>
       </div>
 
       {concerts.length > 0 && (
-        <div className='md:my-32'>
+        <div className='my-12 md:my-32'>
           <Title title='upcoming concerts' />
 
           <div className='px-4 md:px-0 md:my-16 bg-primary-500 flex justify-center items-center flex-col'>

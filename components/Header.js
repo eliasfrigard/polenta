@@ -49,7 +49,7 @@ export default function Header() {
               POLENTA
             </Link>
           </div>
-          <div id='center' className='flex gap-6 font-medium justify-center tracking-widest'>
+          <div id='center' className='flex gap-4 font-medium justify-center tracking-widest'>
             <Link href='/' className={`${activeLinkStyling('/')} desktopNavLink`}>
               HOME
             </Link>
@@ -67,11 +67,11 @@ export default function Header() {
             </Link>
           </div>
           <div id='right' className='flex gap-6 justify-end items-center '>
-            <AiOutlineMail className='text-[1.5rem] antialiased' />
-            <BsFacebook className='text-xl' />
-            <BsInstagram className='text-xl' />
-            <BsSpotify className='text-xl' />
-            <BsYoutube className='text-[1.5rem] translate-y-[1px]' />
+            <AiOutlineMail className='soMeIcon text-[1.5rem] antialiased' />
+            <BsFacebook className='soMeIcon text-xl' />
+            <BsInstagram className='soMeIcon text-xl' />
+            <BsSpotify className='soMeIcon text-xl' />
+            <BsYoutube className='soMeIcon text-[1.5rem] translate-y-[1px]' />
           </div>
         </div>
       </div>
@@ -126,11 +126,11 @@ export default function Header() {
         </div>
 
         <div className='flex justify-center items-center gap-8 text-primary-500'>
-          <AiOutlineMail className='text-[1.8rem] antialiased' />
-          <BsFacebook className='text-2xl' />
-          <BsInstagram className='text-2xl' />
-          <BsSpotify className='text-2xl' />
-          <BsYoutube className='text-[1.8rem] translate-y-[1px]' />
+          <AiOutlineMail className='soMeIcon text-[1.8rem] antialiased' />
+          <BsFacebook className='soMeIcon text-2xl' />
+          <BsInstagram className='soMeIcon text-2xl' />
+          <BsSpotify className='soMeIcon text-2xl' />
+          <BsYoutube className='soMeIcon text-[1.8rem] translate-y-[1px]' />
         </div>
       </div>
     </>

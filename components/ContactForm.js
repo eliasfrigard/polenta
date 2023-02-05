@@ -8,7 +8,7 @@ export default function ContactForm() {
 
   return (
     <>
-      <div className={`centerContent flex-col contactForm w-full md:pb-16 mt-8 md:mt-32 px-6 md:px-0`}>
+      <div className={`centerContent flex-col contactForm w-full md:pb-16 mt-8 md:mt-32 px-6 lg:px-0`}>
         <p className='text-3xl md:text-4xl font-bold uppercase mb-8 tracking-wide border-b border-opacity-20 border-black pb-4 px-4 text-center'>
           contact / booking
         </p>

@@ -102,4 +102,12 @@ a {
     background-color: theme('colors.secondary.500');
     color: theme('colors.primary.500');
   }
+  .soMeIcon:hover {
+    color: theme('colors.accent.500');
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+  .soMeIcon:active {
+    transform: scale(0.95);
+  }
 }
