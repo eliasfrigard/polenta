@@ -109,19 +109,19 @@ export default function Header() {
       >
         <div className='container flex flex-col justify-center items-center gap-10'>
           <Link href='/'>
-            <p className='mobileNavLink'>Home</p>
+            <p className={`${activeLinkStyling('/')} mobileNavLink`}>Home</p>
           </Link>
           <Link href='/about'>
-            <p className='mobileNavLink'>About</p>
+            <p className={`${activeLinkStyling('/about')} mobileNavLink`}>About</p>
           </Link>
           <Link href='/concerts'>
-            <p className='mobileNavLink'>Concerts</p>
+            <p className={`${activeLinkStyling('/concerts')} mobileNavLink`}>Concerts</p>
           </Link>
-          <Link href='/'>
-            <p className='mobileNavLink'>Music</p>
+          <Link href='/music'>
+            <p className={`${activeLinkStyling('/music')} mobileNavLink`}>Music</p>
           </Link>
           <Link href='/contact'>
-            <p className='mobileNavLink'>Contact</p>
+            <p className={`${activeLinkStyling('/contact')} mobileNavLink`}>Contact</p>
           </Link>
         </div>
 
