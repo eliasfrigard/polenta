@@ -1,16 +1,26 @@
 import React from 'react'
 import Link from 'next/link'
 
+import { useRouter } from 'next/router'
+
 import { BsFacebook, BsInstagram, BsYoutube, BsSpotify } from 'react-icons/bs'
 import { AiOutlineMail } from 'react-icons/ai'
 
 import Hamburger from './Hamburger.js'
 
 export default function Header() {
+  const router = useRouter()
+
   const [mobileNavOpen, setMobileNavOpen] = React.useState(false)
 
   const toggleMobileNav = () => {
     setMobileNavOpen(!mobileNavOpen)
+  }
+
+  const activeLinkStyling = (path) => {
+    if (router.pathname == path) {
+      return 'border-b-2 border-accent-500 border-opacity-70'
+    }
   }
 
   return (
@@ -35,18 +45,26 @@ export default function Header() {
         `}
         >
           <div id='left'>
-            <Link href='/'>
-              <p className='hover:text-accent-500 cursor-pointer text-2xl font-bold tracking-widest'>
-                POLENTA
-              </p>
+            <Link className='cursor-pointer text-2xl font-bold tracking-widest' href='/'>
+              POLENTA
             </Link>
           </div>
-          <div id='center' className='flex gap-8 font-medium justify-center tracking-widest'>
-            <Link href='/'>HOME</Link>
-            <Link href='/about'>ABOUT</Link>
-            <Link href='/concerts'>CONCERTS</Link>
-            <Link href='/music'>MUSIC</Link>
-            <Link href='/contact'>CONTACT</Link>
+          <div id='center' className='flex gap-6 font-medium justify-center tracking-widest'>
+            <Link href='/' className={`${activeLinkStyling('/')} desktopNavLink`}>
+              HOME
+            </Link>
+            <Link href='/about' className={`${activeLinkStyling('/about')} desktopNavLink`}>
+              ABOUT
+            </Link>
+            <Link href='/concerts' className={`${activeLinkStyling('/concerts')} desktopNavLink`}>
+              CONCERTS
+            </Link>
+            <Link href='/music' className={`${activeLinkStyling('/music')} desktopNavLink`}>
+              MUSIC
+            </Link>
+            <Link href='/contact' className={`${activeLinkStyling('/contact')} desktopNavLink`}>
+              CONTACT
+            </Link>
           </div>
           <div id='right' className='flex gap-6 justify-end items-center '>
             <AiOutlineMail className='text-[1.5rem] antialiased' />
@@ -75,9 +93,7 @@ export default function Header() {
         >
           <div id='left'>
             <Link href='/'>
-              <p className='hover:text-accent-500 cursor-pointer text-2xl font-bold tracking-widest'>
-                POLENTA
-              </p>
+              <p className='cursor-pointer text-2xl font-bold tracking-widest'>POLENTA</p>
             </Link>
           </div>
           <div id='right' className='flex gap-6 justify-end items-center '>

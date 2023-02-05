@@ -4,7 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
     Droid Sans, Helvetica Neue, sans-serif;
-    background-color: theme('colors.primary.500');
+  background-color: theme('colors.primary.500');
 }
 
 * {
@@ -74,5 +74,18 @@ a {
   .h-screen {
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
+  }
+  .desktopNavLink {
+    --tw-border-opacity: 0;
+    padding-bottom: 5px;
+    margin-bottom: -4px;
+    padding: 0px 10px 5px 10px;
+    border-bottom: 2px solid rgba(242, 242, 242, 0);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    transition-duration: 200ms;
+  }
+  .desktopNavLink:hover {
+    border-bottom: 2px solid rgba(242, 242, 242, 0.5);
   }
 }
