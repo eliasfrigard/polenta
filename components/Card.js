@@ -8,7 +8,7 @@ export default function Hamburger({ name, instrument, email, phone, image, text 
         <Image alt={name} src={image} fill className='object-cover roundedShadow' />
 
         {text && (
-          <div className='imageOverlay p-16 overflow-y-scroll scrollbarHide'>
+          <div className='imageOverlay p-10 md:p-16 overflow-y-scroll scrollbarHide'>
             <div className='prose tracking-wide leading-loose prose-img:rounded-xl prose-invert'>
               {documentToReactComponents(text)}
             </div>
