@@ -25,7 +25,7 @@ export default function Album({ title, description, text, cover, spotify }) {
         </div>
         {spotify && (
           <iframe
-            className='shadow-lg aspect-square'
+            className='md:shadow-lg md:aspect-square'
             src={`https://open.spotify.com/embed/album/${spotify.split('/').pop()}`}
             width='100%'
             height='100%'
