@@ -55,17 +55,19 @@ export default function About({ biography, hero, bandMembers }) {
         </div>
       </AnimateIn>
 
-      <div className='container grid grid-flow-row md:grid-cols-2 px-8 my-12 md:my-32 gap-8 xl:gap-12'>
-        {bandMembers.map((member) => (
-          <Card
-            key={member.sys.id}
-            name={member.fields.name}
-            instrument={member.fields.instrument}
-            image={`https:${member.fields.image.fields.file.url}`}
-            text={member.fields.text}
-          />
-        ))}
-      </div>
+      <AnimateIn opacityDuration={1000}>
+        <div className='container grid grid-flow-row md:grid-cols-2 px-8 my-12 md:my-32 gap-8 xl:gap-12'>
+          {bandMembers.map((member) => (
+            <Card
+              key={member.sys.id}
+              name={member.fields.name}
+              instrument={member.fields.instrument}
+              image={`https:${member.fields.image.fields.file.url}`}
+              text={member.fields.text}
+            />
+          ))}
+        </div>
+      </AnimateIn>
     </Layout>
   )
 }

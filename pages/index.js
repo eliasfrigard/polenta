@@ -79,47 +79,51 @@ export default function Home({ hero, introduction, videos, concerts }) {
         </div>
       </AnimateIn>
 
-      <div className='px-8 md:px-16 my-16 md:my-16 flex justify-center items-center flex-col'>
-        <div className='container'>
-          <Video
-            title={firstVideo.title}
-            description={firstVideo.description}
-            link={firstVideo.youTubeLink}
-          />
-        </div>
-        <div className='container flex gap-8 xl:gap-12 mt-12 md:mt-16 flex-wrap lg:flex-nowrap'>
-          <Video
-            title={secondVideo.title}
-            description={secondVideo.description}
-            link={secondVideo.youTubeLink}
-          />
-          <Video
-            title={thirdVideo.title}
-            description={thirdVideo.description}
-            link={thirdVideo.youTubeLink}
-          />
-        </div>
-      </div>
-
-      {concerts.length > 0 && (
-        <div className='my-12 md:my-32'>
-          <Title title='upcoming concerts' />
-
-          <div className='px-4 md:px-0 md:my-16 bg-primary-500 flex justify-center items-center flex-col'>
-            {concerts.map((concert, index) => (
-              <Event
-                key={concert.sys.id}
-                date={concert.fields.dateTime}
-                venue={concert.fields.venue}
-                city={concert.fields.address}
-                country={concert.fields.country}
-                first={index === 0}
-                last={index + 1 === concerts.length}
-              />
-            ))}
+      <AnimateIn opacityDuration={1000}>
+        <div className='px-8 md:px-16 my-16 md:my-16 flex justify-center items-center flex-col'>
+          <div className='container'>
+            <Video
+              title={firstVideo.title}
+              description={firstVideo.description}
+              link={firstVideo.youTubeLink}
+            />
+          </div>
+          <div className='container flex gap-8 xl:gap-12 mt-12 md:mt-16 flex-wrap lg:flex-nowrap'>
+            <Video
+              title={secondVideo.title}
+              description={secondVideo.description}
+              link={secondVideo.youTubeLink}
+            />
+            <Video
+              title={thirdVideo.title}
+              description={thirdVideo.description}
+              link={thirdVideo.youTubeLink}
+            />
           </div>
         </div>
-      )}
+      </AnimateIn>
+
+      <AnimateIn opacityDuration={1000}>
+        {concerts.length > 0 && (
+          <div className='my-12 md:my-32'>
+            <Title title='upcoming concerts' />
+
+            <div className='px-4 md:px-0 md:my-16 bg-primary-500 flex justify-center items-center flex-col'>
+              {concerts.map((concert, index) => (
+                <Event
+                  key={concert.sys.id}
+                  date={concert.fields.dateTime}
+                  venue={concert.fields.venue}
+                  city={concert.fields.address}
+                  country={concert.fields.country}
+                  first={index === 0}
+                  last={index + 1 === concerts.length}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+      </AnimateIn>
 
       <ContactForm></ContactForm>
     </Layout>

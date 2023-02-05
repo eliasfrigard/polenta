@@ -22,20 +22,32 @@ export async function getStaticProps() {
     content_type: 'album',
   })
 
+  const pageRes = await contentful.getEntries({
+    content_type: 'musicPage',
+  })
+
+  const page = pageRes.items[0].fields
+
   return {
     props: {
+      hero: page.heroImage,
       albums: albumRes.items,
       videos: videosRes.items,
     },
   }
 }
 
-export default function Music({ videos, albums }) {
+export default function Music({ hero, videos, albums }) {
   return (
     <Layout>
       <AnimateIn opacityDuration={1000}>
-        <div id='hero' className='relative h-screen flex justify-center items-center shadow-xl'>
-          <Image alt='Mountains' src='/polenta-9.jpg' fill className='object-cover' />
+        <div id='hero' className='relative h-screen centerContent shadow-xl'>
+          <Image
+            alt={hero.fields.title}
+            src={'https:' + hero.fields.file.url}
+            fill
+            className='object-cover'
+          />{' '}
         </div>
       </AnimateIn>
 
