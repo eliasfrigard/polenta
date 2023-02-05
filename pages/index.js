@@ -6,6 +6,7 @@ import ContactForm from '../components/ContactForm'
 import Event from '../components/Event'
 import Title from '../components/Title'
 import Video from '../components/Video'
+import AnimateIn from '../components/AnimateIn'
 
 import getYoutubeID from 'get-youtube-id'
 import { createClient } from 'contentful'
@@ -48,26 +49,35 @@ export default function Home({ hero, introduction, videos, concerts }) {
 
   return (
     <Layout>
-      <div id='hero' className='relative h-screen md:h-[1050px] flex justify-center items-center shadow-xl'>
-        <Image alt={hero.fields.title} src={'https:' + hero.fields.file.url} fill className='object-cover' />
-        <div className='hidden md:centerContent container md:my-16 md:h-[450px] absolute translate-y-[525px] my-32'>
+      <AnimateIn>
+        <div id='hero' className='relative h-screen md:h-[1050px] flex justify-center items-center shadow-xl'>
           <Image
-            alt='Mountains'
-            src='/splash.png'
+            alt={hero.fields.title}
+            src={'https:' + hero.fields.file.url}
             fill
-            className='object-contain absolute translate-y-5 drop-shadow opacity-95'
+            className='object-cover'
           />
-          <h1 className='text-5xl md:text-[110px] z-10 font-bold md:-translate-y-2 drop-shadow-2xl text-primary-500'>
-            POLENTA
-          </h1>
+          <div className='hidden md:centerContent container md:my-16 md:h-[450px] absolute translate-y-[525px] my-32'>
+            <Image
+              alt='Mountains'
+              src='/splash.png'
+              fill
+              className='object-contain absolute translate-y-5 drop-shadow opacity-95'
+            />
+            <h1 className='text-5xl md:text-[110px] z-10 font-bold md:-translate-y-2 drop-shadow-2xl text-primary-500'>
+              POLENTA
+            </h1>
+          </div>
         </div>
-      </div>
+      </AnimateIn>
 
-      <div className='px-8 lg:px-0 container flex justify-center mb-12 md:mb-32 md:mt-[225px] pt-12 md:pt-32 '>
-        <div className='-translate-x-[2px] prose prose-lg md:prose-xl max-w-4xl prose-img:rounded-xl prose-img:shadow-lg prose-headings:underline leading-[2rem] text-center'>
-          {documentToReactComponents(introduction)}
+      <AnimateIn opacityDuration={1000}>
+        <div className='px-8 lg:px-0 container flex justify-center mb-12 md:mb-32 md:mt-[225px] pt-12 md:pt-32 '>
+          <div className='-translate-x-[2px] prose prose-lg md:prose-xl max-w-4xl prose-img:rounded-xl prose-img:shadow-lg prose-headings:underline leading-[2rem] text-center'>
+            {documentToReactComponents(introduction)}
+          </div>
         </div>
-      </div>
+      </AnimateIn>
 
       <div className='px-8 md:px-16 my-16 md:my-16 flex justify-center items-center flex-col'>
         <div className='container'>

@@ -70,7 +70,7 @@ export default function ContactForm() {
                   }`}
                   id='grid-first-name'
                   type='text'
-                  placeholder='So we know where to respond!'
+                  placeholder='So we know how to reach you!'
                   onBlur={validateEmail}
                 />
                 {!emailIsValid && (
