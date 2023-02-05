@@ -80,7 +80,7 @@ export default function ContactForm() {
               </div>
             </div>
           </form>
-          <button className='roundedShadow w-full h-14 md:mt-2 bg-secondary-500 text-primary-500 font-bold tracking-wider uppercase'>
+          <button className='roundedShadow w-full h-14 md:mt-2 bg-secondary-500 text-primary-500 hover:bg-accent-500 font-bold tracking-wider uppercase duration-150'>
             Send message
           </button>
         </div>
