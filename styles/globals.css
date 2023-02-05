@@ -123,4 +123,12 @@ a {
     opacity: 1;
     backdrop-filter: blur(4px);
   }
+  .scrollbarHide::-webkit-scrollbar {
+    display: none;
+  }
+  /* For IE, Edge and Firefox */
+  .scrollbarHide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }

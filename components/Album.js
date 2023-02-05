@@ -16,8 +16,8 @@ export default function Album({ title, description, text, cover, spotify }) {
             className='object-cover rounded-xl aspect-square overflow-hidden'
           />
           {text && (
-            <div className='imageOverlay centerContent'>
-              <div className='prose tracking-wide leading-snug max-w-4xl prose-img:rounded-xl prose-invert'>
+            <div className='imageOverlay p-16 overflow-y-scroll scrollbarHide'>
+              <div className='prose tracking-wide leading-loose prose-img:rounded-xl prose-invert'>
                 {documentToReactComponents(text)}
               </div>
             </div>

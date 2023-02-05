@@ -52,6 +52,7 @@ export default function About({ biography, hero, bandMembers }) {
             name={member.fields.name}
             instrument={member.fields.instrument}
             image={`https:${member.fields.image.fields.file.url}`}
+            text={member.fields.text}
           />
         ))}
       </div>

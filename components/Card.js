@@ -1,15 +1,16 @@
 import Image from 'next/image'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-export default function Hamburger({ name, instrument, email, phone, image, description }) {
+export default function Hamburger({ name, instrument, email, phone, image, text }) {
   return (
     <div className='flex flex-col centerContent'>
       <div className='aspect-[3/4] w-full min-w-[200px] relative'>
         <Image alt={name} src={image} fill className='object-cover roundedShadow' />
-        {!description && (
-          <div className='imageOverlay'>
-            <div className='centerContent flex-col min-w-full mt-4 md:mt-8 gap-2 text-primary-500'>
-              <p className='text-lg md:text-xl tracking-wider font uppercase'>{name}</p>
-              <div className='h-[1px] w-2/3 bg-primary-500 opacity-20'></div>
+
+        {text && (
+          <div className='imageOverlay p-16 overflow-y-scroll scrollbarHide'>
+            <div className='prose tracking-wide leading-loose prose-img:rounded-xl prose-invert'>
+              {documentToReactComponents(text)}
             </div>
           </div>
         )}
