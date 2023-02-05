@@ -68,7 +68,7 @@ export default function Home({ hero, introduction, videos, concerts }) {
         </div>
       </div>
 
-      <div className='px-4 md:px-0 my-12 md:my-16 flex justify-center items-center flex-col'>
+      <div className='px-8 md:px-16 my-12 md:my-16 flex justify-center items-center flex-col'>
         <div className='container'>
           <div className='w-full centerContent flex-col'>
             <div className='centerContent text-center flex-col mb-6 gap-4'>
