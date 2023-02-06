@@ -35,6 +35,7 @@ export async function getStaticProps() {
   return {
     props: {
       hero: homePage.pageImage,
+      mobileHero: homePage.mobileHeroImage,
       introduction: homePage.introduction,
       videos: homePage.videos,
       concerts: concertsRes.items,
@@ -42,7 +43,7 @@ export async function getStaticProps() {
   }
 }
 
-export default function Home({ hero, introduction, videos, concerts }) {
+export default function Home({ hero, mobileHero, introduction, videos, concerts }) {
   const firstVideo = videos[0].fields
   const secondVideo = videos[1].fields
   const thirdVideo = videos[2].fields
@@ -55,7 +56,13 @@ export default function Home({ hero, introduction, videos, concerts }) {
             alt={hero.fields.title}
             src={'https:' + hero.fields.file.url}
             fill
-            className='object-cover'
+            className='hidden lg:block object-cover'
+          />
+          <Image
+            alt={mobileHero.fields.title}
+            src={'https:' + mobileHero.fields.file.url}
+            fill
+            className='lg:hidden object-cover object-bottom'
           />
           <div className='hidden md:centerContent container md:my-16 md:h-[450px] absolute translate-y-[525px] my-32'>
             <Image
