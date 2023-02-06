@@ -25,6 +25,10 @@ export async function getStaticProps() {
     content_type: 'bandMembers',
   })
 
+  const fileDownloadRes = await contentful.getEntries({
+    content_type: 'fileDownload',
+  })
+
   const page = pageRes.items[0].fields
 
   return {
@@ -32,11 +36,13 @@ export async function getStaticProps() {
       hero: page.heroImage,
       text: page.contactInformation,
       contacts: bandMembersRes.items,
+      files: fileDownloadRes.items
     },
   }
 }
 
-export default function Contact({ text, hero, contacts }) {
+export default function Contact({ text, hero, contacts, files }) {
+  console.log(files);
   return (
     <Layout>
       <AnimateIn opacityDuration={1000}>
@@ -74,27 +80,20 @@ export default function Contact({ text, hero, contacts }) {
 
       <ContactForm></ContactForm>
 
-      <div className='flex flex-col gap-12 md:gap-16 w-full bg-secondary-500 pt-12 md:pt-16 md:pb-16 '>
-        <Title title='Downloads' textColor='text-primary-500' borderColor='border-primary-500' />
-        <div className='container px-6 lg:px-0 xl:px-0 grid grid-flow-row gap-6 md:gap-8 md:grid-cols-2'>
-          <DownloadItem title='Download our presskit from here.' filename='polenta-presskit.zip' />
-          <DownloadItem
-            title='Download our technical rider from here if you dare to do it.'
-            filename='polenta-technical-rider.pdf'
-            link=''
-          />
-          <DownloadItem
-            title='Download our hospitality rider.'
-            filename='polenta-hospitality-rider.pdf'
-            link=''
-          />
-          <DownloadItem
-            title='Download our hospitality rider.'
-            filename='polenta-hospitality-rider.pdf'
-            link=''
-          />
-        </div>
-      </div>
+      {
+        files.length > 0 && (
+          <div className='flex flex-col gap-12 md:gap-16 w-full bg-secondary-500 pt-12 md:pt-16 md:pb-16 '>
+            <Title title='Downloads' textColor='text-primary-500' borderColor='border-primary-500' />
+            <div className={`container px-6 lg:px-0 xl:px-0 grid grid-flow-row gap-6 md:gap-8 ${files.length > 1 &&
+              'md:grid-cols-2'}`}>
+              {files.map((file) => (
+                <DownloadItem key={file.sys.id} title={file.fields.description} filename={file.fields.file.fields.file.fileName} file={`https:${file.fields.file.fields.file.url}`} />
+              ))}
+            </div>
+          </div>
+        )
+      }
+
     </Layout>
   )
 }
