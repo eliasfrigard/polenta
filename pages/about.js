@@ -27,13 +27,14 @@ export async function getStaticProps() {
   return {
     props: {
       hero: page.heroImage,
+      heroPosition: page.heroPosition,
       biography: page.biography,
       bandMembers: bandMembersRes.items,
     },
   }
 }
 
-export default function About({ biography, hero, bandMembers }) {
+export default function About({ biography, hero, heroPosition, bandMembers }) {
   return (
     <Layout>
       <AnimateIn opacityDuration={1000}>
@@ -42,7 +43,7 @@ export default function About({ biography, hero, bandMembers }) {
             alt={hero.fields.title}
             src={'https:' + hero.fields.file.url}
             fill
-            className='object-cover'
+            className={`object-cover object-${heroPosition}`}
           />
         </div>
       </AnimateIn>

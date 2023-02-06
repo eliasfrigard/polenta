@@ -26,24 +26,25 @@ export async function getStaticProps() {
     'fields.dateTime[gte]': gt,
   })
 
-  const homePageRes = await contentful.getEntries({
+  const pageRes = await contentful.getEntries({
     content_type: 'homePage',
   })
 
-  const homePage = homePageRes.items[0].fields
+  const page = pageRes.items[0].fields
 
   return {
     props: {
-      hero: homePage.pageImage,
-      mobileHero: homePage.mobileHeroImage,
-      introduction: homePage.introduction,
-      videos: homePage.videos,
+      hero: page.pageImage,
+      heroPosition: page.heroPosition,
+      mobileHero: page.mobileHeroImage,
+      introduction: page.introduction,
+      videos: page.videos,
       concerts: concertsRes.items,
     },
   }
 }
 
-export default function Home({ hero, mobileHero, introduction, videos, concerts }) {
+export default function Home({ hero, heroPosition, mobileHero, introduction, videos, concerts }) {
   const firstVideo = videos[0].fields
   const secondVideo = videos[1].fields
   const thirdVideo = videos[2].fields
@@ -56,7 +57,7 @@ export default function Home({ hero, mobileHero, introduction, videos, concerts 
             alt={hero.fields.title}
             src={'https:' + hero.fields.file.url}
             fill
-            className='hidden lg:block object-cover'
+            className={`hidden lg:block object-cover object-${heroPosition}`}
           />
           <Image
             alt={mobileHero.fields.title}

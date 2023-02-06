@@ -26,15 +26,16 @@ export async function getStaticProps() {
     'fields.dateTime[lte]': currentDate,
   })
 
-  const concertsPageRes = await contentful.getEntries({
+  const pageRes = await contentful.getEntries({
     content_type: 'concertsPage',
   })
 
-  const concertsPage = concertsPageRes.items[0].fields
+  const page = pageRes.items[0].fields
 
   return {
     props: {
-      hero: concertsPage.heroImage,
+      hero: page.heroImage,
+      heroPosition: page.heroPosition,
       concerts: {
         upcoming: upcomingConcertsRes.items,
         previous: previousConcertsRes.items,
@@ -43,7 +44,7 @@ export async function getStaticProps() {
   }
 }
 
-export default function Concerts({ hero, concerts }) {
+export default function Concerts({ hero, heroPosition, concerts }) {
   return (
     <Layout>
       <AnimateIn opacityDuration={1000}>
@@ -52,7 +53,7 @@ export default function Concerts({ hero, concerts }) {
             alt={hero.fields.title}
             src={'https:' + hero.fields.file.url}
             fill
-            className='object-cover'
+            className={`object-cover object-${heroPosition}`}
           />
         </div>
       </AnimateIn>
