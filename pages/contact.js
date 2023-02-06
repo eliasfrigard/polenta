@@ -82,9 +82,9 @@ export default function Contact({ text, hero, contacts, files }) {
 
       {
         files.length > 0 && (
-          <div className='flex flex-col gap-12 md:gap-16 w-full bg-secondary-500 pt-12 md:pt-16 md:pb-16 '>
+          <div className='flex flex-col gap-12 md:gap-16 w-full bg-secondary-500 pt-12 md:pt-16 lg:pb-12 pb-4 md:pb-6 '>
             <Title title='Downloads' textColor='text-primary-500' borderColor='border-primary-500' />
-            <div className={`container px-6 lg:px-0 xl:px-0 grid grid-flow-row gap-6 md:gap-8 ${files.length > 1 &&
+            <div className={`container px-6 grid grid-flow-row gap-6 md:gap-8 ${files.length > 1 &&
               'md:grid-cols-2'}`}>
               {files.map((file) => (
                 <DownloadItem key={file.sys.id} title={file.fields.description} filename={file.fields.file.fields.file.fileName} file={`https:${file.fields.file.fields.file.url}`} />
