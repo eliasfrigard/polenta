@@ -88,15 +88,15 @@ a {
   .desktopNavLink {
     --tw-border-opacity: 0;
     padding-bottom: 5px;
-    margin-bottom: -5px;
-    padding: 0px 10px 5px 10px;
+    padding: 6px 10px 6px 10px;
     border-bottom: 2px solid rgba(242, 242, 242, 0);
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     transition-duration: 200ms;
   }
   .desktopNavLink:hover {
-    border-bottom: 2px solid rgba(242, 242, 242, 0.5);
+    border-bottom: 2px solid rgba(242, 242, 242, 0.6);
+    color: theme('colors.accent.500')
   }
   .reverseBg {
     background-color: theme('colors.secondary.500');
