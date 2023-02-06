@@ -79,29 +79,27 @@ export default function Home({ hero, introduction, videos, concerts }) {
         </div>
       </AnimateIn>
 
-      <AnimateIn opacityDuration={1000}>
-        <div className='px-8 md:px-16 my-16 md:my-16 flex justify-center items-center flex-col'>
-          <div className='container'>
-            <Video
-              title={firstVideo.title}
-              description={firstVideo.description}
-              link={firstVideo.youTubeLink}
-            />
-          </div>
-          <div className='container flex gap-8 xl:gap-12 mt-12 md:mt-16 flex-wrap lg:flex-nowrap'>
-            <Video
-              title={secondVideo.title}
-              description={secondVideo.description}
-              link={secondVideo.youTubeLink}
-            />
-            <Video
-              title={thirdVideo.title}
-              description={thirdVideo.description}
-              link={thirdVideo.youTubeLink}
-            />
-          </div>
+      <div className='px-8 md:px-16 my-16 md:my-16 flex justify-center items-center flex-col'>
+        <div className='container'>
+          <Video
+            title={firstVideo.title}
+            description={firstVideo.description}
+            link={firstVideo.youTubeLink}
+          />
         </div>
-      </AnimateIn>
+        <div className='container flex gap-8 xl:gap-12 mt-12 md:mt-16 flex-wrap lg:flex-nowrap'>
+          <Video
+            title={secondVideo.title}
+            description={secondVideo.description}
+            link={secondVideo.youTubeLink}
+          />
+          <Video
+            title={thirdVideo.title}
+            description={thirdVideo.description}
+            link={thirdVideo.youTubeLink}
+          />
+        </div>
+      </div>
 
       <AnimateIn opacityDuration={1000}>
         {concerts.length > 0 && (

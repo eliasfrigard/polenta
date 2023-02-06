@@ -51,33 +51,29 @@ export default function Music({ hero, videos, albums }) {
         </div>
       </AnimateIn>
 
-      <AnimateIn opacityDuration={1000}>
-        <div className='container my-12 md:my-32 flex justify-center items-center gap-8 md:gap-20 flex-wrap'>
-          <div className='container grid grid-flow-row lg:grid-cols-2 gap-8 md:gap-12 px-8'>
-            {videos.map((video) => (
-              <Video
-                key={video.sys.id}
-                title={video.fields.title}
-                description={video.fields.description}
-                link={video.fields.youTubeLink}
-              />
-            ))}
-          </div>
+      <div className='container my-12 md:my-32 flex justify-center items-center gap-8 md:gap-20 flex-wrap'>
+        <div className='container grid grid-flow-row lg:grid-cols-2 gap-8 md:gap-12 px-8'>
+          {videos.map((video) => (
+            <Video
+              key={video.sys.id}
+              title={video.fields.title}
+              description={video.fields.description}
+              link={video.fields.youTubeLink}
+            />
+          ))}
         </div>
-      </AnimateIn>
+      </div>
 
-      <AnimateIn opacityDuration={1000}>
-        {albums.map((album) => (
-          <Album
-            key={album.sys.id}
-            title={album.fields.title}
-            description={album.fields.description}
-            text={album.fields.text}
-            cover={'https:' + album.fields.cover.fields.file.url}
-            spotify={album.fields.spotify}
-          />
-        ))}
-      </AnimateIn>
+      {albums.map((album) => (
+        <Album
+          key={album.sys.id}
+          title={album.fields.title}
+          description={album.fields.description}
+          text={album.fields.text}
+          cover={'https:' + album.fields.cover.fields.file.url}
+          spotify={album.fields.spotify}
+        />
+      ))}
     </Layout>
   )
 }

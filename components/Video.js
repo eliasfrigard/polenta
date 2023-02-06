@@ -1,9 +1,10 @@
 import React from 'react'
 import getYoutubeID from 'get-youtube-id'
+import AnimateIn from './AnimateIn.js'
 
 export default function Video({ title, description, link }) {
   return (
-    <div className='w-full centerContent flex-col'>
+    <AnimateIn classes='w-full centerContent flex-col'>
       <div className='centerContent text-center flex-col mb-6 gap-4'>
         <p className='text-2xl md:text-3xl text-center tracking-wide font-medium uppercase border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
           {title}
@@ -18,6 +19,6 @@ export default function Video({ title, description, link }) {
         loading='lazy'
         allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
       ></iframe>
-    </div>
+    </AnimateIn>
   )
 }

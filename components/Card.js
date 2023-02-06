@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import AnimateIn from './AnimateIn'
 
 export default function Hamburger({ name, instrument, email, phone, image, text }) {
   return (
-    <div className='flex flex-col centerContent'>
+    <AnimateIn classes='flex flex-col centerContent'>
       <div className='aspect-[3/4] w-full min-w-[200px] relative'>
         <Image alt={name} src={image} fill className='object-cover roundedShadow' />
 
@@ -24,6 +25,6 @@ export default function Hamburger({ name, instrument, email, phone, image, text 
           {email && <p className='mt-1 italic tracking-wide'>{email}</p>}
         </div>
       </div>
-    </div>
+    </AnimateIn>
   )
 }
