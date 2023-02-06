@@ -6,9 +6,8 @@ export default function Event({ venue, date, city, country, last = false, first 
   return (
     <>
       <div
-        className={`${!first && 'mt-4'} ${
-          !last && 'mb-4'
-        } hidden lg:grid p-4 max-w-[1300px] w-full grid-flow-row grid-cols-4 gap-4 hover:bg-gray-200 rounded-lg`}
+        className={`${!first && 'mt-4'} ${!last && 'mb-4'
+          } hidden lg:grid p-4 max-w-[1300px] w-full grid-flow-row grid-cols-4 gap-4 hover:bg-gray-200 rounded-lg`}
       >
         <div className='centerContent flex-col gap-3'>
           <p className='text-md leading-none font-medium italic tracking-wider drop-shadow-sm'>
@@ -38,9 +37,8 @@ export default function Event({ venue, date, city, country, last = false, first 
        */}
 
       <div
-        className={`mt-4 ${
-          !last && 'mb-4'
-        } lg:hidden centerContent py-6 max-w-[1400px] w-full flex flex-col gap-8 rounded-lg`}
+        className={`mt-4 ${!last && 'mb-4'
+          } lg:hidden centerContent py-6 max-w-[1400px] w-full flex flex-col gap-8 rounded-lg`}
       >
         <BsCalendar3 className='text-6xl shadow'></BsCalendar3>
         <div className='centerContent flex-col gap-3'>

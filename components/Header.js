@@ -35,7 +35,7 @@ export default function Header() {
           lg:grid
           grid-cols-3
           items-center
-          h-[80px]
+          h-[75px]
           w-full
           shadow-lg
           tracking-wide
@@ -83,7 +83,7 @@ export default function Header() {
           grid
           grid-cols-2
           items-center
-          h-[80px]
+          h-[75px]
           w-full
           tracking-wide
           text-primary-500
@@ -103,9 +103,8 @@ export default function Header() {
       </div>
 
       <div
-        className={`fixed flex flex-col justify-center items-center gap-24 pt-[80px] h-screen w-screen bg-secondary-500 z-10 duration-300 transform py-16 ${
-          !mobileNavOpen && '-translate-y-[100vh]'
-        }`}
+        className={`fixed flex flex-col justify-center items-center gap-24 pt-[75px] h-screen w-screen bg-secondary-500 z-10 duration-300 transform py-16 ${!mobileNavOpen && '-translate-y-[100vh]'
+          }`}
       >
         <div className='container flex flex-col justify-center items-center gap-10'>
           <Link href='/'>

@@ -88,7 +88,7 @@ a {
   .desktopNavLink {
     --tw-border-opacity: 0;
     padding-bottom: 5px;
-    margin-bottom: -4px;
+    margin-bottom: -5px;
     padding: 0px 10px 5px 10px;
     border-bottom: 2px solid rgba(242, 242, 242, 0);
     -webkit-background-clip: padding-box;
