@@ -52,7 +52,7 @@ export default function Contact({ text, hero, contacts }) {
 
       <AnimateIn opacityDuration={1000}>
         <div className='px-8 lg:px-0 my-12 md:my-32 container flex justify-center'>
-          <div className='-translate-x-[2px] prose prose-lg md:prose-xl max-w-4xl prose-img:rounded-xl prose-img:shadow-lg prose-headings:underline leading-[2rem] text-center'>
+          <div className='-translate-x-[2px] prose prose-lg max-w-4xl prose-img:rounded-xl prose-img:shadow-lg prose-headings:underline leading-[2rem] text-center'>
             {documentToReactComponents(text)}
           </div>
         </div>
