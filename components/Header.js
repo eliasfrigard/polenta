@@ -32,9 +32,12 @@ export default function Header() {
         <div
           className={`
           hidden
-          lg:grid
-          grid-cols-3
+          lg:gap-16
+          lg:flex
+          xl:grid
+          xl:grid-cols-3
           items-center
+          justify-center
           h-[80px]
           w-full
           shadow-lg
@@ -66,7 +69,7 @@ export default function Header() {
               CONTACT
             </Link>
           </div>
-          <div id='right' className='flex gap-6 justify-end items-center '>
+          <div id='right' className='flex gap-6 justify-end items-center'>
             <AiOutlineMail className='soMeIcon text-[1.5rem] antialiased' />
             <BsFacebook className='soMeIcon text-xl' />
             <BsInstagram className='soMeIcon text-xl' />
