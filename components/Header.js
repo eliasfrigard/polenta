@@ -19,7 +19,7 @@ export default function Header() {
 
   const activeLinkStyling = (path) => {
     if (router.pathname == path) {
-      return 'border-b-2 border-accent-500 border-opacity-70 hover:border-accent-500 hover:border-opacity-70'
+      return 'border-b-2 border-accent-500 border-opacity-70 hover:border-accent-500 hover:border-opacity-70 text-accent-500'
     }
   }
 
