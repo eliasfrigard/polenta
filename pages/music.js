@@ -31,13 +31,14 @@ export async function getStaticProps() {
   return {
     props: {
       hero: page.heroImage,
+      heroPosition: page.heroPosition,
       albums: albumRes.items,
       videos: videosRes.items,
     },
   }
 }
 
-export default function Music({ hero, videos, albums }) {
+export default function Music({ hero, heroPosition, videos, albums }) {
   return (
     <Layout>
       <AnimateIn opacityDuration={1000}>
@@ -46,38 +47,34 @@ export default function Music({ hero, videos, albums }) {
             alt={hero.fields.title}
             src={'https:' + hero.fields.file.url}
             fill
-            className='object-cover'
-          />{' '}
-        </div>
-      </AnimateIn>
-
-      <AnimateIn opacityDuration={1000}>
-        <div className='container my-12 md:my-32 flex justify-center items-center gap-8 md:gap-20 flex-wrap'>
-          <div className='container grid grid-flow-row lg:grid-cols-2 gap-8 md:gap-12 px-8'>
-            {videos.map((video) => (
-              <Video
-                key={video.sys.id}
-                title={video.fields.title}
-                description={video.fields.description}
-                link={video.fields.youTubeLink}
-              />
-            ))}
-          </div>
-        </div>
-      </AnimateIn>
-
-      <AnimateIn opacityDuration={1000}>
-        {albums.map((album) => (
-          <Album
-            key={album.sys.id}
-            title={album.fields.title}
-            description={album.fields.description}
-            text={album.fields.text}
-            cover={'https:' + album.fields.cover.fields.file.url}
-            spotify={album.fields.spotify}
+            className={`object-cover object-${heroPosition}`}
           />
-        ))}
+        </div>
       </AnimateIn>
+
+      <div className='container my-12 md:my-32 flex justify-center items-center gap-8 md:gap-20 flex-wrap'>
+        <div className='container grid grid-flow-row lg:grid-cols-2 gap-8 md:gap-12 px-8'>
+          {videos.map((video) => (
+            <Video
+              key={video.sys.id}
+              title={video.fields.title}
+              description={video.fields.description}
+              link={video.fields.youTubeLink}
+            />
+          ))}
+        </div>
+      </div>
+
+      {albums.map((album) => (
+        <Album
+          key={album.sys.id}
+          title={album.fields.title}
+          description={album.fields.description}
+          text={album.fields.text}
+          cover={'https:' + album.fields.cover.fields.file.url}
+          spotify={album.fields.spotify}
+        />
+      ))}
     </Layout>
   )
 }

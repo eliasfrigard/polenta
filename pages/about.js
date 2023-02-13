@@ -27,13 +27,14 @@ export async function getStaticProps() {
   return {
     props: {
       hero: page.heroImage,
+      heroPosition: page.heroPosition,
       biography: page.biography,
       bandMembers: bandMembersRes.items,
     },
   }
 }
 
-export default function About({ biography, hero, bandMembers }) {
+export default function About({ biography, hero, heroPosition, bandMembers }) {
   return (
     <Layout>
       <AnimateIn opacityDuration={1000}>
@@ -42,32 +43,31 @@ export default function About({ biography, hero, bandMembers }) {
             alt={hero.fields.title}
             src={'https:' + hero.fields.file.url}
             fill
-            className='object-cover'
+            className={`object-cover object-${heroPosition}`}
           />
         </div>
       </AnimateIn>
 
       <AnimateIn opacityDuration={1000}>
         <div className='px-6 lg:px-0 my-12 md:my-32 flex justify-center items-center flex-col'>
-          <div className='-translate-x-[2px] prose prose-lg md:prose-xl max-w-4xl prose-img:rounded-xl prose-img:shadow-lg prose-headings:underline leading-[2rem] text-center'>
+          <div className='-translate-x-[2px] prose prose-lg max-w-4xl prose-img:rounded-xl prose-img:shadow-lg prose-headings:underline leading-[2rem] text-center'>
             {documentToReactComponents(biography)}
           </div>
         </div>
       </AnimateIn>
 
-      <AnimateIn opacityDuration={1000}>
-        <div className='container grid grid-flow-row md:grid-cols-2 px-8 my-12 md:my-32 gap-8 xl:gap-12'>
-          {bandMembers.map((member) => (
-            <Card
-              key={member.sys.id}
-              name={member.fields.name}
-              instrument={member.fields.instrument}
-              image={`https:${member.fields.image.fields.file.url}`}
-              text={member.fields.text}
-            />
-          ))}
-        </div>
-      </AnimateIn>
+      <div className='container grid grid-flow-row md:grid-cols-2 px-8 my-12 md:my-32 gap-8 xl:gap-12'>
+        {bandMembers.map((member) => (
+          <Card
+            key={member.sys.id}
+            name={member.fields.name}
+            instrument={member.fields.instrument}
+            image={`https:${member.fields.image.fields.file.url}`}
+            text={member.fields.text}
+            textSize="lg"
+          />
+        ))}
+      </div>
     </Layout>
   )
 }

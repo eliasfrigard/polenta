@@ -1,10 +1,11 @@
 import Image from 'next/image'
 import Title from './Title'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import AnimateIn from './AnimateIn'
 
 export default function Album({ title, description, text, cover, spotify }) {
   return (
-    <div className='w-full flex flex-col centerContent gap-8 md:gap-12 px-8 md:px-12 my-16 lg:my-32'>
+    <AnimateIn classes='w-full flex flex-col centerContent gap-8 md:gap-12 px-8 md:px-12 my-16 lg:my-32'>
       <Title title={title} subtitle={description}></Title>
 
       <div className={`container grid grid-flow-row mx-12 gap-8 md:gap-12 ${spotify && 'lg:grid-cols-2'}`}>
@@ -36,6 +37,6 @@ export default function Album({ title, description, text, cover, spotify }) {
           ></iframe>
         )}
       </div>
-    </div>
+    </AnimateIn>
   )
 }

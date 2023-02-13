@@ -26,23 +26,25 @@ export async function getStaticProps() {
     'fields.dateTime[gte]': gt,
   })
 
-  const homePageRes = await contentful.getEntries({
+  const pageRes = await contentful.getEntries({
     content_type: 'homePage',
   })
 
-  const homePage = homePageRes.items[0].fields
+  const page = pageRes.items[0].fields
 
   return {
     props: {
-      hero: homePage.pageImage,
-      introduction: homePage.introduction,
-      videos: homePage.videos,
+      hero: page.pageImage,
+      heroPosition: page.heroPosition,
+      mobileHero: page.mobileHeroImage,
+      introduction: page.introduction,
+      videos: page.videos,
       concerts: concertsRes.items,
     },
   }
 }
 
-export default function Home({ hero, introduction, videos, concerts }) {
+export default function Home({ hero, heroPosition, mobileHero, introduction, videos, concerts }) {
   const firstVideo = videos[0].fields
   const secondVideo = videos[1].fields
   const thirdVideo = videos[2].fields
@@ -55,7 +57,13 @@ export default function Home({ hero, introduction, videos, concerts }) {
             alt={hero.fields.title}
             src={'https:' + hero.fields.file.url}
             fill
-            className='object-cover'
+            className={`hidden lg:block object-cover object-${heroPosition}`}
+          />
+          <Image
+            alt={mobileHero.fields.title}
+            src={'https:' + mobileHero.fields.file.url}
+            fill
+            className='lg:hidden object-cover object-bottom'
           />
           <div className='hidden md:centerContent container md:my-16 md:h-[450px] absolute translate-y-[525px] my-32'>
             <Image
@@ -73,35 +81,33 @@ export default function Home({ hero, introduction, videos, concerts }) {
 
       <AnimateIn opacityDuration={1000}>
         <div className='px-8 lg:px-0 container flex justify-center mb-12 md:mb-32 md:mt-[225px] pt-12 md:pt-32 '>
-          <div className='-translate-x-[2px] prose prose-lg md:prose-xl max-w-4xl prose-img:rounded-xl prose-img:shadow-lg prose-headings:underline leading-[2rem] text-center'>
+          <div className='-translate-x-[2px] prose prose-lg max-w-4xl prose-img:rounded-xl prose-img:shadow-lg prose-headings:underline leading-[2rem] text-center'>
             {documentToReactComponents(introduction)}
           </div>
         </div>
       </AnimateIn>
 
-      <AnimateIn opacityDuration={1000}>
-        <div className='px-8 md:px-16 my-16 md:my-16 flex justify-center items-center flex-col'>
-          <div className='container'>
-            <Video
-              title={firstVideo.title}
-              description={firstVideo.description}
-              link={firstVideo.youTubeLink}
-            />
-          </div>
-          <div className='container flex gap-8 xl:gap-12 mt-12 md:mt-16 flex-wrap lg:flex-nowrap'>
-            <Video
-              title={secondVideo.title}
-              description={secondVideo.description}
-              link={secondVideo.youTubeLink}
-            />
-            <Video
-              title={thirdVideo.title}
-              description={thirdVideo.description}
-              link={thirdVideo.youTubeLink}
-            />
-          </div>
+      <div className='px-8 md:px-16 my-16 md:my-16 flex justify-center items-center flex-col'>
+        <div className='container'>
+          <Video
+            title={firstVideo.title}
+            description={firstVideo.description}
+            link={firstVideo.youTubeLink}
+          />
         </div>
-      </AnimateIn>
+        <div className='container flex gap-8 xl:gap-12 mt-12 md:mt-16 flex-wrap lg:flex-nowrap'>
+          <Video
+            title={secondVideo.title}
+            description={secondVideo.description}
+            link={secondVideo.youTubeLink}
+          />
+          <Video
+            title={thirdVideo.title}
+            description={thirdVideo.description}
+            link={thirdVideo.youTubeLink}
+          />
+        </div>
+      </div>
 
       <AnimateIn opacityDuration={1000}>
         {concerts.length > 0 && (

@@ -37,8 +37,7 @@ export default function Header() {
           xl:grid
           xl:grid-cols-3
           items-center
-          justify-center
-          h-[80px]
+          h-[75px]
           w-full
           shadow-lg
           tracking-wide
@@ -56,25 +55,47 @@ export default function Header() {
             <Link href='/' className={`${activeLinkStyling('/')} desktopNavLink`}>
               HOME
             </Link>
+
             <Link href='/about' className={`${activeLinkStyling('/about')} desktopNavLink`}>
               ABOUT
             </Link>
+
             <Link href='/concerts' className={`${activeLinkStyling('/concerts')} desktopNavLink`}>
               CONCERTS
             </Link>
+
             <Link href='/music' className={`${activeLinkStyling('/music')} desktopNavLink`}>
               MUSIC
             </Link>
+
             <Link href='/contact' className={`${activeLinkStyling('/contact')} desktopNavLink`}>
               CONTACT
             </Link>
           </div>
-          <div id='right' className='flex gap-6 justify-end items-center'>
-            <AiOutlineMail className='soMeIcon text-[1.5rem] antialiased' />
-            <BsFacebook className='soMeIcon text-xl' />
-            <BsInstagram className='soMeIcon text-xl' />
-            <BsSpotify className='soMeIcon text-xl' />
-            <BsYoutube className='soMeIcon text-[1.5rem] translate-y-[1px]' />
+          <div id='right' className='flex gap-6 justify-end items-center '>
+            <a href='mailto:someone@yoursite.com?subject=Polenta Music Website'>
+              <AiOutlineMail className='soMeIcon text-[1.5rem] antialiased' />
+            </a>
+
+            <a href='https://www.facebook.com/Polentamusic' target='_blank' rel='noopener noreferrer'>
+              <BsFacebook className='soMeIcon text-xl' />
+            </a>
+
+            <a href='https://www.instagram.com/polentamusic/' target='_blank' rel='noopener noreferrer'>
+              <BsInstagram className='soMeIcon text-xl' />
+            </a>
+
+            <a
+              href='https://open.spotify.com/artist/6LCSzEXMsFKhWkOAp1wP4E?si=SunHecGiSISfPt1Zmv2W3A'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <BsSpotify className='soMeIcon text-xl' />
+            </a>
+
+            <a href='https://www.youtube.com/@polentamusic650' target='_blank' rel='noopener noreferrer'>
+              <BsYoutube className='soMeIcon text-[1.5rem] translate-y-[1px]' />
+            </a>
           </div>
         </div>
       </div>
@@ -86,7 +107,7 @@ export default function Header() {
           grid
           grid-cols-2
           items-center
-          h-[80px]
+          h-[75px]
           w-full
           tracking-wide
           text-primary-500
@@ -106,7 +127,7 @@ export default function Header() {
       </div>
 
       <div
-        className={`fixed flex flex-col justify-center items-center gap-24 pt-[80px] h-screen w-screen bg-secondary-500 z-10 duration-300 transform py-16 ${
+        className={`fixed flex flex-col justify-center items-center gap-24 pt-[75px] h-screen w-screen bg-secondary-500 z-10 duration-300 transform py-16 ${
           !mobileNavOpen && '-translate-y-[100vh]'
         }`}
       >
@@ -114,26 +135,48 @@ export default function Header() {
           <Link href='/'>
             <p className={`${activeLinkStyling('/')} mobileNavLink`}>Home</p>
           </Link>
+
           <Link href='/about'>
             <p className={`${activeLinkStyling('/about')} mobileNavLink`}>About</p>
           </Link>
+
           <Link href='/concerts'>
             <p className={`${activeLinkStyling('/concerts')} mobileNavLink`}>Concerts</p>
           </Link>
+
           <Link href='/music'>
             <p className={`${activeLinkStyling('/music')} mobileNavLink`}>Music</p>
           </Link>
+
           <Link href='/contact'>
             <p className={`${activeLinkStyling('/contact')} mobileNavLink`}>Contact</p>
           </Link>
         </div>
 
         <div className='flex justify-center items-center gap-8 text-primary-500'>
-          <AiOutlineMail className='soMeIcon text-[1.8rem] antialiased' />
-          <BsFacebook className='soMeIcon text-2xl' />
-          <BsInstagram className='soMeIcon text-2xl' />
-          <BsSpotify className='soMeIcon text-2xl' />
-          <BsYoutube className='soMeIcon text-[1.8rem] translate-y-[1px]' />
+          <a href='mailto:someone@yoursite.com?subject=Polenta Music Website'>
+            <AiOutlineMail className='soMeIcon text-[1.8rem] antialiased' />
+          </a>
+
+          <a href='https://www.facebook.com/Polentamusic' target='_blank' rel='noopener noreferrer'>
+            <BsFacebook className='soMeIcon text-2xl' />
+          </a>
+
+          <a href='https://www.instagram.com/polentamusic/' target='_blank' rel='noopener noreferrer'>
+            <BsInstagram className='soMeIcon text-2xl' />
+          </a>
+
+          <a
+            href='https://open.spotify.com/artist/6LCSzEXMsFKhWkOAp1wP4E?si=SunHecGiSISfPt1Zmv2W3A'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <BsSpotify className='soMeIcon text-2xl' />
+          </a>
+
+          <a href='https://www.youtube.com/@polentamusic650' target='_blank' rel='noopener noreferrer'>
+            <BsYoutube className='soMeIcon text-[1.8rem] translate-y-[1px]' />
+          </a>
         </div>
       </div>
     </>
