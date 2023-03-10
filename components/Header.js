@@ -19,7 +19,7 @@ export default function Header() {
 
   const activeLinkStyling = (path) => {
     if (router.pathname == path) {
-      return 'border-b-2 border-accent-500 border-opacity-70 hover:border-accent-500 hover:border-opacity-70 text-accent-500'
+      return 'text-accent-500'
     }
   }
 
@@ -51,8 +51,8 @@ export default function Header() {
               POLENTA
             </Link>
           </div>
-          <div id='center' className='flex gap-4 font-medium justify-center tracking-widest'>
-            <Link href='/' className={`${activeLinkStyling('/')} desktopNavLink`}>
+          <div id='center' className='flex gap-4 font-medium justify-center tracking-[2px]'>
+            <Link href='/' className={`${activeLinkStyling('/')} desktopNavLink drop-shadow-sm`}>
               HOME
             </Link>
 
