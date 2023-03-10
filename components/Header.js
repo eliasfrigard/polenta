@@ -127,7 +127,7 @@ export default function Header() {
       </div>
 
       <div
-        className={`fixed flex flex-col justify-center items-center gap-24 pt-[75px] h-screen w-screen bg-secondary-500 z-10 duration-300 transform py-16 ${
+        className={`fixed flex flex-col justify-evenly items-center pt-[75px] h-screen w-screen bg-secondary-500 z-10 duration-300 transform ${
           !mobileNavOpen && '-translate-y-[100vh]'
         }`}
       >
@@ -155,7 +155,7 @@ export default function Header() {
 
         <div className='flex justify-center items-center gap-8 text-primary-500'>
           <a href='mailto:someone@yoursite.com?subject=Polenta Music Website'>
-            <AiOutlineMail className='soMeIcon text-[1.8rem] antialiased' />
+            <AiOutlineMail className='soMeIcon text-[1.6rem] antialiased' />
           </a>
 
           <a href='https://www.facebook.com/Polentamusic' target='_blank' rel='noopener noreferrer'>
