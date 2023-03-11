@@ -40,7 +40,7 @@ export async function getStaticProps() {
 
 export default function Music({ hero, heroPosition, videos, albums }) {
   return (
-    <Layout>
+    <Layout pageTitle="Music">
       <AnimateIn opacityDuration={1000}>
         <div id='hero' className='relative h-screen centerContent shadow-xl'>
           <Image

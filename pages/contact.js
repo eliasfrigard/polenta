@@ -44,7 +44,7 @@ export async function getStaticProps() {
 
 export default function Contact({ text, hero, heroPosition, contacts, files }) {
   return (
-    <Layout>
+    <Layout pageTitle="Contact">
       <AnimateIn opacityDuration={1000}>
         <div id='hero' className='relative h-screen centerContent shadow-xl'>
           <Image
@@ -84,9 +84,8 @@ export default function Contact({ text, hero, heroPosition, contacts, files }) {
         <div className='flex flex-col gap-12 md:gap-16 w-full bg-secondary-500 pt-12 md:pt-16 lg:pb-12 pb-4 md:pb-6 '>
           <Title title='Downloads' textColor='text-primary-500' borderColor='border-primary-500' />
           <div
-            className={`container px-6 grid grid-flow-row gap-6 md:gap-8 ${
-              files.length > 1 && 'md:grid-cols-2'
-            }`}
+            className={`container px-6 grid grid-flow-row gap-6 md:gap-8 ${files.length > 1 && 'md:grid-cols-2'
+              }`}
           >
             {files.map((file) => (
               <DownloadItem

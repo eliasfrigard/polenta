@@ -50,7 +50,7 @@ export default function Home({ hero, heroPosition, mobileHero, introduction, vid
   const thirdVideo = videos[2].fields
 
   return (
-    <Layout>
+    <Layout pageTitle="Home">
       <AnimateIn>
         <div id='hero' className='relative h-screen md:h-[1050px] flex justify-center items-center shadow-xl'>
           <Image
