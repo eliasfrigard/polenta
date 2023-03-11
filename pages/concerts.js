@@ -38,6 +38,8 @@ export async function getStaticProps() {
       mobileHero: page.mobileHeroImage,
       heroPosition: page.heroPosition,
       heroImageActive: page.heroImageActive,
+      pageTitle: page.name,
+      pageDescription: page.description,
       concerts: {
         upcoming: upcomingConcertsRes.items,
         previous: previousConcertsRes.items,
@@ -46,9 +48,9 @@ export async function getStaticProps() {
   }
 }
 
-export default function Concerts({ hero, heroPosition, concerts, mobileHero, heroImageActive }) {
+export default function Concerts({ hero, heroPosition, concerts, mobileHero, heroImageActive, pageTitle, pageDescription }) {
   return (
-    <Layout pageTitle="Concerts">
+    <Layout pageTitle={pageTitle} pageDescription={pageDescription} imageUrl={`https: + ${hero.fields.file.url}`}>
       {
         heroImageActive &&
         <AnimateIn opacityDuration={1000}>

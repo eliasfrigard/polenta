@@ -40,13 +40,15 @@ export async function getStaticProps() {
       text: page.contactInformation,
       contacts: bandMembersRes.items,
       files: fileDownloadRes.items,
+      pageTitle: page.name,
+      pageDescription: page.description,
     },
   }
 }
 
-export default function Contact({ text, hero, heroPosition, contacts, files, mobileHero, heroImageActive }) {
+export default function Contact({ text, hero, heroPosition, contacts, files, mobileHero, heroImageActive, pageTitle, pageDescription }) {
   return (
-    <Layout pageTitle="Contact">
+    <Layout pageTitle={pageTitle} pageDescription={pageDescription} imageUrl={`https: + ${hero.fields.file.url}`}>
       {
         heroImageActive &&
         <AnimateIn opacityDuration={1000}>

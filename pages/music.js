@@ -36,13 +36,15 @@ export async function getStaticProps() {
       heroImageActive: page.heroImageActive,
       albums: albumRes.items,
       videos: videosRes.items,
+      pageTitle: page.name,
+      pageDescription: page.description,
     },
   }
 }
 
-export default function Music({ hero, heroPosition, videos, albums, mobileHero, heroImageActive }) {
+export default function Music({ hero, heroPosition, videos, albums, mobileHero, heroImageActive, pageTitle, pageDescription }) {
   return (
-    <Layout pageTitle="Music">
+    <Layout pageTitle={pageTitle} pageDescription={pageDescription} imageUrl={`https: + ${hero.fields.file.url}`}>
       {
         heroImageActive &&
         <AnimateIn opacityDuration={1000}>
