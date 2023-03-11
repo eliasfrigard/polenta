@@ -11,7 +11,7 @@ export default function Layout({ children, pageTitle }) {
         <meta property="og:title" content={pageTitle} key="title" />
       </Head>
       <Header />
-      <main className='bg-primary-500'>{children}</main>
+      <main className='bg-primary-500 pt-[75px]'>{children}</main>
       <Footer />
     </div>
   )

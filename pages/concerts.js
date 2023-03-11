@@ -35,7 +35,9 @@ export async function getStaticProps() {
   return {
     props: {
       hero: page.heroImage,
+      mobileHero: page.mobileHeroImage,
       heroPosition: page.heroPosition,
+      heroImageActive: page.heroImageActive,
       concerts: {
         upcoming: upcomingConcertsRes.items,
         previous: previousConcertsRes.items,
@@ -44,19 +46,28 @@ export async function getStaticProps() {
   }
 }
 
-export default function Concerts({ hero, heroPosition, concerts }) {
+export default function Concerts({ hero, heroPosition, concerts, mobileHero, heroImageActive }) {
   return (
     <Layout pageTitle="Concerts">
-      <AnimateIn opacityDuration={1000}>
-        <div id='hero' className='relative h-screen centerContent shadow-xl'>
-          <Image
-            alt={hero.fields.title}
-            src={'https:' + hero.fields.file.url}
-            fill
-            className={`object-cover object-${heroPosition}`}
-          />
-        </div>
-      </AnimateIn>
+      {
+        heroImageActive &&
+        <AnimateIn opacityDuration={1000}>
+          <div id='hero' className='relative h-screen flex justify-center items-center shadow-xl'>
+            <Image
+              alt={hero.fields.title}
+              src={'https:' + hero.fields.file.url}
+              fill
+              className={`hidden lg:block object-cover object-${heroPosition}`}
+            />
+            <Image
+              alt={mobileHero.fields.title}
+              src={'https:' + mobileHero.fields.file.url}
+              fill
+              className='lg:hidden object-cover object-bottom'
+            />
+          </div>
+        </AnimateIn>
+      }
 
       <div className='flex flex-col gap-12 md:gap-32 my-12 md:my-32'>
         <AnimateIn opacityDuration={1000}>

@@ -8,7 +8,6 @@ import Title from '../components/Title'
 import Video from '../components/Video'
 import AnimateIn from '../components/AnimateIn'
 
-import getYoutubeID from 'get-youtube-id'
 import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 

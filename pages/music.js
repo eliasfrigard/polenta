@@ -31,26 +31,37 @@ export async function getStaticProps() {
   return {
     props: {
       hero: page.heroImage,
+      mobileHero: page.mobileHeroImage,
       heroPosition: page.heroPosition,
+      heroImageActive: page.heroImageActive,
       albums: albumRes.items,
       videos: videosRes.items,
     },
   }
 }
 
-export default function Music({ hero, heroPosition, videos, albums }) {
+export default function Music({ hero, heroPosition, videos, albums, mobileHero, heroImageActive }) {
   return (
     <Layout pageTitle="Music">
-      <AnimateIn opacityDuration={1000}>
-        <div id='hero' className='relative h-screen centerContent shadow-xl'>
-          <Image
-            alt={hero.fields.title}
-            src={'https:' + hero.fields.file.url}
-            fill
-            className={`object-cover object-${heroPosition}`}
-          />
-        </div>
-      </AnimateIn>
+      {
+        heroImageActive &&
+        <AnimateIn opacityDuration={1000}>
+          <div id='hero' className='relative h-screen flex justify-center items-center shadow-xl'>
+            <Image
+              alt={hero.fields.title}
+              src={'https:' + hero.fields.file.url}
+              fill
+              className={`hidden lg:block object-cover object-${heroPosition}`}
+            />
+            <Image
+              alt={mobileHero.fields.title}
+              src={'https:' + mobileHero.fields.file.url}
+              fill
+              className='lg:hidden object-cover object-bottom'
+            />
+          </div>
+        </AnimateIn>
+      }
 
       <div className='container my-12 md:my-32 flex justify-center items-center gap-8 md:gap-20 flex-wrap'>
         <div className='container grid grid-flow-row lg:grid-cols-2 gap-8 md:gap-12 px-8'>
