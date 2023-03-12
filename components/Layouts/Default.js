@@ -6,7 +6,6 @@ import Head from 'next/head'
 export default function Layout({ children, pageTitle, pageDescription, imageUrl, pageUrl }) {
   return (
     <div>
-
       <Head>
         <title>{pageTitle} | Polenta</title>
         <meta name="description" content="A brief description of the content on the page" />

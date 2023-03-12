@@ -88,7 +88,7 @@ export default function Home({ hero, heroPosition, mobileHero, introduction, vid
         </div>
       </AnimateIn>
 
-      <div className='px-8 md:px-16 my-16 md:my-16 flex justify-center items-center flex-col'>
+      <div className='px-8 md:px-16 my-12 md:my-16 flex justify-center items-center flex-col'>
         <div className='container'>
           <Video
             title={firstVideo.title}
@@ -96,7 +96,7 @@ export default function Home({ hero, heroPosition, mobileHero, introduction, vid
             link={firstVideo.youTubeLink}
           />
         </div>
-        <div className='container flex gap-8 xl:gap-12 mt-12 md:mt-16 flex-wrap lg:flex-nowrap'>
+        <div className='container flex gap-8 xl:gap-12 mt-8 md:mt-16 flex-wrap lg:flex-nowrap'>
           <Video
             title={secondVideo.title}
             description={secondVideo.description}
