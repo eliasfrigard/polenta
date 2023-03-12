@@ -8,26 +8,26 @@ export default function Event({ venue, date, city, country, last = false, first 
     <>
       <AnimateIn
         classes={`${!first && 'mt-4'} ${!last && 'mb-4'
-          } hidden lg:grid p-4 max-w-[1300px] w-full grid-flow-row grid-cols-4 gap-4 hover:bg-gray-200 rounded-lg`}
+          } hidden lg:grid p-4 max-w-[1300px] w-full grid-flow-row grid-cols-4 gap-4 hover:bg-gray-200 rounded-lg tracking-wider text-secondary-500`}
       >
         <div className='centerContent flex-col gap-3'>
-          <p className='text-md leading-none font-medium italic tracking-wider drop-shadow-sm'>
+          <p className='text-2xl uppercase font-bold leading-none drop-shadow-sm'>
+            <Moment format='HH:mm'>{date}</Moment>
+          </p>
+          <p className='text-lg leading-none uppercase drop-shadow-sm'>
             <Moment format='D MMMM YYYY'>{date}</Moment>
           </p>
-          <p className='text-xl leading-none font-medium tracking-wide drop-shadow-sm'>
-            <Moment format='dddd HH:mm'>{date}</Moment>
-          </p>
         </div>
-        <div className='centerContent tracking-wider font-bold flex gap-2 drop-shadow-sm'>
-          <IoMdPin className='text-2xl opacity-80'></IoMdPin>
+        <div className='centerContent text-lg flex gap-2 drop-shadow-sm'>
+          <IoMdPin className='text-xl opacity-80 text-accent-500'></IoMdPin>
           {venue}
         </div>
-        <div className='centerContent font-medium text-base tracking-wider flex gap-2 drop-shadow-sm'>
-          <IoMdGlobe className='text-2xl opacity-80'></IoMdGlobe>
+        <div className='centerContent text-lg flex gap-2 drop-shadow-sm'>
+          <IoMdGlobe className='text-xl opacity-80 text-accent-500'></IoMdGlobe>
           {city}, {country}
         </div>
         <div className='centerContent'>
-          <div className='centerContent w-[180px] h-12 rounded-lg bg-accent-500 hover:bg-secondary-500 text-primary-500 hover:cursor-pointer active:scale-[0.97] shadow duration-150 select-none'>
+          <div className='centerContent w-[180px] h-12 rounded-lg bg-accent-500 hover:bg-secondary-500 text-primary-500 hover:cursor-pointer active:scale-[0.97] shadow duration-100 select-none'>
             <p className='tracking-widest uppercase font-medium text-sm '>Event Link</p>
           </div>
         </div>
