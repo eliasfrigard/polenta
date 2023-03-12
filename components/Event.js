@@ -7,22 +7,22 @@ export default function Event({ venue, date, city, country, last = false, first 
   return (
     <>
       <AnimateIn
-        classes={`${!first && 'mt-4'} ${!last && 'mb-4'
-          } hidden lg:grid p-4 max-w-[1300px] w-full grid-flow-row grid-cols-4 gap-4 hover:bg-gray-200 rounded-lg tracking-wider text-secondary-500`}
+        classes={`${!first && 'mt-2'} ${!last && 'mb-2'
+          } hidden lg:grid py-7 max-w-[1200px] w-full grid-flow-row grid-cols-4 gap-4 hover:bg-gray-200 rounded-lg tracking-wider text-secondary-500 bg-secondary-500 bg-opacity-[4%] shadow`}
       >
         <div className='centerContent flex-col gap-3'>
           <p className='text-2xl uppercase font-bold leading-none drop-shadow-sm'>
             <Moment format='HH:mm'>{date}</Moment>
           </p>
-          <p className='text-lg leading-none uppercase drop-shadow-sm'>
+          <p className='text-base leading-none uppercase drop-shadow-sm'>
             <Moment format='D MMMM YYYY'>{date}</Moment>
           </p>
         </div>
-        <div className='centerContent text-lg flex gap-2 drop-shadow-sm'>
+        <div className='centerContent flex gap-2 drop-shadow-sm'>
           <IoMdPin className='text-xl opacity-80 text-accent-500'></IoMdPin>
           {venue}
         </div>
-        <div className='centerContent text-lg flex gap-2 drop-shadow-sm'>
+        <div className='centerContent flex gap-2 drop-shadow-sm'>
           <IoMdGlobe className='text-xl opacity-80 text-accent-500'></IoMdGlobe>
           {city}, {country}
         </div>
@@ -71,9 +71,9 @@ export default function Event({ venue, date, city, country, last = false, first 
        * Divider for both mobile and desktop.
        */}
 
-      {!last && (
+      {/* {!last && (
         <div className='container w-3/4 h-[1px] rounded-full bg-black opacity-20 md:opacity-10'></div>
-      )}
+      )} */}
     </>
   )
 }
