@@ -17,7 +17,7 @@ export default function Layout({ children, pageTitle, pageDescription, imageUrl,
         <meta property="og:title" content={pageTitle} key="title" />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:image" content={imageUrl} />
-        {/* <meta property="og:url" content={pageUrl} /> */}
+        <meta property="og:url" content={`https://polentamusic.com${pageUrl}`} />
       </Head>
       <Header />
       <main className='bg-primary-500 pt-[75px]'>{children}</main>

@@ -31,7 +31,6 @@ export async function getStaticProps() {
 
   const page = pageRes.items[0].fields
 
-  console.log(page);
   return {
     props: {
       hero: page.pageImage,
@@ -52,7 +51,7 @@ export default function Home({ hero, heroPosition, mobileHero, introduction, vid
   const thirdVideo = videos[2].fields
 
   return (
-    <Layout pageTitle={pageTitle} pageDescription={pageDescription} imageUrl={`https: + ${hero.fields.file.url}`}>
+    <Layout pageTitle={pageTitle} pageDescription={pageDescription} imageUrl={`https: + ${hero.fields.file.url}`} pageUrl="/">
       <AnimateIn>
         <div id='hero' className='relative h-screen md:h-[1050px] flex justify-center items-center shadow-xl'>
           <Image

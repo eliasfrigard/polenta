@@ -50,7 +50,7 @@ export async function getStaticProps() {
 
 export default function Concerts({ hero, heroPosition, concerts, mobileHero, heroImageActive, pageTitle, pageDescription }) {
   return (
-    <Layout pageTitle={pageTitle} pageDescription={pageDescription} imageUrl={`https: + ${hero.fields.file.url}`}>
+    <Layout pageTitle={pageTitle} pageDescription={pageDescription} imageUrl={`https: + ${hero.fields.file.url}`} pageUrl="/concerts">
       {
         heroImageActive &&
         <AnimateIn opacityDuration={1000}>

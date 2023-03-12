@@ -49,7 +49,7 @@ export default function About({
   pageDescription,
 }) {
   return (
-    <Layout pageTitle={pageTitle} pageDescription={pageDescription} imageUrl={`https: + ${hero.fields.file.url}`}>
+    <Layout pageTitle={pageTitle} pageDescription={pageDescription} imageUrl={`https: + ${hero.fields.file.url}`} pageUrl="/about">
       {
         heroImageActive &&
         <AnimateIn opacityDuration={1000}>
