@@ -35,7 +35,7 @@ export default function ContactForm() {
   return (
     <>
       <div className={`centerContent flex-col contactForm w-full md:pb-16 mt-8 md:mt-32 px-6 lg:px-0`}>
-        <p className='text-3xl md:text-4xl font-bold uppercase mb-8 tracking-wide border-b border-opacity-20 border-secondary-500 pb-4 px-4 text-center'>
+        <p className='text-3xl md:text-4xl font-bold uppercase mb-6 tracking-wide text-secondary-500 pb-4 px-4 text-center'>
           contact / booking
         </p>
         <div className='flex-col p-8 md:p-12 mt-2 md:mt-0 container max-w-4xl roundedShadow bg-primary-500 h-full border border-opacity-10 border-secondary-500'>

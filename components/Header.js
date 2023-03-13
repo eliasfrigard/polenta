@@ -73,7 +73,7 @@ export default function Header() {
             </Link>
           </div>
           <div id='right' className='flex gap-6 justify-end items-center '>
-            <a href='mailto:someone@yoursite.com?subject=Polenta Music Website'>
+            <a href='mailto:polentamusic@gmail.com?subject=Polenta Music Website'>
               <AiOutlineMail className='soMeIcon text-[1.5rem] antialiased' />
             </a>
 

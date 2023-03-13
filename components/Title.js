@@ -6,7 +6,7 @@ export default function Title({ title, subtitle, textColor = 'text-secondary-500
   return (
     <AnimateIn classes='px-4 w-3/4 md:w-full md:px-0 container flex flex-col justify-center items-center'>
       <p
-        className={`text-center text-3xl md:text-5xl md:text-[3.6em] border-b border-opacity-20 pb-4 font-bold tracking-wide leading-tight md:leading-none uppercase ${textColor} ${borderColor} border-opacity-20 px-4`}
+        className={`text-center text-3xl md:text-5xl md:text-[3em] pb-4 md:pb-0 font-bold tracking-wide leading-tight md:leading-none uppercase ${textColor} ${borderColor} border-opacity-20 px-4`}
       >
         {title}
       </p>
