@@ -131,4 +131,7 @@ a {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+  .heroHeight {
+    height: calc(100vh - 75px);
+  }
 }

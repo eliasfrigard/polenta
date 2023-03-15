@@ -42,13 +42,26 @@ export async function getStaticProps() {
   }
 }
 
-export default function Music({ hero, heroPosition, videos, albums, mobileHero, heroImageActive, pageTitle, pageDescription }) {
+export default function Music({
+  hero,
+  heroPosition,
+  videos,
+  albums,
+  mobileHero,
+  heroImageActive,
+  pageTitle,
+  pageDescription,
+}) {
   return (
-    <Layout pageTitle={pageTitle} pageDescription={pageDescription} imageUrl={`https: + ${hero.fields.file.url}`} pageUrl="/music">
-      {
-        heroImageActive &&
+    <Layout
+      pageTitle={pageTitle}
+      pageDescription={pageDescription}
+      imageUrl={`https: + ${hero.fields.file.url}`}
+      pageUrl='/music'
+    >
+      {heroImageActive && (
         <AnimateIn opacityDuration={1000}>
-          <div id='hero' className='relative h-screen flex justify-center items-center shadow-xl'>
+          <div id='hero' className='relative heroHeight flex justify-center items-center shadow-xl'>
             <Image
               alt={hero.fields.title}
               src={'https:' + hero.fields.file.url}
@@ -63,7 +76,7 @@ export default function Music({ hero, heroPosition, videos, albums, mobileHero, 
             />
           </div>
         </AnimateIn>
-      }
+      )}
 
       <div className='container my-12 md:my-32 flex justify-center items-center gap-8 md:gap-20 flex-wrap'>
         <div className='container grid grid-flow-row lg:grid-cols-2 gap-8 md:gap-12 px-8'>
