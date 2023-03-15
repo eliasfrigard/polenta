@@ -1,4 +1,3 @@
-import { loadGetInitialProps } from 'next/dist/shared/lib/utils'
 import React from 'react'
 
 export default function ContactForm() {
@@ -6,6 +5,8 @@ export default function ContactForm() {
   const [nameIsValid, setNameIsValid] = React.useState(true)
   const [phoneIsValid, setPhoneIsValid] = React.useState(true)
   const [messageIsValid, setMessageIsValid] = React.useState(true)
+
+  const formRef = React.useRef(null)
 
   const validateEmail = (event) => {
     const value = event.target.value.toString()
@@ -32,6 +33,10 @@ export default function ContactForm() {
     setMessageIsValid(value.length < 4000 && value.length > 0)
   }
 
+  const handleSubmit = (event) => {
+    console.log(formRef.current)
+  }
+
   return (
     <>
       <div className={`centerContent flex-col contactForm w-full md:pb-16 mt-8 md:mt-32 px-6 lg:px-0`}>
@@ -39,7 +44,7 @@ export default function ContactForm() {
           contact / booking
         </p>
         <div className='flex-col p-8 md:p-12 mt-2 md:mt-0 container max-w-4xl roundedShadow bg-primary-500 h-full border border-opacity-20 border-secondary-500'>
-          <form className='w-full'>
+          <form ref={formRef} onSubmit={handleSubmit}>
             <div className='flex flex-wrap -mx-3 md:mb-4'>
               <div className='w-full px-3 mb-2 md:mb-0'>
                 <label className='formLabel' for='grid-first-name'>
@@ -120,7 +125,10 @@ export default function ContactForm() {
               </div>
             </div>
           </form>
-          <button className='roundedShadow w-full h-14 md:mt-2 bg-secondary-500 text-primary-500 hover:bg-accent-500 font-bold tracking-wider uppercase duration-150 active:scale-[0.98] select-none'>
+          <button
+            onClick={handleSubmit}
+            className='roundedShadow w-full h-14 md:mt-2 bg-secondary-500 text-primary-500 hover:bg-accent-500 font-bold tracking-wider uppercase duration-150 active:scale-[0.98] select-none'
+          >
             Send message
           </button>
         </div>
