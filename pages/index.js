@@ -96,7 +96,7 @@ export default function Home({
 
       <AnimateIn opacityDuration={1000}>
         <div className='px-8 lg:px-0 container flex justify-center mb-12 md:mb-32 md:mt-[225px] pt-12 md:pt-32 '>
-          <div className='-translate-x-[2px] prose prose-lg max-w-4xl prose-img:rounded-xl prose-img:shadow-lg prose-headings:underline leading-[2rem] text-center'>
+          <div className='-translate-x-[2px] prose prose-lg max-w-4xl prose-img:rounded-xl prose-img:shadow-lg  leading-[2rem] text-center'>
             {documentToReactComponents(introduction)}
           </div>
         </div>
