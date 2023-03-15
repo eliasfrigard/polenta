@@ -2,7 +2,6 @@ import React from 'react'
 
 import Layout from '../components/Layouts/Default'
 import Image from 'next/image'
-import Card from '../components/Card.js'
 import Title from '../components/Title'
 import DownloadItem from '../components/DownloadItem'
 import ContactForm from '../components/ContactForm'
@@ -46,11 +45,24 @@ export async function getStaticProps() {
   }
 }
 
-export default function Contact({ text, hero, heroPosition, contacts, files, mobileHero, heroImageActive, pageTitle, pageDescription }) {
+export default function Contact({
+  text,
+  hero,
+  heroPosition,
+  files,
+  mobileHero,
+  heroImageActive,
+  pageTitle,
+  pageDescription,
+}) {
   return (
-    <Layout pageTitle={pageTitle} pageDescription={pageDescription} imageUrl={`https: + ${hero.fields.file.url}`} pageUrl="/contact">
-      {
-        heroImageActive &&
+    <Layout
+      pageTitle={pageTitle}
+      pageDescription={pageDescription}
+      imageUrl={`https: + ${hero.fields.file.url}`}
+      pageUrl='/contact'
+    >
+      {heroImageActive && (
         <AnimateIn opacityDuration={1000}>
           <div id='hero' className='relative h-screen flex justify-center items-center shadow-xl'>
             <Image
@@ -67,7 +79,7 @@ export default function Contact({ text, hero, heroPosition, contacts, files, mob
             />
           </div>
         </AnimateIn>
-      }
+      )}
 
       <AnimateIn opacityDuration={1000}>
         <div className='px-8 lg:px-0 my-12 md:my-32 container flex justify-center'>
@@ -77,28 +89,15 @@ export default function Contact({ text, hero, heroPosition, contacts, files, mob
         </div>
       </AnimateIn>
 
-      {/* <AnimateIn opacityDuration={1000}>
-        <div className='container px-8 my-12 md:my-32 grid grid-flow-row md:grid-cols-2 lg:grid-cols-4 gap-8 flex-wrap'>
-          {contacts.map((contact) => (
-            <Card
-              key={contact.sys.id}
-              name={contact.fields.name}
-              phone={contact.fields.phoneNumber}
-              email={contact.fields.email}
-              image={`https:${contact.fields.image.fields.file.url}`}
-            />
-          ))}
-        </div>
-      </AnimateIn> */}
-
       <ContactForm></ContactForm>
 
       {files.length > 0 && (
         <div className='flex flex-col gap-12 md:gap-16 w-full bg-secondary-500 pt-12 md:pt-16 lg:pb-12 pb-4 md:pb-6 '>
           <Title title='Downloads' textColor='text-primary-500' borderColor='border-primary-500' />
           <div
-            className={`container px-6 grid grid-flow-row gap-6 md:gap-8 ${files.length > 1 && 'md:grid-cols-2'
-              }`}
+            className={`container px-6 grid grid-flow-row gap-6 md:gap-8 ${
+              files.length > 1 && 'md:grid-cols-2'
+            }`}
           >
             {files.map((file) => (
               <DownloadItem

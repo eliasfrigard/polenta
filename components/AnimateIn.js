@@ -13,13 +13,11 @@ const AnimateIn = ({
   const getAnimationClasses = () => {
     switch (animationType) {
       case 'slide':
-        return `${classes} duration-1000 ${
-          inView ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
-        }`
+        return `${classes} duration-500 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`
       case 'zoom':
-        return `${classes} duration-1000 ${inView ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`
+        return `${classes} duration-500 ${inView ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`
       default:
-        return `${classes} duration-1000 ${inView ? 'opacity-100' : 'opacity-0'}`
+        return `${classes} duration-500 ${inView ? 'opacity-100' : 'opacity-0'}`
     }
   }
 

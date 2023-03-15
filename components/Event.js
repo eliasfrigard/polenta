@@ -7,8 +7,9 @@ export default function Event({ venue, date, city, country, last = false, first 
   return (
     <>
       <AnimateIn
-        classes={`${!first && 'mt-2'} ${!last && 'mb-2'
-          } hidden lg:grid py-7 max-w-[1200px] w-full grid-flow-row grid-cols-4 gap-4 hover:bg-gray-200 rounded-lg tracking-wider text-secondary-500 bg-secondary-500 bg-opacity-[4%] shadow`}
+        classes={`${!first && 'mt-2'} ${
+          !last && 'mb-2'
+        } hidden lg:grid py-7 max-w-[1200px] w-full grid-flow-row grid-cols-4 gap-4 hover:bg-gray-200 rounded-lg tracking-wider text-secondary-500 bg-secondary-500 bg-opacity-[4%] shadow`}
       >
         <div className='centerContent flex-col gap-3'>
           <p className='text-2xl uppercase font-bold leading-none drop-shadow-sm'>
@@ -38,8 +39,9 @@ export default function Event({ venue, date, city, country, last = false, first 
        */}
 
       <AnimateIn
-        classes={`mt-4 ${!last && 'mb-4'
-          } lg:hidden centerContent py-6 max-w-[1400px] w-full flex flex-col gap-8 rounded-lg`}
+        classes={`mt-4 ${
+          !last && 'mb-4'
+        } lg:hidden centerContent py-6 max-w-[1400px] w-full flex flex-col gap-8 rounded-lg`}
       >
         <BsCalendar3 className='text-6xl shadow'></BsCalendar3>
         <div className='centerContent flex-col gap-3'>
@@ -66,14 +68,6 @@ export default function Event({ venue, date, city, country, last = false, first 
           </div>
         </div>
       </AnimateIn>
-
-      {/**
-       * Divider for both mobile and desktop.
-       */}
-
-      {/* {!last && (
-        <div className='container w-3/4 h-[1px] rounded-full bg-black opacity-20 md:opacity-10'></div>
-      )} */}
     </>
   )
 }

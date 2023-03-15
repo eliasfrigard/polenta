@@ -49,9 +49,13 @@ export default function About({
   pageDescription,
 }) {
   return (
-    <Layout pageTitle={pageTitle} pageDescription={pageDescription} imageUrl={`https: + ${hero.fields.file.url}`} pageUrl="/about">
-      {
-        heroImageActive &&
+    <Layout
+      pageTitle={pageTitle}
+      pageDescription={pageDescription}
+      imageUrl={`https: + ${hero.fields.file.url}`}
+      pageUrl='/about'
+    >
+      {heroImageActive && (
         <AnimateIn opacityDuration={1000}>
           <div id='hero' className='relative h-screen flex justify-center items-center shadow-xl'>
             <Image
@@ -68,15 +72,7 @@ export default function About({
             />
           </div>
         </AnimateIn>
-      }
-
-      {/* <AnimateIn opacityDuration={1000}>
-        <div className='px-6 lg:px-0 my-12 md:my-32 flex justify-center items-center flex-col'>
-          <div className='-translate-x-[2px] prose prose-lg max-w-2xl prose-img:rounded-xl prose-img:shadow-lg prose-headings:underline leading-[2rem] text-center'>
-            {documentToReactComponents(biography)}
-          </div>
-        </div>
-      </AnimateIn> */}
+      )}
 
       <AnimateIn opacityDuration={1000}>
         <div className='px-8 lg:px-0 my-12 md:my-32 container flex justify-center'>
@@ -94,7 +90,7 @@ export default function About({
             instrument={member.fields.instrument}
             image={`https:${member.fields.image.fields.file.url}`}
             text={member.fields.text}
-            textSize="lg"
+            textSize='lg'
           />
         ))}
       </div>

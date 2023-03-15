@@ -1,6 +1,11 @@
-import AnimateIn from "./AnimateIn"
+import AnimateIn from './AnimateIn'
 
-export default function Title({ title, subtitle, textColor = 'text-secondary-500', borderColor = 'border-black' }) {
+export default function Title({
+  title,
+  subtitle,
+  textColor = 'text-secondary-500',
+  borderColor = 'border-black',
+}) {
   if (!title) return ''
 
   return (
