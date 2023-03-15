@@ -51,7 +51,7 @@ export default function Event({ venue, date, city, country, last = false, first 
           !last && 'mb-4'
         } lg:hidden centerContent py-12 max-w-[85vw] w-full flex flex-col gap-7 rounded-lg shadow-md bg-secondary-500 bg-opacity-[6%]`}
       >
-        <BsCalendar3 className='text-4xl shadow-md'></BsCalendar3>
+        <BsCalendar3 className='text-4xl shadow-md text-accent-500'></BsCalendar3>
         <div className='centerContent flex-col gap-4'>
           <p className='text-4xl uppercase font-bold leading-none drop-shadow-sm'>
             <Moment format='HH:mm'>{date}</Moment>
