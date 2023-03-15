@@ -48,11 +48,23 @@ export async function getStaticProps() {
   }
 }
 
-export default function Concerts({ hero, heroPosition, concerts, mobileHero, heroImageActive, pageTitle, pageDescription }) {
+export default function Concerts({
+  hero,
+  heroPosition,
+  concerts,
+  mobileHero,
+  heroImageActive,
+  pageTitle,
+  pageDescription,
+}) {
   return (
-    <Layout pageTitle={pageTitle} pageDescription={pageDescription} imageUrl={`https: + ${hero.fields.file.url}`} pageUrl="/concerts">
-      {
-        heroImageActive &&
+    <Layout
+      pageTitle={pageTitle}
+      pageDescription={pageDescription}
+      imageUrl={`https: + ${hero.fields.file.url}`}
+      pageUrl='/concerts'
+    >
+      {heroImageActive && (
         <AnimateIn opacityDuration={1000}>
           <div id='hero' className='relative h-screen flex justify-center items-center shadow-xl'>
             <Image
@@ -69,7 +81,7 @@ export default function Concerts({ hero, heroPosition, concerts, mobileHero, her
             />
           </div>
         </AnimateIn>
-      }
+      )}
 
       <div className='flex flex-col gap-12 md:gap-32 my-12 md:my-32'>
         <AnimateIn opacityDuration={1000}>
@@ -84,6 +96,7 @@ export default function Concerts({ hero, heroPosition, concerts, mobileHero, her
                     venue={concert.fields.venue}
                     city={concert.fields.address}
                     country={concert.fields.country}
+                    link={concert.fields.urlLink}
                     first={index === 0}
                     last={index + 1 === concerts.upcoming.length}
                   />
@@ -109,6 +122,7 @@ export default function Concerts({ hero, heroPosition, concerts, mobileHero, her
                     venue={concert.fields.venue}
                     city={concert.fields.address}
                     country={concert.fields.country}
+                    link={concert.fields.urlLink}
                     first={index === 0}
                     last={index + 1 === concerts.previous.length}
                   />

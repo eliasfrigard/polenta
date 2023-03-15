@@ -45,13 +45,27 @@ export async function getStaticProps() {
   }
 }
 
-export default function Home({ hero, heroPosition, mobileHero, introduction, videos, concerts, pageTitle, pageDescription }) {
+export default function Home({
+  hero,
+  heroPosition,
+  mobileHero,
+  introduction,
+  videos,
+  concerts,
+  pageTitle,
+  pageDescription,
+}) {
   const firstVideo = videos[0].fields
   const secondVideo = videos[1].fields
   const thirdVideo = videos[2].fields
 
   return (
-    <Layout pageTitle={pageTitle} pageDescription={pageDescription} imageUrl={`https: + ${hero.fields.file.url}`} pageUrl="/">
+    <Layout
+      pageTitle={pageTitle}
+      pageDescription={pageDescription}
+      imageUrl={`https: + ${hero.fields.file.url}`}
+      pageUrl='/'
+    >
       <AnimateIn>
         <div id='hero' className='relative h-screen md:h-[1050px] flex justify-center items-center shadow-xl'>
           <Image
@@ -123,6 +137,7 @@ export default function Home({ hero, heroPosition, mobileHero, introduction, vid
                   venue={concert.fields.venue}
                   city={concert.fields.address}
                   country={concert.fields.country}
+                  link={concert.fields.urlLink}
                   first={index === 0}
                   last={index + 1 === concerts.length}
                 />
