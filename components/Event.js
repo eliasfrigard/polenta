@@ -71,8 +71,8 @@ export default function Event({ venue, date, city, country, last = false, first 
           </div>
         </div>
         <div className='centerContent w-full'>
-          {!link ? (
-            <button className='centerContent w-3/4 h-12 rounded-lg bg-accent-500 shadow-lg text-primary-500 cursor-default select-none tracking-widest uppercase font-medium text-sm'>
+          {link ? (
+            <button className='centerContent w-3/4 h-12 rounded-lg bg-accent-500 shadow-lg text-primary-500 cursor-default select-none tracking-widest uppercase font-medium text-sm opacity-30'>
               Event Link
             </button>
           ) : (
