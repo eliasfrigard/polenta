@@ -33,7 +33,7 @@ export default function Event({ venue, date, city, country, last = false, first 
               Event Link
             </button>
           ) : (
-            <a href={link} target='_blank' rel='noopener noreferrer'>
+            <a href={link} target='_blank' rel='noopener noreferrer nofollow'>
               <button className='centerContent w-[180px] h-12 rounded-lg bg-accent-500 hover:bg-secondary-500 text-primary-500 hover:cursor-pointer active:scale-[0.97] shadow duration-100 select-none tracking-widest uppercase font-medium text-sm'>
                 Event Link
               </button>
@@ -76,7 +76,7 @@ export default function Event({ venue, date, city, country, last = false, first 
               Event Link
             </button>
           ) : (
-            <a href={link} target='_blank' rel='noopener noreferrer'>
+            <a href={link} target='_blank' rel='noopener noreferrer nofollow'>
               <button className='centerContent w-3/4 h-12 rounded-lg bg-accent-500 shadow-lg text-primary-500 hover:cursor-pointer hover:bg-secondary-500 duration-150 select-none tracking-widest uppercase font-medium text-sm active:scale-[0.98]'>
                 Event Link
               </button>
