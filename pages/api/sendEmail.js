@@ -11,6 +11,12 @@ export default async function sendEmail(req, res) {
       },
     })
 
+    if (req.body.address) {
+      // This is the honeypot. If exists, probably bot.
+      // Send 200 so bots don't know what the fuck is going on.
+      return res.status(200).send({ success: 'Email sent successfully' })
+    }
+
     const message = {
       from: 'polentamusiikki@gmail.com',
       to: 'polentamusiikki@gmail.com',

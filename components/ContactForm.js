@@ -6,12 +6,14 @@ export default function ContactForm() {
   const emailRef = React.useRef(null)
   const nameRef = React.useRef(null)
   const phoneRef = React.useRef(null)
+  const addressRef = React.useRef(null)
 
   const [formIsValid, setFormIsValid] = React.useState(true)
   const [emailIsValid, setEmailValid] = React.useState(true)
   const [nameIsValid, setNameIsValid] = React.useState(true)
   const [phoneIsValid, setPhoneIsValid] = React.useState(true)
   const [messageIsValid, setMessageIsValid] = React.useState(true)
+  const [addressIsValid, setAddressIsValid] = React.useState(true)
 
   const [formSuccess, setFormSuccess] = React.useState(null)
 
@@ -25,6 +27,11 @@ export default function ContactForm() {
   const validatePhone = (event) => {
     const value = event.target.value.toString()
     setPhoneIsValid(value.length < 25)
+  }
+
+  const validateAddress = (event) => {
+    const value = event.target.value.toString()
+    setAddressIsValid(value.length < 300)
   }
 
   const validateName = (event) => {
@@ -45,12 +52,14 @@ export default function ContactForm() {
     const email = emailRef.current.value
     const name = nameRef.current.value
     const phone = phoneRef.current.value
+    const address = addressRef.current.value
 
     if (
       !nameIsValid ||
       !emailIsValid ||
       !phoneIsValid ||
       !messageIsValid ||
+      !addressIsValid ||
       message.length <= 0 ||
       email.length <= 0 ||
       name.length <= 0
@@ -66,6 +75,7 @@ export default function ContactForm() {
       email,
       phone,
       name,
+      address,
     }
 
     try {
@@ -147,6 +157,24 @@ export default function ContactForm() {
                   <p className='text-red-800 ml-1 text-xs font-medium'>
                     Phone number cannot be more than 25 characters.
                   </p>
+                )}
+              </div>
+              <div className='hidden w-full md:w-1/2 px-3 mb-2 md:mb-0'>
+                <label className='formLabel' for='grid-first-name'>
+                  Address
+                </label>
+                <input
+                  ref={addressRef}
+                  className={`appearance-none block w-full border border-secondary-500 border-opacity-10 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-primary-500 ${
+                    !addressIsValid && 'border-red-500'
+                  }`}
+                  id='grid-first-name'
+                  type='text'
+                  placeholder='So we can call you back!'
+                  onChange={validateAddress}
+                />
+                {!addressIsValid && (
+                  <p className='text-red-800 ml-1 text-xs font-medium'>Address cannot be outside Europe.</p>
                 )}
               </div>
             </div>
