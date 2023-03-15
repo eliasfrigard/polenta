@@ -3,11 +3,11 @@ import nodemailer from 'nodemailer'
 export default async function sendEmail(req, res) {
   if (req.method === 'POST') {
     const transporter = nodemailer.createTransport({
-      host: 'smtp-relay.sendinblue.com',
-      port: 587,
+      host: process.env.EMAIL_HOST,
+      port: process.env.EMAIL_PORT,
       auth: {
-        user: 'polentamusiikki@gmail.com',
-        pass: 'pcgNHfIY72GZD9Q0',
+        user: process.env.EMAIL,
+        pass: process.env.EMAIL_PASS,
       },
     })
 
