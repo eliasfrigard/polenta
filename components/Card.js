@@ -29,7 +29,7 @@ export default function Hamburger({ name, instrument, email, phone, image, text,
           </div>
         )
       }
-      {
+      {/* {
         textSize === 'lg' && (
           <div className='centerContent text-center flex-col mt-6 gap-4'>
             <p className='text-2xl md:text-3xl text-center tracking-wide font-medium uppercase border-b border-secondary-500 border-opacity-20 pb-4 px-4'>
@@ -38,7 +38,7 @@ export default function Hamburger({ name, instrument, email, phone, image, text,
             <p className='italic opacity-70 tracking-wide font-medium'>{instrument}</p>
           </div>
         )
-      }
+      } */}
     </AnimateIn>
   )
 }

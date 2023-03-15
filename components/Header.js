@@ -26,7 +26,7 @@ export default function Header() {
   return (
     <>
       <div
-        className={`w-full backdrop-blur flex justify-start fixed items-center z-10 bg-secondary-500 bg-opacity-90
+        className={`w-full backdrop-blur flex justify-start fixed top-0 items-center z-10 bg-secondary-500 bg-opacity-90
     `}
       >
         <div
@@ -73,7 +73,7 @@ export default function Header() {
             </Link>
           </div>
           <div id='right' className='flex gap-6 justify-end items-center '>
-            <a href='mailto:someone@yoursite.com?subject=Polenta Music Website'>
+            <a href='mailto:polentamusic@gmail.com?subject=Polenta Music Website'>
               <AiOutlineMail className='soMeIcon text-[1.5rem] antialiased' />
             </a>
 
@@ -99,6 +99,8 @@ export default function Header() {
           </div>
         </div>
       </div>
+
+      {/* MOBILE */}
 
       <div className={`w-screen flex justify-start fixed items-center z-20 bg-secondary-500`}>
         <div
@@ -127,9 +129,8 @@ export default function Header() {
       </div>
 
       <div
-        className={`fixed flex flex-col justify-evenly items-center pt-[75px] h-screen w-screen bg-secondary-500 z-10 duration-300 transform ${
-          !mobileNavOpen && '-translate-y-[100vh]'
-        }`}
+        className={`lg:hidden fixed flex flex-col justify-evenly items-center pt-[75px] h-screen w-screen bg-secondary-500 z-10 duration-300 transform ${!mobileNavOpen && '-translate-y-[100vh]'
+          }`}
       >
         <div className='container flex flex-col justify-center items-center gap-10'>
           <Link href='/'>

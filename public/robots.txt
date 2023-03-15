@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://polentamusic.com
+
+# Sitemaps
+Sitemap: https://polentamusic.com/sitemap.xml

@@ -72,7 +72,7 @@ a {
   }
   .roundedShadow {
     border-radius: theme('borderRadius.lg');
-    box-shadow: theme('boxShadow.xl');
+    box-shadow: theme('boxShadow.lg');
   }
   .formLabel {
     display: block;

@@ -27,29 +27,59 @@ export async function getStaticProps() {
   return {
     props: {
       hero: page.heroImage,
+      mobileHero: page.mobileHeroImage,
       heroPosition: page.heroPosition,
       biography: page.biography,
       bandMembers: bandMembersRes.items,
+      heroImageActive: page.heroImageActive,
+      pageTitle: page.name,
+      pageDescription: page.description,
     },
   }
 }
 
-export default function About({ biography, hero, heroPosition, bandMembers }) {
+export default function About({
+  biography,
+  hero,
+  heroPosition,
+  bandMembers,
+  heroImageActive,
+  mobileHero,
+  pageTitle,
+  pageDescription,
+}) {
   return (
-    <Layout>
-      <AnimateIn opacityDuration={1000}>
-        <div id='hero' className='relative h-screen flex justify-center items-center shadow-xl'>
-          <Image
-            alt={hero.fields.title}
-            src={'https:' + hero.fields.file.url}
-            fill
-            className={`object-cover object-${heroPosition}`}
-          />
+    <Layout pageTitle={pageTitle} pageDescription={pageDescription} imageUrl={`https: + ${hero.fields.file.url}`} pageUrl="/about">
+      {
+        heroImageActive &&
+        <AnimateIn opacityDuration={1000}>
+          <div id='hero' className='relative h-screen flex justify-center items-center shadow-xl'>
+            <Image
+              alt={hero.fields.title}
+              src={'https:' + hero.fields.file.url}
+              fill
+              className={`hidden lg:block object-cover object-${heroPosition}`}
+            />
+            <Image
+              alt={mobileHero.fields.title}
+              src={'https:' + mobileHero.fields.file.url}
+              fill
+              className='lg:hidden object-cover object-bottom'
+            />
+          </div>
+        </AnimateIn>
+      }
+
+      {/* <AnimateIn opacityDuration={1000}>
+        <div className='px-6 lg:px-0 my-12 md:my-32 flex justify-center items-center flex-col'>
+          <div className='-translate-x-[2px] prose prose-lg max-w-2xl prose-img:rounded-xl prose-img:shadow-lg prose-headings:underline leading-[2rem] text-center'>
+            {documentToReactComponents(biography)}
+          </div>
         </div>
-      </AnimateIn>
+      </AnimateIn> */}
 
       <AnimateIn opacityDuration={1000}>
-        <div className='px-6 lg:px-0 my-12 md:my-32 flex justify-center items-center flex-col'>
+        <div className='px-8 lg:px-0 my-12 md:my-32 container flex justify-center'>
           <div className='-translate-x-[2px] prose prose-lg max-w-4xl prose-img:rounded-xl prose-img:shadow-lg prose-headings:underline leading-[2rem] text-center'>
             {documentToReactComponents(biography)}
           </div>

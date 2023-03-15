@@ -8,7 +8,6 @@ import Title from '../components/Title'
 import Video from '../components/Video'
 import AnimateIn from '../components/AnimateIn'
 
-import getYoutubeID from 'get-youtube-id'
 import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
@@ -40,17 +39,19 @@ export async function getStaticProps() {
       introduction: page.introduction,
       videos: page.videos,
       concerts: concertsRes.items,
+      pageTitle: page.name,
+      pageDescription: page.description,
     },
   }
 }
 
-export default function Home({ hero, heroPosition, mobileHero, introduction, videos, concerts }) {
+export default function Home({ hero, heroPosition, mobileHero, introduction, videos, concerts, pageTitle, pageDescription }) {
   const firstVideo = videos[0].fields
   const secondVideo = videos[1].fields
   const thirdVideo = videos[2].fields
 
   return (
-    <Layout>
+    <Layout pageTitle={pageTitle} pageDescription={pageDescription} imageUrl={`https: + ${hero.fields.file.url}`} pageUrl="/">
       <AnimateIn>
         <div id='hero' className='relative h-screen md:h-[1050px] flex justify-center items-center shadow-xl'>
           <Image
@@ -87,7 +88,7 @@ export default function Home({ hero, heroPosition, mobileHero, introduction, vid
         </div>
       </AnimateIn>
 
-      <div className='px-8 md:px-16 my-16 md:my-16 flex justify-center items-center flex-col'>
+      <div className='px-8 md:px-16 my-12 md:my-16 flex justify-center items-center flex-col'>
         <div className='container'>
           <Video
             title={firstVideo.title}
@@ -95,7 +96,7 @@ export default function Home({ hero, heroPosition, mobileHero, introduction, vid
             link={firstVideo.youTubeLink}
           />
         </div>
-        <div className='container flex gap-8 xl:gap-12 mt-12 md:mt-16 flex-wrap lg:flex-nowrap'>
+        <div className='container flex gap-8 xl:gap-12 mt-8 md:mt-16 flex-wrap lg:flex-nowrap'>
           <Video
             title={secondVideo.title}
             description={secondVideo.description}
