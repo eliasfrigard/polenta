@@ -13,13 +13,11 @@ const caudex = Poppins({
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className={`${caudex.variable} font-caudex`}>
-      <Script src="/static/script.js" />
+    <div id='__next' className={`${caudex.variable} font-caudex`}>
+      <Script src='/static/script.js' />
       <Component {...pageProps} />
     </div>
   )
 }
-
-
 
 export default MyApp
