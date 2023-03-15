@@ -49,34 +49,39 @@ export default function Event({ venue, date, city, country, last = false, first 
       <AnimateIn
         classes={`mt-4 ${
           !last && 'mb-4'
-        } lg:hidden centerContent py-6 max-w-[1400px] w-full flex flex-col gap-8 rounded-lg`}
+        } lg:hidden centerContent py-12 max-w-[85vw] w-full flex flex-col gap-6 rounded-lg bg-secondary-500 bg-opacity-[6%]`}
       >
-        <BsCalendar3 className='text-6xl shadow'></BsCalendar3>
-        <div className='centerContent flex-col gap-3'>
-          <p className='text-xl leading-none font-medium tracking-wide drop-shadow-sm'>
-            <Moment format='HH:mm dddd'>{date}</Moment>
+        <BsCalendar3 className='text-4xl shadow'></BsCalendar3>
+        <div className='centerContent flex-col gap-4'>
+          <p className='text-4xl uppercase font-bold leading-none drop-shadow-sm'>
+            <Moment format='HH:mm'>{date}</Moment>
           </p>
-          <p className='text-2xl leading-none font-bold tracking-wide drop-shadow-sm'>
+          <p className='text-lg font-medium leading-none uppercase drop-shadow-sm'>
             <Moment format='D MMMM YYYY'>{date}</Moment>
           </p>
         </div>
-        <div className='flex flex-col gap-3'>
-          <div className='centerContent tracking-wide leading-none font-medium italic flex gap-2 drop-shadow-sm'>
-            <IoMdPin className='text-xl'></IoMdPin>
+        <div className='centerContent flex flex-col gap-2 drop-shadow-sm font-medium'>
+          <div className='centerContent flex gap-2 drop-shadow-sm'>
+            <IoMdPin className='text-xl opacity-80 text-accent-500'></IoMdPin>
             {venue}
           </div>
-          <div className='centerContent font-medium leading-none text-base tracking-wide flex gap-2 drop-shadow-sm'>
-            <IoMdGlobe className='text-xl'></IoMdGlobe>
+          <div className='centerContent flex gap-2 drop-shadow-sm'>
+            <IoMdGlobe className='text-xl opacity-80 text-accent-500'></IoMdGlobe>
             {city}, {country}
           </div>
         </div>
         <div className='centerContent w-full'>
-          {link ? (
+          {!link ? (
             <button className='centerContent w-3/4 h-12 rounded-lg bg-accent-500 shadow-lg text-primary-500 cursor-default select-none tracking-widest uppercase font-medium text-sm opacity-30'>
               Event Link
             </button>
           ) : (
-            <a href={link} target='_blank' rel='noopener noreferrer nofollow'>
+            <a
+              href={link}
+              target='_blank'
+              rel='noopener noreferrer nofollow'
+              className='w-full flex justify-center items-center'
+            >
               <button className='centerContent w-3/4 h-12 rounded-lg bg-accent-500 shadow-lg text-primary-500 hover:cursor-pointer hover:bg-secondary-500 duration-150 select-none tracking-widest uppercase font-medium text-sm active:scale-[0.98]'>
                 Event Link
               </button>
