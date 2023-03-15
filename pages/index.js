@@ -85,7 +85,7 @@ export default function Home({
       pageUrl='/'
     >
       <AnimateIn>
-        <div id='hero' className='relative h-screen md:h-[1050px] flex justify-center items-center shadow-xl'>
+        <div id='hero' className='relative h-screen md:h-[900px] flex justify-center items-center shadow-xl'>
           <Image
             alt={hero.fields.title}
             src={'https:' + hero.fields.file.url}
@@ -98,7 +98,7 @@ export default function Home({
             fill
             className='lg:hidden object-cover object-bottom'
           />
-          <div className='hidden md:centerContent container md:my-16 md:h-[450px] absolute translate-y-[525px] my-32'>
+          <div className='hidden md:centerContent container md:my-16 md:h-[450px] absolute translate-y-[450px] my-32'>
             <Image
               alt='Mountains'
               src='/splash.png'
