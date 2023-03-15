@@ -33,7 +33,6 @@ export default function Album({ title, description, text, cover, spotify }) {
             allowfullscreen
             allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
             loading='lazy'
-            border
           ></iframe>
         )}
       </div>
