@@ -9,7 +9,7 @@ export default function Event({ venue, date, city, country, last = false, first 
       <AnimateIn
         classes={`${!first && 'mt-2'} ${
           !last && 'mb-2'
-        } hidden lg:grid py-7 max-w-[1200px] w-full grid-flow-row grid-cols-4 gap-4 hover:bg-gray-200 rounded-lg tracking-wider text-secondary-500 bg-secondary-500 bg-opacity-[4%] shadow`}
+        } hidden lg:grid py-7 max-w-[1200px] w-full grid-flow-row grid-cols-4 gap-4 hover:bg-gray-200 rounded-lg tracking-wider text-secondary-500 bg-secondary-500 bg-opacity-[4%] shadow-md`}
       >
         <div className='centerContent flex-col gap-3'>
           <p className='text-2xl uppercase font-bold leading-none drop-shadow-sm'>
@@ -29,12 +29,12 @@ export default function Event({ venue, date, city, country, last = false, first 
         </div>
         <div className='centerContent'>
           {!link ? (
-            <button className='centerContent w-[180px] h-12 rounded-lg bg-accent-500 text-primary-500 cursor-default shadowselect-none tracking-widest uppercase font-medium text-sm opacity-30'>
+            <button className='centerContent w-[180px] h-12 rounded-lg bg-accent-500 text-primary-500 cursor-default shadowselect-none tracking-widest uppercase font-medium text-sm opacity-30 shadow-md'>
               Event Link
             </button>
           ) : (
             <a href={link} target='_blank' rel='noopener noreferrer nofollow'>
-              <button className='centerContent w-[180px] h-12 rounded-lg bg-accent-500 hover:bg-secondary-500 text-primary-500 hover:cursor-pointer active:scale-[0.97] shadow duration-100 select-none tracking-widest uppercase font-medium text-sm'>
+              <button className='centerContent w-[180px] h-12 rounded-lg bg-accent-500 hover:bg-secondary-500 text-primary-500 hover:cursor-pointer active:scale-[0.97] shadow-md duration-100 select-none tracking-widest uppercase font-medium text-sm'>
                 Event Link
               </button>
             </a>
