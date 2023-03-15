@@ -129,8 +129,9 @@ export default function Header() {
       </div>
 
       <div
-        className={`lg:hidden fixed flex flex-col justify-evenly items-center pt-[75px] h-screen w-screen bg-secondary-500 z-10 duration-300 transform ${!mobileNavOpen && '-translate-y-[100vh]'
-          }`}
+        className={`lg:hidden fixed flex flex-col justify-evenly items-center pt-[75px] h-screen w-screen bg-secondary-500 z-10 duration-300 transform ${
+          !mobileNavOpen && '-translate-y-[100vh]'
+        }`}
       >
         <div className='container flex flex-col justify-center items-center gap-10'>
           <Link href='/'>
@@ -178,6 +179,13 @@ export default function Header() {
           <a href='https://www.youtube.com/@polentamusic650' target='_blank' rel='noopener noreferrer'>
             <BsYoutube className='soMeIcon text-[1.8rem] translate-y-[1px]' />
           </a>
+        </div>
+        <div className='text-primary-500 tracking-wide text-center'>
+          <p className='text-s mb-2'>Copyright 2023 © Polenta Music</p>
+          <a href='mailto:' className='text-xs underline'>
+            polentamusiikki@gmail.com
+          </a>
+          {/* <p className='text-xs mt-2'>Website by Elias Frigård</p> */}
         </div>
       </div>
     </>
