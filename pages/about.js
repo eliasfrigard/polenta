@@ -7,6 +7,24 @@ import AnimateIn from '../components/AnimateIn'
 
 import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { BLOCKS } from '@contentful/rich-text-types'
+
+const options = {
+  renderNode: {
+    [BLOCKS.EMBEDDED_ASSET]: (node) => {
+      const { url, fileName, contentType } = node.data.target.fields.file
+      return (
+        <Image
+          src={`https:${url}`}
+          alt={fileName}
+          width={node.data.target.fields.file.details.image.width}
+          height={node.data.target.fields.file.details.image.height}
+          layout='responsive'
+        />
+      )
+    },
+  },
+}
 
 export async function getStaticProps() {
   const contentful = createClient({
@@ -76,8 +94,8 @@ export default function About({
 
       <AnimateIn opacityDuration={1000}>
         <div className='px-8 lg:px-0 my-12 md:my-32 container flex justify-center'>
-          <div className='-translate-x-[2px] prose prose-lg max-w-4xl prose-img:rounded-xl prose-img:shadow-lg leading-[2rem] text-center'>
-            {documentToReactComponents(biography)}
+          <div className='-translate-x-[2px] prose prose-lg max-w-4xl prose-img:roundedShadow prose-img:shadow-md leading-[2rem] text-center'>
+            {documentToReactComponents(biography, options)}
           </div>
         </div>
       </AnimateIn>
