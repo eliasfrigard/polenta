@@ -85,7 +85,10 @@ export default function Home({
       pageUrl='/'
     >
       <AnimateIn>
-        <div id='hero' className='relative h-screen md:h-[900px] flex justify-center items-center shadow-xl'>
+        <div
+          id='hero'
+          className='relative heroHeight md:h-[900px] flex justify-center items-center shadow-xl'
+        >
           <Image
             alt={hero.fields.title}
             src={'https:' + hero.fields.file.url}
