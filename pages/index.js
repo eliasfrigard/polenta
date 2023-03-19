@@ -94,7 +94,6 @@ export default function Home({
             src={'https:' + hero.fields.file.url}
             fill
             className={`hidden lg:block object-cover object-${heroPosition}`}
-            prominent
           />
           <Image
             alt={mobileHero.fields.title}
@@ -130,6 +129,7 @@ export default function Home({
             title={firstVideo.title}
             description={firstVideo.description}
             link={firstVideo.youTubeLink}
+            prominent
           />
         </div>
         <div className='container flex gap-8 xl:gap-12 mt-8 md:mt-16 flex-wrap lg:flex-nowrap'>
