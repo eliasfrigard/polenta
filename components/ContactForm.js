@@ -98,7 +98,7 @@ export default function ContactForm() {
         <p className='text-3xl md:text-4xl font-bold uppercase mb-4 tracking-wide text-secondary-500 pb-4 px-4 text-center'>
           contact / booking
         </p>
-        <div className='flex-col p-8 md:p-12 mt-2 md:mt-0 container max-w-4xl roundedShadow bg-primary-500 h-full border border-opacity-10 border-secondary-500'>
+        <div className='flex-col p-6 md:p-12 mt-2 md:mt-0 container max-w-4xl roundedShadow bg-primary-500 h-full border border-opacity-10 border-secondary-500'>
           <form className='w-full'>
             <div className='flex flex-wrap -mx-3 md:mb-4'>
               <div className='w-full px-3 mb-2 md:mb-0'>
