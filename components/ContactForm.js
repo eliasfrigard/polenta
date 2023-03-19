@@ -208,19 +208,19 @@ export default function ContactForm() {
           >
             Send message
           </button>
-          <div className='pt-4 flex justify-center items-center'>
+          <div className='flex justify-center items-center'>
             {!formIsValid && (
-              <p className='text-red-800 ml-1 text-[14px] tracking-wide font-medium'>
+              <p className='text-red-800 pt-4 ml-1 text-[14px] tracking-wide font-medium'>
                 Please fill out all the required fields correctly!
               </p>
             )}
             {formSuccess !== null &&
               (!formSuccess ? (
-                <p className='text-red-800 ml-1 text-[14px] tracking-wide font-medium'>
+                <p className='text-red-800 pt-4 ml-1 text-[14px] tracking-wide font-medium'>
                   The message could not be sent, please try again later!
                 </p>
               ) : (
-                <p className='text-green-800 ml-1 text-[14px] tracking-wide font-medium'>
+                <p className='text-green-800 pt-4 ml-1 text-[14px] tracking-wide font-medium'>
                   Your message was sent successfully!
                 </p>
               ))}
