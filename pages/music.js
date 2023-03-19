@@ -80,8 +80,9 @@ export default function Music({
 
       <div className='container my-12 md:my-32 flex justify-center items-center gap-8 md:gap-20 flex-wrap'>
         <div className='container grid grid-flow-row lg:grid-cols-2 gap-8 md:gap-12 px-8'>
-          {videos.map((video) => (
+          {videos.map((video, index) => (
             <Video
+              prominent={index === 0}
               key={video.sys.id}
               title={video.fields.title}
               description={video.fields.description}

@@ -94,6 +94,7 @@ export default function Home({
             src={'https:' + hero.fields.file.url}
             fill
             className={`hidden lg:block object-cover object-${heroPosition}`}
+            prominent
           />
           <Image
             alt={mobileHero.fields.title}
