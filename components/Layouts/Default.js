@@ -28,9 +28,10 @@ export default function Layout({ children, pageTitle = '', pageDescription, imag
   const title = `${pageTitle} | Polenta`
 
   return (
-    <div>
+    <>
       <Head>
         <title>{title}</title>
+        <link rel='canonical' href={`https://www.polentamusic.com${pageUrl}`} />
         <meta name='description' content='A brief description of the content on the page' />
         <meta
           name='keywords'
@@ -39,10 +40,11 @@ export default function Layout({ children, pageTitle = '', pageDescription, imag
         <meta name='author' content='Elias Frigård' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta name='robots' content='index,follow' />
+        <meta itemProp='image' content={imageUrl} />
         <meta property='og:title' content={pageTitle} key='title' />
         <meta property='og:description' content={pageDescription} />
         <meta property='og:image' content={imageUrl} />
-        <meta property='og:url' content={`https://polentamusic.com${pageUrl}`} />
+        <meta property='og:url' content={`https://www.polentamusic.com${pageUrl}`} />
       </Head>
       <Header />
       <main
@@ -52,6 +54,6 @@ export default function Layout({ children, pageTitle = '', pageDescription, imag
         {children}
       </main>
       <Footer />
-    </div>
+    </>
   )
 }
