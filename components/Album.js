@@ -9,7 +9,7 @@ export default function Album({ title, description, text, cover, spotify }) {
       <Title title={title} subtitle={description}></Title>
 
       <div className={`container grid grid-flow-row mx-12 gap-8 md:gap-12 ${spotify && 'lg:grid-cols-2'}`}>
-        <div className='overflow-hidden rounded-xl shadow-lg w-full aspect-square relative'>
+        <div className='overflow-hidden rounded-xl shadow-lg w-full md:h-full aspect-square relative'>
           <Image
             alt={title}
             src={cover}
@@ -26,10 +26,8 @@ export default function Album({ title, description, text, cover, spotify }) {
         </div>
         {spotify && (
           <iframe
-            className='md:shadow-lg md:aspect-square'
+            className='md:shadow-lg min-h-300px h-[450px] md:h-full md:aspect-square w-full'
             src={`https://open.spotify.com/embed/album/${spotify.split('/').pop()}`}
-            width='100%'
-            height='100%'
             allowFullScreen
             allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
             loading='lazy'
