@@ -156,7 +156,7 @@ export default function Header() {
         </div>
 
         <div className='flex justify-center items-center gap-8 text-primary-500'>
-          <a href='mailto:someone@yoursite.com?subject=Polenta Music Website'>
+          <a href='mailto:polentamusic@gmail.com?subject=Polenta Music Website'>
             <AiOutlineMail className='soMeIcon text-[1.6rem] antialiased' />
           </a>
 
