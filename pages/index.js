@@ -104,20 +104,19 @@ export default function Home({
           <div className='hidden md:centerContent container md:my-16 md:h-[450px] absolute translate-y-[450px] my-32'>
             <Image
               alt='Mountains'
-              src='/splash.png'
-              fill
-              className='object-contain absolute translate-y-5 drop-shadow opacity-95'
+              src='/polenta-logo-round.png'
+              contain
+              height={600}
+              width={600}
+              className='object-contain absolute -translate-y-5'
             />
-            <h1 className='text-5xl md:text-[110px] z-10 font-bold md:-translate-y-2 drop-shadow-2xl text-primary-500'>
-              POLENTA
-            </h1>
           </div>
         </div>
       </AnimateIn>
 
       <AnimateIn opacityDuration={1000}>
         <div className='px-8 lg:px-0 container flex justify-center mb-12 md:mb-32 md:mt-[225px] pt-12 md:pt-32 '>
-          <div className='-translate-x-[2px] prose prose-lg max-w-4xl prose-img:rounded-xl prose-img:shadow-lg  leading-[2rem] text-center'>
+          <div className='-translate-x-[2px] prose prose-lg max-w-5xl prose-img:rounded-xl prose-img:shadow-lg leading-[2.2rem] text-center'>
             {documentToReactComponents(introduction, options)}
           </div>
         </div>
