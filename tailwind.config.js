@@ -12,10 +12,10 @@ module.exports = {
           500: '#F2F2F2',
         },
         secondary: {
-          500: '#011C26',
+          500: '#28323c',
         },
         accent: {
-          500: '#d57b01',
+          500: '#dea46f',
         },
       },
       // fontFamily: {
