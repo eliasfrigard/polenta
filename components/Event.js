@@ -19,11 +19,11 @@ export default function Event({ venue, date, city, country, last = false, first 
             <Moment format='D MMMM YYYY'>{date}</Moment>
           </p>
         </div>
-        <div className='centerContent flex gap-2 drop-shadow-sm text-center'>
-          <IoMdPin className='text-xl opacity-80 text-accent-500'></IoMdPin>
+        <div className='centerContent flex gap-2 drop-shadow-sm text-center font-medium'>
+          {/* <IoMdPin className='text-xl opacity-80 text-accent-500'></IoMdPin> */}
           {venue}
         </div>
-        <div className='centerContent flex gap-2 drop-shadow-sm'>
+        <div className='centerContent flex gap-2 drop-shadow-sm font-medium'>
           <IoMdGlobe className='text-xl opacity-80 text-accent-500'></IoMdGlobe>
           {city}, {country}
         </div>
