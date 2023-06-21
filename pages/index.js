@@ -101,20 +101,27 @@ export default function Home({
             fill
             className='lg:hidden object-cover object-bottom'
           />
+          <div className='hidden md:centerContent container md:my-16 md:h-[500px] absolute translate-y-[450px] my-32'>
+            <Image
+              alt='Mountains'
+              src='/splash2.png'
+              fill
+              className='object-contain absolute translate-y-5 drop-shadow'
+            />
+            <Image
+              alt='Mountains'
+              src='/polenta-logo-white.png'
+              contain
+              height={600}
+              width={600}
+              className='object-contain absolute -translate-y-5'
+            />
+          </div>
         </div>
       </AnimateIn>
 
-      <div className='hidden md:centerContent container md:mb-16 md:h-[600px] relative'>
-        <Image
-          alt='Mountains'
-          src='/polenta-logo.png'
-          fill
-          className='object-contain absolute translate-y-5 drop-shadow opacity-95'
-        />
-      </div>
-
       <AnimateIn opacityDuration={1000}>
-        <div className='px-8 lg:px-0 container flex justify-center mb-12 md:mb-32'>
+        <div className='px-8 lg:px-0 container flex justify-center mb-12 md:mb-32 md:mt-[225px] pt-12 md:pt-32 '>
           <div className='-translate-x-[2px] prose prose-lg max-w-4xl prose-img:rounded-xl prose-img:shadow-lg  leading-[2rem] text-center'>
             {documentToReactComponents(introduction, options)}
           </div>
