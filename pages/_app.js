@@ -2,18 +2,18 @@ import '../styles/globals.css'
 
 import Script from 'next/script'
 
-import { Poppins } from '@next/font/google'
+import { Montserrat } from '@next/font/google'
 
-const caudex = Poppins({
+const mont = Montserrat({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
   style: ['normal', 'italic'],
-  variable: '--font-caudex',
+  variable: '--font-mont',
 })
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div id='__next' className={`${caudex.variable} font-caudex`}>
+    <div id='__next' className={`${mont.className} font-mont`}>
       <Script src='/static/script.js' />
       <Component {...pageProps} />
     </div>
