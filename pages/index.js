@@ -104,13 +104,7 @@ export default function Home({
           <div className='hidden md:centerContent container md:my-16 md:h-[500px] absolute translate-y-[450px] my-32'>
             <Image
               alt='Mountains'
-              src='/splash2.png'
-              fill
-              className='object-contain absolute translate-y-5 drop-shadow'
-            />
-            <Image
-              alt='Mountains'
-              src='/polenta-logo-white.png'
+              src='/polenta-logo-round.png'
               contain
               height={600}
               width={600}
