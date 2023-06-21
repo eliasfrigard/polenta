@@ -101,7 +101,7 @@ export default function Home({
             fill
             className='lg:hidden object-cover object-bottom'
           />
-          <div className='hidden md:centerContent container md:my-16 md:h-[500px] absolute translate-y-[450px] my-32'>
+          <div className='hidden md:centerContent container md:my-16 md:h-[450px] absolute translate-y-[450px] my-32'>
             <Image
               alt='Mountains'
               src='/polenta-logo-round.png'
