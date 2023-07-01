@@ -7,9 +7,8 @@ export default function Event({ venue, date, city, country, last = false, first 
   return (
     <>
       <AnimateIn
-        classes={`${!first && 'mt-2'} ${
-          !last && 'mb-2'
-        } hidden lg:grid py-7 max-w-[1200px] w-full grid-flow-row grid-cols-4 gap-4 hover:bg-gray-200 rounded-lg tracking-wider text-secondary-500 bg-secondary-500 bg-opacity-[4%] shadow-md`}
+        classes={`${!first && 'mt-2'} ${!last && 'mb-2'
+          } hidden lg:grid py-7 max-w-[1200px] w-full grid-flow-row grid-cols-4 gap-4 hover:bg-gray-200 rounded-lg tracking-wider text-secondary-500 bg-secondary-500 bg-opacity-[4%] shadow-md`}
       >
         <div className='centerContent flex-col gap-3'>
           <p className='text-2xl uppercase font-bold leading-none drop-shadow-sm'>
@@ -47,9 +46,8 @@ export default function Event({ venue, date, city, country, last = false, first 
        */}
 
       <AnimateIn
-        classes={`mt-4 ${
-          !last && 'mb-4'
-        } lg:hidden centerContent py-12 max-w-[85vw] w-full flex flex-col gap-7 rounded-lg shadow-md bg-secondary-500 bg-opacity-[4%]`}
+        classes={`mt-4 ${!last && 'mb-4'
+          } lg:hidden centerContent py-12 max-w-[85vw] w-full flex flex-col gap-7 rounded-lg shadow-md bg-secondary-500 bg-opacity-[4%]`}
       >
         <BsCalendar3 className='text-4xl shadow-md text-accent-500'></BsCalendar3>
         <div className='centerContent flex-col gap-4'>
@@ -60,13 +58,13 @@ export default function Event({ venue, date, city, country, last = false, first 
             <Moment format='D MMMM YYYY'>{date}</Moment>
           </p>
         </div>
-        <div className='centerContent flex flex-col gap-2 drop-shadow-sm font-medium'>
-          <div className='centerContent flex gap-2 drop-shadow-sm'>
-            <IoMdPin className='text-xl opacity-80 text-accent-500'></IoMdPin>
+        <div className='centerContent flex flex-col gap-3 drop-shadow-sm font-medium'>
+          <div className='centerContent flex gap-2 drop-shadow-sm text-center px-10'>
+            {/* <IoMdPin className='text-xl opacity-80 text-accent-500'></IoMdPin> */}
             {venue}
           </div>
           <div className='centerContent flex gap-2 drop-shadow-sm'>
-            <IoMdGlobe className='text-xl opacity-80 text-accent-500'></IoMdGlobe>
+            {/* <IoMdGlobe className='text-xl opacity-80 text-accent-500'></IoMdGlobe> */}
             {city}, {country}
           </div>
         </div>
