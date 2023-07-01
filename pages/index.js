@@ -52,8 +52,9 @@ export async function getStaticProps() {
   return {
     props: {
       hero: page.pageImage,
-      heroPosition: page.heroPosition,
       mobileHero: page.mobileHeroImage,
+      logo: page.logo,
+      heroPosition: page.heroPosition,
       introduction: page.introduction,
       videos: page.videos,
       concerts: concertsRes.items,
@@ -65,8 +66,9 @@ export async function getStaticProps() {
 
 export default function Home({
   hero,
-  heroPosition,
   mobileHero,
+  heroPosition,
+  logo,
   introduction,
   videos,
   concerts,
@@ -119,8 +121,8 @@ export default function Home({
           />
           <Image
             ref={logoRef}
-            alt='Polenta Logo'
-            src='/polenta-logo-round.png'
+            alt={logo.fields.title}
+            src={'https:' + logo.fields.file.url}
             width={600}
             height={600 / ratio}
             className='absolute bottom-0 translate-y-1/2'
