@@ -77,6 +77,22 @@ export default function Home({
   const secondVideo = videos[1].fields
   const thirdVideo = videos[2].fields
 
+  const [ratio, setRatio] = React.useState(1 / 1)
+
+  const logoRef = React.useRef(null)
+
+  React.useEffect(() => {
+    if (!logoRef.current) return
+
+    const resizeObserver = new ResizeObserver(() => {
+      logoRef.current.parentElement.style.marginBottom = `${logoRef.current.offsetHeight / 2}px`
+    })
+
+    resizeObserver.observe(logoRef.current)
+
+    return () => resizeObserver.disconnect()
+  }, [logoRef])
+
   return (
     <Layout
       pageTitle={pageTitle}
@@ -87,7 +103,7 @@ export default function Home({
       <AnimateIn>
         <div
           id='hero'
-          className='relative heroHeight md:h-[900px] flex justify-center items-center shadow-xl'
+          className={`relative heroHeight md:h-[900px] shadow-xl flex items-center justify-center`}
         >
           <Image
             alt={hero.fields.title}
@@ -101,21 +117,22 @@ export default function Home({
             fill
             className='lg:hidden object-cover object-bottom'
           />
-          <div className='hidden md:centerContent container md:my-16 md:h-[450px] absolute translate-y-[450px] my-32'>
-            <Image
-              alt='Mountains'
-              src='/polenta-logo-round.png'
-              contain
-              height={600}
-              width={600}
-              className='object-contain absolute -translate-y-5'
-            />
-          </div>
+          <Image
+            ref={logoRef}
+            alt='Polenta Logo'
+            src='/polenta-logo-round.png'
+            width={600}
+            height={600 / ratio}
+            className='absolute bottom-0 translate-y-1/2'
+            onLoadingComplete={({ naturalWidth, naturalHeight }) =>
+              setRatio(naturalWidth / naturalHeight)
+            }
+          />
         </div>
       </AnimateIn>
 
       <AnimateIn opacityDuration={1000}>
-        <div className='px-8 lg:px-0 container flex justify-center mb-12 md:mb-32 md:mt-[225px] pt-12 md:pt-32 '>
+        <div className='px-8 lg:px-0 container flex justify-center mb-12 md:mb-32 pt-8 md:pt-16'>
           <div className='-translate-x-[2px] prose prose-lg max-w-5xl prose-img:rounded-xl prose-img:shadow-lg leading-[2.2rem] text-center'>
             {documentToReactComponents(introduction, options)}
           </div>
