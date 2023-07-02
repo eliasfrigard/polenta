@@ -22,7 +22,7 @@ export async function getStaticProps() {
 
   const previousConcertsRes = await contentful.getEntries({
     content_type: 'concert',
-    order: 'fields.dateTime',
+    order: '-fields.dateTime',
     'fields.dateTime[lte]': currentDate,
   })
 
