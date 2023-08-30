@@ -77,6 +77,7 @@ export default function About({
         <AnimateIn opacityDuration={1000}>
           <div id='hero' className='relative heroHeight flex justify-center items-center shadow-xl'>
             <Image
+              // Safe navigation.
               alt={hero.fields?.title}
               src={'https:' + hero.fields.file.url}
               fill
