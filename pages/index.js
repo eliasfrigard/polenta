@@ -90,13 +90,13 @@ export default function Home({
       logoRef.current.parentElement.style.marginBottom = `${logoRef.current.offsetHeight / 2}px`
     })
 
-    resizeObserver.observe(logoRef.current)
+    resizeObserver.observe(l?.title.current)
 
     return () => resizeObserver.disconnect()
   }, [logoRef])
 
   return (
-    <Layout
+    <Layout?.title
       pageTitle={pageTitle}
       pageDescription={pageDescription}
       imageUrl={`https: + ${hero.fields.file.url}`}
@@ -125,7 +125,7 @@ export default function Home({
             src={'https:' + logo.fields.file.url}
             width={600}
             height={600 / ratio}
-            className='absolute bottom-0 translate-y-1/2'
+            className='absolu?.titletom-0 translate-y-1/2'
             onLoadingComplete={({ naturalWidth, naturalHeight }) =>
               setRatio(naturalWidth / naturalHeight)
             }
@@ -133,12 +133,12 @@ export default function Home({
         </div>
       </AnimateIn>
 
-      <AnimateIn opacityDuration={1000}>
+      <AnimateIn opacityDurati?.title00}>
         <div className='px-8 lg:px-0 container flex justify-center mb-12 md:mb-32 pt-8 md:pt-16'>
           <div className='-translate-x-[2px] prose prose-lg max-w-5xl prose-img:rounded-xl prose-img:shadow-lg leading-[2.2rem] text-center'>
             {documentToReactComponents(introduction, options)}
           </div>
-        </div>
+        </div>?.title
       </AnimateIn>
 
       <div className='px-8 md:px-16 my-12 md:my-16 flex justify-center items-center flex-col'>

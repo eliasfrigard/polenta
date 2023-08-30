@@ -63,13 +63,13 @@ export default function Music({
         <AnimateIn opacityDuration={1000}>
           <div id='hero' className='relative heroHeight flex justify-center items-center shadow-xl'>
             <Image
-              alt={hero.fields.title}
+              alt={hero.fields?.title}
               src={'https:' + hero.fields.file.url}
               fill
               className={`hidden lg:block object-cover object-${heroPosition}`}
             />
             <Image
-              alt={mobileHero.fields.title}
+              alt={mobileHero.fields?.title}
               src={'https:' + mobileHero.fields.file.url}
               fill
               className='lg:hidden object-cover object-bottom'
@@ -84,7 +84,7 @@ export default function Music({
             <Video
               prominent={index === 0}
               key={video.sys.id}
-              title={video.fields.title}
+              title={video.fields?.title}
               description={video.fields.description}
               link={video.fields.youTubeLink}
             />
@@ -95,7 +95,7 @@ export default function Music({
       {albums.map((album) => (
         <Album
           key={album.sys.id}
-          title={album.fields.title}
+          title={album.fields?.title}
           description={album.fields.description}
           text={album.fields.text}
           cover={'https:' + album.fields.cover.fields.file.url}
