@@ -84,7 +84,7 @@ export default function Concerts({
       )}
 
       <div className='flex flex-col gap-12 md:gap-32 my-12 md:my-32'>
-        <AnimateIn opacityDuration={1000}>
+        <div>
           <div className='flex flex-col md:gap-16'>
             <Title title='Upcoming Concerts' />
             {concerts.upcoming.length > 0 ? (
@@ -108,9 +108,9 @@ export default function Concerts({
               </p>
             )}
           </div>
-        </AnimateIn>
+        </div>
 
-        <AnimateIn opacityDuration={1000}>
+        <div>
           {concerts.previous.length > 0 && (
             <div className='flex flex-col md:gap-16'>
               <Title title='Previous Concerts' />{' '}
@@ -130,7 +130,7 @@ export default function Concerts({
               </div>
             </div>
           )}
-        </AnimateIn>
+        </div>
       </div>
     </Layout>
   )
