@@ -112,7 +112,7 @@ export default function ContactForm() {
                   }`}
                   id='grid-first-name'
                   type='text'
-                  placeholder='So we know who you are!'
+                  placeholder='What is your name?'
                   onChange={validateName}
                 />
                 {!nameIsValid && (
@@ -132,7 +132,7 @@ export default function ContactForm() {
                   }`}
                   id='grid-first-name'
                   type='text'
-                  placeholder='So we know how to reach you!'
+                  placeholder='What is your email?'
                   onBlur={validateEmail}
                 />
                 {!emailIsValid && (
@@ -150,7 +150,7 @@ export default function ContactForm() {
                   }`}
                   id='grid-first-name'
                   type='text'
-                  placeholder='So we can call you back!'
+                  placeholder='What is your number?'
                   onChange={validatePhone}
                 />
                 {!phoneIsValid && (
@@ -191,7 +191,7 @@ export default function ContactForm() {
                   }`}
                   id='grid-first-name'
                   type='text'
-                  placeholder='What are you thinking about?'
+                  placeholder='What is on your mind?'
                   onChange={validateMessage}
                 />
                 {!messageIsValid && (
