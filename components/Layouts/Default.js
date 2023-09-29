@@ -26,17 +26,17 @@ export default function Layout({ children, pageTitle = '', pageDescription, imag
   }, [router])
 
   const title = `${pageTitle} | Polenta`
+  const baseUrl = 'https://www.polentamusic.com'
+  const faviconUrl = '/favicon.ico'
 
   return (
     <>
       <Head>
+        <meta charSet="UTF-8" />
         <title>{title}</title>
-        <link rel='canonical' href={`https://www.polentamusic.com${pageUrl}`} />
-        <meta name='description' content='A brief description of the content on the page' />
-        <meta
-          name='keywords'
-          content='Fiddle, Guitar, Finnish, Finland, Folk, Music, Kansanmusiikki, Folk Music, Violin, Kuisma, Malmivaara, Sippola, Kinnunen'
-        />
+        <link rel="icon" href={faviconUrl} />
+        <link rel='canonical' href={baseUrl + pageUrl} />
+        <meta name='description' content={pageDescription} />
         <meta name='author' content='Elias Frigård' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta name='robots' content='index,follow' />
@@ -44,7 +44,8 @@ export default function Layout({ children, pageTitle = '', pageDescription, imag
         <meta property='og:title' content={pageTitle} key='title' />
         <meta property='og:description' content={pageDescription} />
         <meta property='og:image' content={imageUrl} />
-        <meta property='og:url' content={`https://www.polentamusic.com${pageUrl}`} />
+        <meta property='og:url' content={baseUrl + pageUrl} />
+        <meta property="og:type" content="website" />
       </Head>
       <Header />
       <main
