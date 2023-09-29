@@ -7,7 +7,7 @@ export default function Event({ venue, date, city, country, last = false, first 
   return (
     <>
       <AnimateIn
-        classes={`${!first && 'mt-2'} ${!last && 'mb-2'
+        classes={`${!first && 'mt-2'} ${!last && 'my-5'
           } hidden lg:grid py-7 max-w-[1200px] w-full grid-flow-row grid-cols-4 gap-4 hover:bg-gray-200 rounded-lg tracking-wider text-secondary-500 bg-secondary-500 bg-opacity-[4%] shadow-md`}
       >
         <div className='centerContent flex-col gap-3'>
