@@ -26,7 +26,7 @@ export default function Header() {
   return (
     <>
       <div
-        className={`w-full backdrop-blur flex justify-start fixed top-0 items-center z-10 bg-secondary-500 bg-opacity-90
+        className={`w-full backdrop-blur-sm flex justify-start fixed top-0 items-center z-10 bg-secondary-500 bg-opacity-90
     `}
       >
         <div
@@ -129,9 +129,8 @@ export default function Header() {
       </div>
 
       <div
-        className={`lg:hidden fixed flex flex-col justify-evenly items-center pt-[75px] h-screen w-screen bg-secondary-500 z-10 duration-300 transform ${
-          !mobileNavOpen && '-translate-y-[100vh]'
-        }`}
+        className={`lg:hidden fixed flex flex-col justify-evenly items-center pt-[75px] h-screen w-screen bg-secondary-500 z-10 duration-300 transform ${!mobileNavOpen && '-translate-y-[100vh]'
+          }`}
       >
         <div className='container flex flex-col justify-center items-center gap-10'>
           <Link href='/'>

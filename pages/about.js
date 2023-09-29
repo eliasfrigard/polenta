@@ -75,7 +75,7 @@ export default function About({
     >
       {heroImageActive && (
         <AnimateIn opacityDuration={1000}>
-          <div id='hero' className='relative heroHeight flex justify-center items-center shadow-xl'>
+          <div id='hero' className='relative h-screen -mt-[75px] flex justify-center items-center shadow-xl'>
             <Image
               // Safe navigation.
               alt={hero.fields?.title}

@@ -66,7 +66,7 @@ export default function Concerts({
     >
       {heroImageActive && (
         <AnimateIn opacityDuration={1000}>
-          <div id='hero' className='relative heroHeight flex justify-center items-center shadow-xl'>
+          <div id='hero' className='relative h-screen -mt-[75px] flex justify-center items-center shadow-xl'>
             <Image
               alt={hero.fields?.title}
               src={'https:' + hero.fields.file.url}

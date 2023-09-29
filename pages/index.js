@@ -105,7 +105,7 @@ export default function Home({
       <AnimateIn>
         <div
           id='hero'
-          className={`relative heroHeight md:h-[900px] shadow-xl flex items-center justify-center`}
+          className={`relative h-screen -mt-[75px] md:h-[975px] shadow-xl flex items-center justify-center`}
         >
           <Image
             alt={hero.fields.title}
