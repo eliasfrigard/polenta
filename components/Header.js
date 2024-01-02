@@ -73,7 +73,7 @@ export default function Header() {
             </Link>
           </div>
           <div id='right' className='flex gap-6 justify-end items-center '>
-            <a href='mailto:polentamusic@gmail.com?subject=Polenta Music Website'>
+            <a href='mailto:polentamusiikki@gmail.com?subject=Polenta Music Website'>
               <AiOutlineMail className='soMeIcon text-[1.5rem] antialiased' />
             </a>
 
@@ -155,7 +155,7 @@ export default function Header() {
         </div>
 
         <div className='flex justify-center items-center gap-8 text-primary-500'>
-          <a href='mailto:polentamusic@gmail.com?subject=Polenta Music Website'>
+          <a href='mailto:polentamusiikki@gmail.com?subject=Polenta Music Website'>
             <AiOutlineMail className='soMeIcon text-[1.6rem] antialiased' />
           </a>
 
