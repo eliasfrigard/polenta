@@ -62,7 +62,7 @@ export async function getStaticProps() {
   const heroUrl = 'https:' + page.pageImage.fields.file.url
   const mobileHeroUrl = 'https:' + page.mobileHeroImage.fields.file.url
 
-  const logoBuffer = await getLogoBuffer(logoUrl)
+  const logoBuffer = await getImageBuffer(logoUrl)
   const heroBuffer = await getImageBuffer(heroUrl)
   const mobileHeroBuffer = await getImageBuffer(mobileHeroUrl)
 
