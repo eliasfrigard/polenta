@@ -7,6 +7,7 @@ import Event from '../components/Event'
 import Title from '../components/Title'
 import Video from '../components/Video'
 import AnimateIn from '../components/AnimateIn'
+import { getPlaiceholder } from 'plaiceholder'
 
 import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
@@ -29,6 +30,14 @@ const options = {
   },
 }
 
+const getImageBuffer = async (src) => {
+  const buffer = await fetch(src).then(async (res) =>
+    Buffer.from(await res.arrayBuffer())
+  )
+
+  return buffer
+}
+
 export async function getStaticProps() {
   const contentful = createClient({
     space: process.env.SPACE_ID,
@@ -49,11 +58,35 @@ export async function getStaticProps() {
 
   const page = pageRes.items[0].fields
 
+  const logoUrl = 'https:' + page.logo.fields.file.url
+  const heroUrl = 'https:' + page.pageImage.fields.file.url
+  const mobileHeroUrl = 'https:' + page.mobileHeroImage.fields.file.url
+
+  const logoBuffer = await getLogoBuffer(logoUrl)
+  const heroBuffer = await getImageBuffer(heroUrl)
+  const mobileHeroBuffer = await getImageBuffer(mobileHeroUrl)
+
+  const { base64: logoBlur } = await getPlaiceholder(logoBuffer)
+  const { base64: heroBlur } = await getPlaiceholder(heroBuffer)
+  const { base64: mobileHeroBlur } = await getPlaiceholder(mobileHeroBuffer)
+
   return {
     props: {
-      hero: page.pageImage,
-      mobileHero: page.mobileHeroImage,
-      logo: page.logo,
+      hero: {
+        altText: page.pageImage.fields.title,
+        image: heroUrl,
+        blur: heroBlur
+      },
+      mobileHero: {
+        altText: page.mobileHeroImage.fields.title,
+        image: mobileHeroUrl,
+        blur: mobileHeroBlur
+      },
+      logo: {
+        altText: page.logo.fields.title,
+        image: logoUrl,
+        blur: logoBlur
+      },
       heroPosition: page.heroPosition,
       introduction: page.introduction,
       videos: page.videos,
@@ -99,7 +132,7 @@ export default function Home({
     <Layout
       pageTitle={pageTitle}
       pageDescription={pageDescription}
-      imageUrl={`https: + ${hero.fields.file.url}`}
+      imageUrl={hero.image}
       pageUrl='/'
     >
       <AnimateIn>
@@ -108,21 +141,27 @@ export default function Home({
           className={`relative h-screen -mt-[75px] md:h-[975px] shadow-xl flex items-center justify-center`}
         >
           <Image
-            alt={hero.fields.title}
-            src={'https:' + hero.fields.file.url}
-            fill
+            alt={hero.altText}
+            src={hero.image}
+            placeholder={hero?.blur ? 'blur' : 'empty'}
+            blurDataURL={hero?.blur}
             className={`hidden lg:block object-cover object-${heroPosition}`}
+            fill
           />
           <Image
-            alt={mobileHero.fields.title}
-            src={'https:' + mobileHero.fields.file.url}
-            fill
+            alt={mobileHero.altText}
+            src={mobileHero.image}
+            placeholder={mobileHero?.blur ? 'blur' : 'empty'}
+            blurDataURL={mobileHero?.blur}
             className='lg:hidden object-cover object-bottom'
+            fill
           />
           <Image
             ref={logoRef}
-            alt={logo.fields.title}
-            src={'https:' + logo.fields.file.url}
+            alt={logo.altText}
+            src={logo.image}
+            placeholder={logo?.blur ? 'blur' : 'empty'}
+            blurDataURL={logo?.blur}
             width={600}
             height={600 / ratio}
             className='absolute bottom-0 translate-y-1/2'

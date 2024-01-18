@@ -22,6 +22,7 @@
     "next": "13.4.6",
     "next-sitemap": "^4.0.5",
     "nodemailer": "^6.9.1",
+    "plaiceholder": "^3.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
