@@ -6,7 +6,7 @@ import AnimateIn from '../components/AnimateIn'
 
 import { createClient } from 'contentful'
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const contentful = createClient({
     space: process.env.SPACE_ID,
     accessToken: process.env.ACCESS_TOKEN,
