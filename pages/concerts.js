@@ -3,6 +3,7 @@ import Event from '../components/Event'
 import Image from 'next/image'
 import Title from '../components/Title'
 import AnimateIn from '../components/AnimateIn'
+import sortConcerts from '../utils/sortConcerts'
 
 import { createClient } from 'contentful'
 import { useEffect, useState } from 'react'
@@ -50,13 +51,10 @@ export default function Concerts({
   const [previousConcerts, setPreviousConcerts] = useState([])
 
   useEffect(() => {
-    const currentDate = new Date();
+    const { upcoming, previous } = sortConcerts(concerts)
 
-    const upcoming = concerts.filter((concert) => new Date(concert.fields.dateTime) >= currentDate)
-    const previous = concerts.filter((concert) => new Date(concert.fields.dateTime) < currentDate)
-
-    setUpcomingConcerts(upcoming);
-    setPreviousConcerts(previous);
+    setUpcomingConcerts(upcoming)
+    setPreviousConcerts(previous)
   }, [concerts])
 
   return (

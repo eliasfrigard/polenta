@@ -8,6 +8,7 @@ import Title from '../components/Title'
 import Video from '../components/Video'
 import AnimateIn from '../components/AnimateIn'
 import { getPlaiceholder } from 'plaiceholder'
+import sortConcerts from '../utils/sortConcerts'
 
 import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
@@ -127,9 +128,7 @@ export default function Home({
   }, [logoRef])
 
   React.useEffect(() => {
-    const currentDate = new Date()
-
-    const upcoming = concerts.filter((concert) => new Date(concert.fields.dateTime) >= currentDate)
+    const { upcoming } = sortConcerts(concerts)
 
     setUpcomingConcerts(upcoming)
   }, [concerts])
