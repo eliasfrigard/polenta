@@ -44,12 +44,9 @@ export async function getStaticProps() {
     accessToken: process.env.ACCESS_TOKEN,
   })
 
-  var gt = new Date().toISOString()
-
   const concertsRes = await contentful.getEntries({
     content_type: 'concert',
     order: 'fields.dateTime',
-    'fields.dateTime[gte]': gt,
   })
 
   const pageRes = await contentful.getEntries({
@@ -113,6 +110,7 @@ export default function Home({
   const thirdVideo = videos[2].fields
 
   const [ratio, setRatio] = React.useState(1 / 1)
+  const [upcomingConcerts, setUpcomingConcerts] = React.useState([])
 
   const logoRef = React.useRef(null)
 
@@ -127,6 +125,14 @@ export default function Home({
 
     return () => resizeObserver.disconnect()
   }, [logoRef])
+
+  React.useEffect(() => {
+    const currentDate = new Date()
+
+    const upcoming = concerts.filter((concert) => new Date(concert.fields.dateTime) >= currentDate)
+
+    setUpcomingConcerts(upcoming)
+  }, [concerts])
 
   return (
     <Layout
@@ -204,12 +210,12 @@ export default function Home({
       </div>
 
       <AnimateIn opacityDuration={1000}>
-        {concerts.length > 0 && (
+        {upcomingConcerts.length > 0 && (
           <div className='my-12 md:my-32'>
             <Title title='upcoming concerts' />
 
             <div className='px-4 md:px-0 md:my-16 bg-primary-500 flex justify-center items-center flex-col'>
-              {concerts.map((concert, index) => (
+              {upcomingConcerts.map((concert, index) => (
                 <Event
                   key={concert.sys.id}
                   date={concert.fields.dateTime}
@@ -218,7 +224,7 @@ export default function Home({
                   country={concert.fields.country}
                   link={concert.fields.urlLink}
                   first={index === 0}
-                  last={index + 1 === concerts.length}
+                  last={index + 1 === upcomingConcerts.length}
                 />
               ))}
             </div>

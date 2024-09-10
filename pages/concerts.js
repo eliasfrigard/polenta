@@ -5,25 +5,17 @@ import Title from '../components/Title'
 import AnimateIn from '../components/AnimateIn'
 
 import { createClient } from 'contentful'
+import { useEffect, useState } from 'react'
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const contentful = createClient({
     space: process.env.SPACE_ID,
     accessToken: process.env.ACCESS_TOKEN,
   })
 
-  var currentDate = new Date().toISOString()
-
-  const upcomingConcertsRes = await contentful.getEntries({
+  const concertsRes = await contentful.getEntries({
     content_type: 'concert',
     order: 'fields.dateTime',
-    'fields.dateTime[gte]': currentDate,
-  })
-
-  const previousConcertsRes = await contentful.getEntries({
-    content_type: 'concert',
-    order: '-fields.dateTime',
-    'fields.dateTime[lte]': currentDate,
   })
 
   const pageRes = await contentful.getEntries({
@@ -40,10 +32,7 @@ export async function getServerSideProps() {
       heroImageActive: page.heroImageActive,
       pageTitle: page.name,
       pageDescription: page.description,
-      concerts: {
-        upcoming: upcomingConcertsRes.items,
-        previous: previousConcertsRes.items,
-      },
+      concerts: concertsRes.items,
     },
   }
 }
@@ -57,6 +46,19 @@ export default function Concerts({
   pageTitle,
   pageDescription,
 }) {
+  const [upcomingConcerts, setUpcomingConcerts] = useState([])
+  const [previousConcerts, setPreviousConcerts] = useState([])
+
+  useEffect(() => {
+    const currentDate = new Date();
+
+    const upcoming = concerts.filter((concert) => new Date(concert.fields.dateTime) >= currentDate)
+    const previous = concerts.filter((concert) => new Date(concert.fields.dateTime) < currentDate)
+
+    setUpcomingConcerts(upcoming);
+    setPreviousConcerts(previous);
+  }, [concerts])
+
   return (
     <Layout
       pageTitle={pageTitle}
@@ -87,9 +89,9 @@ export default function Concerts({
         <div>
           <div className='flex flex-col md:gap-16'>
             <Title title='Upcoming Concerts' />
-            {concerts.upcoming.length > 0 ? (
+            {upcomingConcerts.length > 0 ? (
               <div className='bg-primary-500 centerContent flex-col'>
-                {concerts.upcoming.map((concert, index) => (
+                {upcomingConcerts.map((concert, index) => (
                   <Event
                     key={concert.sys.id}
                     date={concert.fields.dateTime}
@@ -98,7 +100,7 @@ export default function Concerts({
                     country={concert.fields.country}
                     link={concert.fields.urlLink}
                     first={index === 0}
-                    last={index + 1 === concerts.upcoming.length}
+                    last={index + 1 === upcomingConcerts.length}
                   />
                 ))}
               </div>
@@ -111,11 +113,11 @@ export default function Concerts({
         </div>
 
         <div>
-          {concerts.previous.length > 0 && (
+          {previousConcerts.length > 0 && (
             <div className='flex flex-col md:gap-16'>
               <Title title='Previous Concerts' />{' '}
               <div className='bg-primary-500 centerContent flex-col'>
-                {concerts.previous.map((concert, index) => (
+                {previousConcerts.map((concert, index) => (
                   <Event
                     key={concert.sys.id}
                     date={concert.fields.dateTime}
@@ -124,7 +126,7 @@ export default function Concerts({
                     country={concert.fields.country}
                     link={concert.fields.urlLink}
                     first={index === 0}
-                    last={index + 1 === concerts.previous.length}
+                    last={index + 1 === previousConcerts.length}
                   />
                 ))}
               </div>
